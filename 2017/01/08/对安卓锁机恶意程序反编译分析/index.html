@@ -24,7 +24,7 @@
 锁机恶意程序一共分为两种：1、通过设备管理器锁机加密码">
 <meta property="og:image" content="http://y00z.github.io/images/1.8/01.png">
 <meta property="og:image" content="http://y00z.github.io/images/1.8/02.png">
-<meta property="og:updated_time" content="2017-01-23T03:37:31.594Z">
+<meta property="og:updated_time" content="2017-02-04T06:22:37.772Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="对安卓锁机恶意程序反编译分析">
 <meta name="twitter:description" content="前言
@@ -86,6 +86,8 @@
 				
 					<a class="github" target="_blank" href="https://github.com/Y00z/" title="github"><i class="icon-github"></i></a>
 		        
+					<a class="weibo" target="_blank" href="http://weibo.com/2248548304" title="weibo"><i class="icon-weibo"></i></a>
+		        
 					<a class="mail" target="_blank" href="Mailto:yooz@foxmail.com" title="mail"><i class="icon-mail"></i></a>
 		        
 					<a class="twitter" target="_blank" href="https://twitter.com/Y00z_" title="twitter"><i class="icon-twitter"></i></a>
@@ -123,6 +125,8 @@
 				<div class="social">
 					
 						<a class="github" target="_blank" href="https://github.com/Y00z/" title="github"><i class="icon-github"></i></a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/2248548304" title="weibo"><i class="icon-weibo"></i></a>
 			        
 						<a class="mail" target="_blank" href="Mailto:yooz@foxmail.com" title="mail"><i class="icon-mail"></i></a>
 			        
@@ -178,7 +182,7 @@
 <p>在上一篇博文中的安全卫士中有用到这个设备管理器。<br>原理和我项目中的是一样的。先自动跳转到激活设备管理器页面，用户点击激活后设置密码，安全卫士项目中有代码，这里就不多说了。</p>
 </blockquote>
 <h3 id="第二种"><a href="#第二种" class="headerlink" title="第二种"></a>第二种</h3><blockquote>
-<p>这种也就是这篇博文主要讲的了。<br>ApkTool用来逆向。<br>主要文件，混淆了方法名和类名。<br><img src="images/1.8/01.png" alt=""><br><img src="images/1.8/02.png" alt=""><br>重要的是ijm-x86.so这个so文件,后面有讲解<br>先从AndroidManifest来找到入口的Activity，c.class，然后来看看初始化的主要代码<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle paramBundle)</span></span></div><div class="line">&#123;</div><div class="line">  LogCatBroadcaster.start(<span class="keyword">this</span>);</div><div class="line">  <span class="keyword">super</span>.onCreate(paramBundle);</div><div class="line">  setContentView(<span class="number">2130903040</span>);</div><div class="line">  <span class="keyword">this</span>.b = ((Button)findViewById(<span class="number">2131099651</span>));</div><div class="line">  <span class="keyword">this</span>.t = ((EditText)findViewById(<span class="number">0</span>));</div><div class="line">  Button localButton = <span class="keyword">this</span>.b;</div><div class="line">  ButtonClickListener localButtonClickListener = <span class="keyword">new</span> ButtonClickListener();</div><div class="line">  localButton.setOnClickListener(localButtonClickListener);</div><div class="line">  <span class="keyword">try</span></div><div class="line">  &#123;</div><div class="line">    StringBuffer localStringBuffer = <span class="keyword">new</span> StringBuffer();</div><div class="line">    d(<span class="keyword">this</span>.path + <span class="string">"/zihao.l"</span>);</div><div class="line">    <span class="keyword">return</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">catch</span> (IOException localIOException)</div><div class="line">  &#123;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这种也就是这篇博文主要讲的了。<br>ApkTool用来逆向。<br>主要文件，混淆了方法名和类名。<br><img src="/images/1.8/01.png" alt=""><br><img src="/images/1.8/02.png" alt=""><br>重要的是ijm-x86.so这个so文件,后面有讲解<br>先从AndroidManifest来找到入口的Activity，c.class，然后来看看初始化的主要代码<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle paramBundle)</span></span></div><div class="line">&#123;</div><div class="line">  LogCatBroadcaster.start(<span class="keyword">this</span>);</div><div class="line">  <span class="keyword">super</span>.onCreate(paramBundle);</div><div class="line">  setContentView(<span class="number">2130903040</span>);</div><div class="line">  <span class="keyword">this</span>.b = ((Button)findViewById(<span class="number">2131099651</span>));</div><div class="line">  <span class="keyword">this</span>.t = ((EditText)findViewById(<span class="number">0</span>));</div><div class="line">  Button localButton = <span class="keyword">this</span>.b;</div><div class="line">  ButtonClickListener localButtonClickListener = <span class="keyword">new</span> ButtonClickListener();</div><div class="line">  localButton.setOnClickListener(localButtonClickListener);</div><div class="line">  <span class="keyword">try</span></div><div class="line">  &#123;</div><div class="line">    StringBuffer localStringBuffer = <span class="keyword">new</span> StringBuffer();</div><div class="line">    d(<span class="keyword">this</span>.path + <span class="string">"/zihao.l"</span>);</div><div class="line">    <span class="keyword">return</span>;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">catch</span> (IOException localIOException)</div><div class="line">  &#123;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>this.path是当前内存卡的路径,也就是内存卡路径然后拼接zihao.l这个字符串，传给了d方法，并且模拟点击了ButtonClickListener，我们先来看看d方法。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">d</span><span class="params">(String paramString)</span></span></div><div class="line">  <span class="keyword">throws</span> IOException</div><div class="line">&#123;</div><div class="line">  FileOutputStream localFileOutputStream = <span class="keyword">new</span> FileOutputStream(paramString);</div><div class="line">  InputStream localInputStream = getAssets().open(<span class="string">"ijm-x86.so"</span>);</div><div class="line">  <span class="keyword">byte</span>[] arrayOfByte = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = localInputStream.read(arrayOfByte); ; i = localInputStream.read(arrayOfByte))</div><div class="line">  &#123;</div><div class="line">    <span class="keyword">if</span> (i &lt;= <span class="number">0</span>)</div><div class="line">    &#123;</div><div class="line">      localFileOutputStream.flush();</div><div class="line">      localInputStream.close();</div><div class="line">      localFileOutputStream.close();</div><div class="line">      <span class="keyword">return</span>;</div><div class="line">    &#125;</div><div class="line">    localFileOutputStream.write(arrayOfByte, <span class="number">0</span>, i);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>把ijm-x86.so文件复制到了sd卡中，并且命名为zihao.l<br>再来看看ButtonClickListener的点击事件。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">  <span class="keyword">private</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">ButtonClickListener</span></span></div><div class="line">  <span class="keyword">implements</span> <span class="title">View</span>.<span class="title">OnClickListener</span></div><div class="line">&#123;</div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="title">ButtonClickListener</span><span class="params">()</span></span></div><div class="line">  &#123;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="meta">@Override</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onClick</span><span class="params">(View paramView)</span></span></div><div class="line">  &#123;</div><div class="line">    b localb = <span class="keyword">new</span> b();</div><div class="line">    localb.rootShell();</div><div class="line">    a.deleteFile(c.<span class="keyword">this</span>.file);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -327,6 +331,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2017/02/04/drozer对app安全测试/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          drozer对app安全测试
+        
+      </div>
+    </a>
   
   
     <a href="/2017/01/06/安卓源码三连发/" id="article-nav-older" class="article-nav-link-wrap">
@@ -567,7 +580,7 @@
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">悠哉：&lt;/br&gt; 你是准备努力奋斗博掌声&lt;/br&gt;还是矫情做作博同情?</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">悠哉：&lt;/br&gt; 你是准备努力奋斗赢掌声&lt;/br&gt;还是矫情做作博同情?</div>
   	  	
     	</section>
     
