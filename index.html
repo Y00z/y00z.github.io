@@ -158,50 +158,8 @@
         <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><blockquote>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;最近发现一款不错的Android安全测试框架<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;其官方文档说道：“Drozer允许你一一个普通android应用的身份与其他应用和操作系统交互。”<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在Web世界已经有了许多安全测试工具了，我们只需要给出一个目标，这些工具就会自动为我们安全测试报告。但Drozer与这样的自动化扫描器不同，Drozer是一种交互式的安全测试工具。使用Drozer进行安全测试，用户在自己的工作站上输入命令，Drozer会将命令发送到Android设备上的代理程序执行。</p>
 </blockquote>
-<h4 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h4><blockquote>
-<p>电脑和手机都需要安装drozer<br>下载地址<br><a href="https://www.mwrinfosecurity.com/products/drozer/community-edition/" target="_blank" rel="external">https://www.mwrinfosecurity.com/products/drozer/community-edition/</a><br>我电脑是windows的，安装完毕后，dos切换到drozer安装目录。<br><img src="/images/pasted-33.png" alt=""></p>
-</blockquote>
-<h6 id="连接手机"><a href="#连接手机" class="headerlink" title="连接手机"></a>连接手机</h6><blockquote>
-<p>然后手机上安装好drozer并且开启server默认端口31415</p>
-<p><img src="/images/pasted-34.jpg" alt=""><br>然后手机打开调试usb连接电脑，<br>输入指令做端口转发 <code>adb forward tcp:31415 tcp:31415</code><br>必须在<code>adb devices</code> 有显示手机设备才可以。<br>dos中，在drozer安装目录输入指令<br><code>drozer console connect</code><br><img src="/images/pasted-34.png" alt=""><br>连接成功了。</p>
-</blockquote>
-<h4 id="功能介绍"><a href="#功能介绍" class="headerlink" title="功能介绍"></a>功能介绍</h4><h6 id="所有的模块"><a href="#所有的模块" class="headerlink" title="所有的模块"></a>所有的模块</h6><blockquote>
-<ul>
-<li>list<br>查看框架所有的模块<br><img src="/images/pasted-35.png" alt=""></li>
-<li>run app.package.list<br>列出手机上所有应用包名</li>
-</ul>
-</blockquote>
-<h6 id="查看包名"><a href="#查看包名" class="headerlink" title="查看包名"></a>查看包名</h6><blockquote>
-<ul>
-<li>run app.package.list<br><img src="/images/pasted-36.png" alt=""><br>ps: 为了一些有心人士,所以打了码,不好意思。<br>加上-f参数，搜索特定包名支持模糊搜索：</li>
-<li>run app.package.list -f (string to be searched)<br><img src="/images/pasted-37.png" alt=""></li>
-</ul>
-</blockquote>
-<h6 id="查看包详情"><a href="#查看包详情" class="headerlink" title="查看包详情"></a>查看包详情</h6><blockquote>
-<ul>
-<li>run app.package.info –a (package name)<br><img src="/images/pasted-38.png" alt=""></li>
-</ul>
-</blockquote>
-<h6 id="扫描攻击面"><a href="#扫描攻击面" class="headerlink" title="扫描攻击面"></a>扫描攻击面</h6><blockquote>
-<p>扫描指定app的攻击面。</p>
-<ul>
-<li>run app.package.attacksurface (package name)<br><img src="/images/pasted-39.png" alt=""><br>可以看到有3个暴露的activity，现在我们需要找出暴露activity的名字并检查是否有敏感信息</li>
-</ul>
-</blockquote>
-<h6 id="查看暴露的页面"><a href="#查看暴露的页面" class="headerlink" title="查看暴露的页面"></a>查看暴露的页面</h6><blockquote>
-<ul>
-<li>run app.activity.info –a (package name)<br><img src="/images/pasted-40.png" alt=""><br>如果暴露的页面是需要登录之后获取一些操作之后才能看到的页面。那么用drozer可以直接打开这个页面。</li>
-</ul>
-</blockquote>
-<h6 id="打开暴露的页面"><a href="#打开暴露的页面" class="headerlink" title="打开暴露的页面"></a>打开暴露的页面</h6><blockquote>
-<ul>
-<li>run app.activity.start –component (package name) (activity name)<br><img src="/images/pasted-41.png" alt=""><br>会直接启动该activity。<br><img src="/images/pasted-42.png" alt=""><br>就这样我们成功绕过了登录认证。<br>由于我在页面写了检测到如果没有登录，就重新跳到登录页面，所以有弹出框。</li>
-</ul>
-</blockquote>
-<h4 id="漏洞原因"><a href="#漏洞原因" class="headerlink" title="漏洞原因"></a>漏洞原因</h4><blockquote>
-<p>在AndroidManifest.xml中activity有一个属性android:exported，当这个属性为true的时候，表示该组件可以被其他组件调用。所以直接不写这个属性就可以了，默认false。<br>ps:其实这个app本来是没这个属性，我为了方便演示才加上的。</p>
-</blockquote>
-
+<h4 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境 "></a>配置环境
+        
       
 
       
@@ -209,6 +167,21 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list">
+			 
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color3">安卓</a>
+        </li>
+       
+        <li class="article-tag-list-item">
+        	<a href="javascript:void(0)" class="article-tag-list-link color5">安全攻防</a>
+        </li>
+      
+		</ul>
+	</div>
+
       
 
       
@@ -703,15 +676,15 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color3">安卓</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="color5">安全攻防</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
