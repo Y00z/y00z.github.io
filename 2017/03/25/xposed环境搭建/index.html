@@ -6,34 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://y00z.github.io">
-  <title>微信小程序app源码 | Yooz的博客</title>
+  <title>xposed环境搭建 | Yooz的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="前言
-小程序已经出来一段时间了，对于小程序就不做多评价了，网上很多介绍文章。我们公司的这个小程序项目是一个演示项目，介绍公司产品的主要功能，代码很简单。微信小程序本身就很简单，和react-native很多相似处。为防止数据泄漏，我就把接口换成了死数据。使用到了下拉刷新，上拉加载更多，wx-charts框架等
-
-登录">
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Xposed是GitHUB上rovo89大神设计开发的一个针对Android平台的动态劫持项目，通过替换/system/bin/app_process程序控制zygote进程，使得app_process在启动过程中会加载XposedBridge.jar这个jar包，从而完成对Zygote进程及其创建的Dalv">
 <meta property="og:type" content="article">
-<meta property="og:title" content="微信小程序app源码">
-<meta property="og:url" content="http://y00z.github.io/2017/02/06/微信小程序app源码/index.html">
+<meta property="og:title" content="xposed环境搭建">
+<meta property="og:url" content="http://y00z.github.io/2017/03/25/xposed环境搭建/index.html">
 <meta property="og:site_name" content="Yooz的博客">
 <meta property="og:description" content="前言
-小程序已经出来一段时间了，对于小程序就不做多评价了，网上很多介绍文章。我们公司的这个小程序项目是一个演示项目，介绍公司产品的主要功能，代码很简单。微信小程序本身就很简单，和react-native很多相似处。为防止数据泄漏，我就把接口换成了死数据。使用到了下拉刷新，上拉加载更多，wx-charts框架等
-
-登录">
-<meta property="og:image" content="http://y00z.github.io/images/Screenshot_20170214-13584228.jpg">
-<meta property="og:image" content="http://y00z.github.io/images/Screenshot_20170214-135849.jpg">
-<meta property="og:image" content="http://y00z.github.io/images/Screenshot_20170214-135803.jpg">
-<meta property="og:image" content="http://y00z.github.io/images/Screenshot_20170214-135829.jpg">
-<meta property="og:image" content="http://y00z.github.io/images/Screenshot_20170214-135841.jpg">
-<meta property="og:image" content="http://y00z.github.io/images/Screenshot_20170214-135848.jpg">
-<meta property="og:updated_time" content="2017-02-22T08:09:44.056Z">
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Xposed是GitHUB上rovo89大神设计开发的一个针对Android平台的动态劫持项目，通过替换/system/bin/app_process程序控制zygote进程，使得app_process在启动过程中会加载XposedBridge.jar这个jar包，从而完成对Zygote进程及其创建的Dalv">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-48.jpg">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-49.jpg">
+<meta property="og:updated_time" content="2017-03-28T14:09:06.266Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="微信小程序app源码">
+<meta name="twitter:title" content="xposed环境搭建">
 <meta name="twitter:description" content="前言
-小程序已经出来一段时间了，对于小程序就不做多评价了，网上很多介绍文章。我们公司的这个小程序项目是一个演示项目，介绍公司产品的主要功能，代码很简单。微信小程序本身就很简单，和react-native很多相似处。为防止数据泄漏，我就把接口换成了死数据。使用到了下拉刷新，上拉加载更多，wx-charts框架等
-
-登录">
-<meta name="twitter:image" content="http://y00z.github.io/images/Screenshot_20170214-13584228.jpg">
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Xposed是GitHUB上rovo89大神设计开发的一个针对Android平台的动态劫持项目，通过替换/system/bin/app_process程序控制zygote进程，使得app_process在启动过程中会加载XposedBridge.jar这个jar包，从而完成对Zygote进程及其创建的Dalv">
+<meta name="twitter:image" content="http://y00z.github.io/images/pasted-48.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Yooz的博客" type="application/atom+xml">
   
@@ -155,48 +145,46 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-微信小程序app源码" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-xposed环境搭建" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      微信小程序app源码
+      xposed环境搭建
     </h1>
   
 
-        <a href="/2017/02/06/微信小程序app源码/" class="archive-article-date">
-  	<time datetime="2017-02-06T02:16:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-06</time>
+        <a href="/2017/03/25/xposed环境搭建/" class="archive-article-date">
+  	<time datetime="2017-03-25T10:55:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-25</time>
 </a>
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><blockquote>
-<p>小程序已经出来一段时间了，对于小程序就不做多评价了，网上很多介绍文章。<br>我们公司的这个小程序项目是一个演示项目，介绍公司产品的主要功能，代码很简单。<br>微信小程序本身就很简单，和react-native很多相似处。<br>为防止数据泄漏，我就把接口换成了死数据。<br>使用到了下拉刷新，上拉加载更多，wx-charts框架等</p>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Xposed是GitHUB上rovo89大神设计开发的一个针对Android平台的动态劫持项目，通过替换/system/bin/app_process程序控制zygote进程，使得app_process在启动过程中会加载XposedBridge.jar这个jar包，从而完成对Zygote进程及其创建的Dalvik虚拟机的劫持。Xposed在开机的时候完成对所有的Hook Function的劫持，在原Function执行的前后加上自定义代码。</p>
 </blockquote>
-<h5 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录<a id="more"></a></h5><blockquote>
-<p><img src="/images/Screenshot_20170214-13584228.jpg" alt=""></p>
-</blockquote>
-<h5 id="主页"><a href="#主页" class="headerlink" title="主页"></a>主页</h5><blockquote>
-<p><img src="/images/Screenshot_20170214-135849.jpg" alt=""></p>
-</blockquote>
-<h5 id="图表"><a href="#图表" class="headerlink" title="图表"></a>图表</h5><blockquote>
-<p><img src="/images/Screenshot_20170214-135803.jpg" alt=""></p>
-</blockquote>
-<h5 id="菜单"><a href="#菜单" class="headerlink" title="菜单"></a>菜单</h5><blockquote>
-<p><img src="/images/Screenshot_20170214-135829.jpg" alt=""></p>
-</blockquote>
-<h5 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h5><blockquote>
-<p><img src="/images/Screenshot_20170214-135841.jpg" alt=""></p>
-</blockquote>
-<h5 id="详情"><a href="#详情" class="headerlink" title="详情"></a>详情</h5><blockquote>
-<p><img src="/images/Screenshot_20170214-135848.jpg" alt=""></p>
-</blockquote>
-<h5 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h5><ul>
-<li><a href="https://github.com/Y00z/wx_acm" target="_blank" rel="external">https://github.com/Y00z/wx_acm</a></li>
+<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文<a id="more"></a></h3><blockquote>
+<p>安卓环境就不多说了。</p>
+<h5 id="1-创建一个安卓工程项目"><a href="#1-创建一个安卓工程项目" class="headerlink" title="1 创建一个安卓工程项目"></a>1 创建一个安卓工程项目</h5><p>初识状态</p>
+<p><img src="/images/pasted-48.jpg" alt=""></p>
+<h5 id="2-导入xposed的jar包"><a href="#2-导入xposed的jar包" class="headerlink" title="2 导入xposed的jar包"></a>2 导入xposed的jar包</h5><p>下载地址：</p>
+<ul>
+<li><a href="https://bintray.com/rovo89/de.robv.android.xposed/api" target="_blank" rel="external">https://bintray.com/rovo89/de.robv.android.xposed/api</a><br>下载里面的<code>api-82-sources.jar</code>和<code>api-82.jar</code><br>导入到项目的lib目录下</li>
 </ul>
+<h5 id="3-修改AndroidManifest-xml"><a href="#3-修改AndroidManifest-xml" class="headerlink" title="3 修改AndroidManifest.xml"></a>3 修改AndroidManifest.xml</h5><p>在application节点中加入代码</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta-data</span></span></div><div class="line">     <span class="attr">android:name</span>=<span class="string">"xposedmodule"</span></div><div class="line">     <span class="attr">android:value</span>=<span class="string">"true"</span> /&gt;</div><div class="line"> <span class="tag">&lt;<span class="name">meta-data</span></span></div><div class="line">     <span class="attr">android:name</span>=<span class="string">"xposeddescription"</span></div><div class="line">     <span class="attr">android:value</span>=<span class="string">"Hook log test"</span> /&gt;</div><div class="line"> <span class="tag">&lt;<span class="name">meta-data</span></span></div><div class="line">     <span class="attr">android:name</span>=<span class="string">"xposedminversion"</span></div><div class="line">     <span class="attr">android:value</span>=<span class="string">"53"</span> /&gt;</div></pre></td></tr></table></figure>
+<h5 id="4-修改build-gradle"><a href="#4-修改build-gradle" class="headerlink" title="4 修改build.gradle"></a>4 修改build.gradle</h5><p><code>provided</code> 方式导入jar包<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">dependencies</span> &#123;</div><div class="line">    <span class="keyword">compile</span> <span class="string">'com.android.support:appcompat-v7:25.2.0'</span></div><div class="line">    testCompile <span class="string">'junit:junit:4.12'</span></div><div class="line">    provided <span class="string">'de.robv.android.xposed:api:82'</span></div><div class="line">    provided <span class="string">'de.robv.android.xposed:api:82:sources'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><font color="#ff0000" fontsize="28sp">注意,注意,注意,注意,注意,注意</font><br>这里默认有个 <code>compile fileTree(dir: &#39;libs&#39;, include: [&#39;*.jar&#39;])</code>  一定要删掉。</p>
+<h5 id="5-创建一个类"><a href="#5-创建一个类" class="headerlink" title="5 创建一个类"></a>5 创建一个类</h5><p>创建一个<code>Tutorial</code>类，继承<code>IXposedHookLoadPackage</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Tutorial</span> <span class="keyword">implements</span> <span class="title">IXposedHookLoadPackage</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handleLoadPackage</span><span class="params">(<span class="keyword">final</span> LoadPackageParam lpparam)</span> <span class="keyword">throws</span> Throwable </span>&#123;</div><div class="line">        XposedBridge.log(<span class="string">"正在加载中....."</span> + lpparam.packageName);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="6-创建入口文件。"><a href="#6-创建入口文件。" class="headerlink" title="6 创建入口文件。"></a>6 创建入口文件。</h5><p>创建一个<code>assets</code>文件，并且在里面创建一个<code>xposed_init</code>文件。<br><code>xposed_init</code>里面内容为<code>Tutorial</code>的完全路径<br><code>hk.myapplication03.Tutorial</code>  //完整类名:包名+类名</p>
+<p>Ok，全部已经搭建好了，来运行一下，需要进到框架中激活并且重启才能生效。<br>查看一下log日志。</p>
+<p><img src="/images/pasted-49.jpg" alt=""></p>
+<p>OK了， 环境搭建完成并且成功的实现了一个简单的HOOK</p>
+</blockquote>
 
       
 
@@ -241,11 +229,7 @@
 		<ul class="article-tag-list">
 			 
         <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color3">开源</a>
-        </li>
-       
-        <li class="article-tag-list-item">
-        	<a href="javascript:void(0)" class="article-tag-list-link color4">小程序</a>
+        	<a href="javascript:void(0)" class="article-tag-list-link color2">xposed</a>
         </li>
       
 		</ul>
@@ -301,7 +285,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://y00z.github.io/2017/02/06/微信小程序app源码/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://y00z.github.io/2017/03/25/xposed环境搭建/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -315,18 +299,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/02/23/React-Native电商项目源码/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/03/28/开发xposed破解模块/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          React-Native电商项目源码
+          开发xposed破解模块
         
       </div>
     </a>
   
   
-    <a href="/2017/02/04/drozer对app安全测试/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">drozer对app安全测试</div>
+    <a href="/2017/03/17/adb指令渗透手机获取隐私信息/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">adb指令渗透手机获取隐私信息</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -339,7 +323,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="微信小程序app源码" data-title="微信小程序app源码" data-url="http://y00z.github.io/2017/02/06/微信小程序app源码/"></div>
+	<div class="ds-thread" data-thread-key="xposed环境搭建" data-title="xposed环境搭建" data-url="http://y00z.github.io/2017/03/25/xposed环境搭建/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
