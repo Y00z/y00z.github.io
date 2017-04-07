@@ -23,7 +23,7 @@
 <meta property="og:image" content="http://y00z.github.io/images/pasted-54.jpg">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-55.jpg">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-56.jpg">
-<meta property="og:updated_time" content="2017-03-28T14:13:43.357Z">
+<meta property="og:updated_time" content="2017-04-05T01:48:33.819Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="开发xposed破解模块">
 <meta name="twitter:description" content="前言
@@ -195,14 +195,23 @@
 <p><img src="/images/pasted-55.jpg" alt=""></p>
 <p>全都是一些注释信息和语音名单。同时把手机的IMEI码上传到了服务器。</p>
 <p>其中的vip.php引起了我的注意。返回 0</p>
-<p>于是我把这个请求重定向到了本地，返回 1，<br>这个时候奇迹出现了，Duang</p>
+<p>于是我把这个请求使用burp重定向到了本地，返回 1，<br>这个时候奇迹出现了，Duang</p>
 <p><img src="/images/pasted-56.jpg" alt=""></p>
 </blockquote>
 <p>直接就成会员了。</p>
+<h3 id="末尾"><a href="#末尾" class="headerlink" title="末尾"></a>末尾</h3><blockquote>
+<p>这个app原理其实很简单，利用了qq的校验不严的漏洞。在录语音的时候会在本地生成已一个语音文件，然后发送给好友就是把这个语音文件发送了出去。然而发送的时候这个语音文件和录语音时生成的语音文件并没有做校验，导致了可以任意发送语音文件。</p>
+</blockquote>
 <h4 id="编写Hook模块。"><a href="#编写Hook模块。" class="headerlink" title="编写Hook模块。"></a>编写Hook模块。</h4><blockquote>
 <p>两种方法。<br>1,把请求重定向自己的页面，返回1<br>2,把请求的响应体强制改成1</p>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">findAndHookMethod(AbstractHttpClient, <span class="string">"execute"</span>, HttpUriRequest, <span class="keyword">new</span> XC_MethodHook() &#123;</div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">beforeHookedMethod</span><span class="params">(MethodHookParam param)</span> <span class="keyword">throws</span> URISyntaxException, UnknownHostException </span>&#123;</div><div class="line">		<span class="keyword">if</span> (HttpRequestBase.isInstance(param.args[<span class="number">0</span>])) &#123;</div><div class="line">			Object httpRequestBase = param.args[<span class="number">0</span>];</div><div class="line">			URI uri = (URI) callMethod(httpRequestBase, <span class="string">"getURI"</span>);</div><div class="line">			String host = uri.getHost();</div><div class="line">			<span class="keyword">if</span> (<span class="string">"****.**/vip/vip.php?imei="</span>.equals(host)) &#123;</div><div class="line">				String ip = <span class="string">"http:oi8g0l23v.bkt.clouddn.com/vip.txt"</span>;</div><div class="line">				URI newUrl = <span class="keyword">new</span> URI(uri.getScheme(), uri.getUserInfo(), ip, uri.getPort(), uri.getRawPath(), uri.getRawQuery(), uri.getRawFragment());</div><div class="line">				callMethod(httpRequestBase, <span class="string">"setURI"</span>, newUrl);</div><div class="line">				callMethod(httpRequestBase, <span class="string">"setHeader"</span>, <span class="string">"Host"</span>, host);</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p><br></p>
+<h4 id="app和模块下载地址"><a href="#app和模块下载地址" class="headerlink" title="app和模块下载地址"></a>app和模块下载地址</h4><blockquote>
+<ul>
+<li><a><a href="http://pan.baidu.com/s/1skFxIuL" target="_blank" rel="external">http://pan.baidu.com/s/1skFxIuL</a></a> 密码: 8zyj</li>
+</ul>
+</blockquote>
 
       
 
@@ -321,6 +330,15 @@
   
 <nav id="article-nav">
   
+    <a href="/2017/04/04/burp爆破http-Basic认证/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          burp爆破http Basic认证
+        
+      </div>
+    </a>
+  
   
     <a href="/2017/03/25/xposed环境搭建/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">xposed环境搭建</div>
@@ -419,14 +437,6 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">安卓</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">安全攻防</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">React-Native</a>
               </li>
              
@@ -435,7 +445,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">xposed</a>
+                <a href="javascript:void(0)" class="js-tag color5">安全攻防</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">安卓</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -447,7 +461,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
+                <a href="javascript:void(0)" class="js-tag color2">xposed</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -456,6 +470,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">破解</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
             
             <div class="clearfix"></div>
