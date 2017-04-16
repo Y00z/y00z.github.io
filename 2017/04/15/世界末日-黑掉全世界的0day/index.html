@@ -35,7 +35,7 @@
 <meta property="og:image" content="http://y00z.github.io/images/pasted-77.jpg">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-78.jpg">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-79.jpg">
-<meta property="og:updated_time" content="2017-04-15T17:20:16.727Z">
+<meta property="og:updated_time" content="2017-04-16T07:24:40.582Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="世界末日:黑掉全世界的0day">
 <meta name="twitter:description" content="前言
@@ -210,7 +210,7 @@
 <p>靶机 win7<br><img src="/images/pasted-69.jpg" alt=""></p>
 <p>攻击者1<br><img src="/images/pasted-70.jpg" alt=""></p>
 <p>攻击者1<br><img src="/images/pasted-71.jpg" alt=""></p>
-<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>下载解压后切换到windows目录执行python fb.py</p>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>下载解压后切换到windows目录执行python fb.py<br><strong><br>默认选项参数特别多，我这里只说重要需要填写的参数</strong></p>
 <p>输入靶机ip和攻击者ip以及选择是否开启本地监听。</p>
 <p><img src="/images/pasted-72.jpg" alt=""></p>
 <p>创建一个工程项目，名字随意</p>
@@ -235,8 +235,17 @@ msf exploit(handler) &gt; set LPORT 5554
 <p>再来看看我们监听的反弹shell</p>
 <p><img src="/images/pasted-79.jpg" alt=""></p>
 <p>成功反弹，喜大普奔。</p>
+<h3 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h3><blockquote>
+<p>可惜我没有服务器，只能做做内网测试。与此同时公布漏洞的十多个小时中，微软终于出了<a href="https://blogs.technet.microsoft.com/msrc/2017/04/14/protecting-customers-and-evaluating-risk/" target="_blank" rel="external">补丁</a><br>并且把此漏洞定为编号MS17-010，win10以及更新布丁后的windows将不受影响。</p>
+</blockquote>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><blockquote>
-<p>这只是NSA武器库的冰山一角，想想美国的网络安全真的是领先我们几个世纪啊，每年各种黑客国际大会比赛几乎都是中国人拿的冠军，原来是美国黑客压根就没参加。<br>ps：这个武器库和msf很像，但是没有msf好用，默认选项太多，也许是msf用习惯了吧。</p>
+<p>这个武器库确实厉害，把远程溢出攻击简化成如此简单。这只是NSA武器库的冰山一角，想想美国的网络安全真的是领先我们几个世纪啊，每年各种黑客国际大会比赛几乎都是中国拿的冠军，原来是美国黑客压根就没参加。<br>ps：这个武器库和msf很像，但是没有msf好用，默认选项太多，也许是msf用习惯了吧。</p>
+</blockquote>
+<p>下载地址：</p>
+<blockquote>
+<ul>
+<li><a href="https://github.com/x0rz/EQGRP_Lost_in_Translation" target="_blank" rel="external">https://github.com/x0rz/EQGRP_Lost_in_Translation</a></li>
+</ul>
 </blockquote>
 
       
