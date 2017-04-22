@@ -24,7 +24,7 @@
 锁机恶意程序一共分为两种：1、通过设备管理器锁机加密码">
 <meta property="og:image" content="http://y00z.github.io/images/1.8/01.png">
 <meta property="og:image" content="http://y00z.github.io/images/1.8/02.png">
-<meta property="og:updated_time" content="2017-03-28T12:59:29.108Z">
+<meta property="og:updated_time" content="2017-04-21T14:14:43.402Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="对安卓锁机恶意程序反编译分析">
 <meta name="twitter:description" content="前言
@@ -199,8 +199,7 @@
 <p>执行了b对象中的rootShell方法。我们继续跟进。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">rootShell</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">  execCommand(<span class="keyword">new</span> String[] &#123; <span class="string">"mount -o rw,remount /system"</span>, <span class="string">"mount -o rw,remount /system/app"</span>, <span class="string">"cp /sdcard/zihao.l /system/app/"</span>, <span class="string">"chmod 777 /system/app/zihao.l"</span>, <span class="string">"mv /system/app/zihao.l /system/app/zihao.apk"</span>, <span class="string">"chmod 644 /system/app/zihao.apk"</span>, <span class="string">"reboot"</span> &#125;, <span class="keyword">true</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>很明显，这个是执行shell命令的代码。<br>先把/system 和 /system/app 设置可读可写。<br>再从sd卡把zihao.l复制到/system/app中，并且命名zihao.apk。<br>最后再重启。<br>/system/app是存放系统app的，这个操作呢，是把zihao.apk设置成系统app，并且不可卸载。<br>这个zihao.apk也就是上面的ijm-x86.so，这个so文件其实一个apk程序，我们再来逆向分析一下这个ijm-x86.so。</p>
 </blockquote>
-<p>###分析第二层</p>
-<blockquote>
+<h3 id="分析第二层"><a href="#分析第二层" class="headerlink" title="分析第二层"></a>分析第二层</h3><blockquote>
 <p>同样的手法，找到app的入口Activity.</p>
 </blockquote>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Override</span></div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCreate</span><span class="params">(Bundle paramBundle)</span></span></div><div class="line">&#123;</div><div class="line">  LogCatBroadcaster.start(<span class="keyword">this</span>);</div><div class="line">  <span class="keyword">super</span>.onCreate(paramBundle);</div><div class="line">  activiteDevice();</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -216,7 +215,7 @@
 <p>把一个布局文件全屏显示在屏幕中，以及设置组件的文字，大小，DES加密等。<br>重点：布局文件的type和flags属性。<br>可以让这个View一直显示在栈的顶端，任何其他view都会在这个view的下面，导致锁屏的假象。</p>
 </blockquote>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><blockquote>
-<p>这个锁机程序的运行流传，打开，把so文件改成apk文件防盗/system/app目录，重启，apk自启动，设置view到栈的顶端。<br>由于已经是系统应用了，所以双清也清除不了</p>
+<p>这个锁机程序的运行流程，打开，把so文件改成apk文件防盗/system/app目录，重启，apk自启动，设置view到栈的顶端。<br>由于已经是系统应用了，所以双清、恢复出厂化设置都清除不了</p>
 </blockquote>
 <h2 id="解决办法。"><a href="#解决办法。" class="headerlink" title="解决办法。"></a>解决办法。</h2><blockquote>
 <p>手机必须是开启usb调试，连接电脑adb shell进入手机base shell，<br>进入/system/app目录，源码中的命令有说把该目录弄成可读可写，我们就借用那个命令，然后再把恶意app删掉即可rm -fr xx.apk，最后reboot重启。</p>
@@ -461,15 +460,11 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">安卓</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">nodejs</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -477,7 +472,7 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">反编译</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -485,7 +480,15 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">反编译</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">路由器</a>
               </li>
             
             <div class="clearfix"></div>
