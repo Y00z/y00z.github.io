@@ -6,15 +6,29 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://y00z.github.io">
-  <title>标签 | Yooz的博客</title>
+  <title>开发xposed破解模块 | Yooz的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="标签">
-<meta property="og:url" content="http://y00z.github.io/tags/index.html">
+  <meta name="description" content="前言
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;最近发现了一个挺好玩的app，百变语音，就是在qq上可以把自定义的mp3以语音形式发送给好友。app上有很多男女说话的语音供用户下载使用，同时也可以把qq里面别人发的语音下载过来自己用。(当你听到一个甜美的美女声音的时候，背后可能是一个基佬。)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nb">
+<meta property="og:type" content="article">
+<meta property="og:title" content="开发xposed破解模块">
+<meta property="og:url" content="http://y00z.github.io/2017/03/28/开发xposed破解模块/index.html">
 <meta property="og:site_name" content="Yooz的博客">
-<meta property="og:updated_time" content="2016-12-14T02:11:41.380Z">
+<meta property="og:description" content="前言
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;最近发现了一个挺好玩的app，百变语音，就是在qq上可以把自定义的mp3以语音形式发送给好友。app上有很多男女说话的语音供用户下载使用，同时也可以把qq里面别人发的语音下载过来自己用。(当你听到一个甜美的美女声音的时候，背后可能是一个基佬。)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nb">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-50.jpg">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-51.jpg">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-52.jpg">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-53.jpg">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-54.jpg">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-55.jpg">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-56.jpg">
+<meta property="og:updated_time" content="2017-04-05T01:48:33.819Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="标签">
+<meta name="twitter:title" content="开发xposed破解模块">
+<meta name="twitter:description" content="前言
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;最近发现了一个挺好玩的app，百变语音，就是在qq上可以把自定义的mp3以语音形式发送给好友。app上有很多男女说话的语音供用户下载使用，同时也可以把qq里面别人发的语音下载过来自己用。(当你听到一个甜美的美女声音的时候，背后可能是一个基佬。)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nb">
+<meta name="twitter:image" content="http://y00z.github.io/images/pasted-50.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Yooz的博客" type="application/atom+xml">
   
@@ -144,27 +158,61 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-undefined" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-开发xposed破解模块" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      标签
+      开发xposed破解模块
     </h1>
   
 
         
-        <a href="/tags/index.html" class="archive-article-date">
-  	<time datetime="2016-12-14T02:05:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-14</time>
+        <a href="/2017/03/28/开发xposed破解模块/" class="archive-article-date">
+  	<time datetime="2017-03-28T09:13:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-28</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;最近发现了一个挺好玩的app，百变语音，就是在qq上可以把自定义的mp3以语音形式发送给好友。app上有很多男女说话的语音供用户下载使用，同时也可以把qq里面别人发的语音下载过来自己用。(当你听到一个甜美的美女声音的时候，背后可能是一个基佬。)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;其中还有会员功能，会员功能有更多的语音，并且同时可以在微信中使用。ok让我们来分析一下吧。<a id="more"></a></p>
+</blockquote>
+<h3 id="反编译"><a href="#反编译" class="headerlink" title="反编译"></a>反编译</h3><blockquote>
+<p>首先来反编译走一波。前面的文章有说道如何反编译，这里就不多说了。</p>
+<p><img src="/images/pasted-50.jpg" alt=""></p>
+<p>一个小小的app还有这么多包。翻<code>AndroidManifest</code>找入口的<code>Activity</code></p>
+<p><img src="/images/pasted-51.jpg" alt=""></p>
+<p>可以看到，指定了一个路径然后给了a.b，然后获取了包名给了a.g，然后有创建了一个HashMap给q.c，然后然后。。。。(我实在编不下去了。)<br>这特么是些啥玩意儿，然后我不看这些杂乱无章的代码，找一下关于会员的关键代码，依然找不到任何线索。<br>这时候突然看到了一个很奇怪的包名</p>
+<p><img src="/images/pasted-52.jpg" alt=""><br><img src="/images/pasted-53.jpg" alt=""></p>
+<p>进去看依然是被混淆得不成样子的代码。不过为什么要叫iapp呢，于是我百度了一番。</p>
+<p><img src="/images/pasted-54.jpg" alt=""></p>
+<p>（这是一款神奇的软件，iApp是一款让你的手机展现放光彩的应用。轻松的操作就可以设计出，你想要的应用界面，你可以分享给你的朋友，传递你的快乐！iApp采用了可视化设计界面，让你设计界面的时候一目了然，不用繁琐的看着代码伤脑筋了！<br>iApp不是一款简单的应用程序，它是创造应用的应用程序。 如果你没有iApp 你就真的没有iApp！ )<br><br><br>嗯，非常好，前者有e4a，现在又出来个iapp。全都是直接拖组件的，怪不得这么多包名。</p>
+<p>于是不看代码了，看看app的网络请求。</p>
+<p><img src="/images/pasted-55.jpg" alt=""></p>
+<p>全都是一些注释信息和语音名单。同时把手机的IMEI码上传到了服务器。</p>
+<p>其中的vip.php引起了我的注意。返回 0</p>
+<p>于是我把这个请求使用burp重定向到了本地，返回 1，<br>这个时候奇迹出现了，Duang</p>
+<p><img src="/images/pasted-56.jpg" alt=""></p>
+</blockquote>
+<p>直接就成会员了。</p>
+<h3 id="末尾"><a href="#末尾" class="headerlink" title="末尾"></a>末尾</h3><blockquote>
+<p>这个app原理其实很简单，利用了qq的校验不严的漏洞。在录语音的时候会在本地生成已一个语音文件，然后发送给好友就是把这个语音文件发送了出去。然而发送的时候这个语音文件和录语音时生成的语音文件并没有做校验，导致了可以任意发送语音文件。</p>
+</blockquote>
+<h4 id="编写Hook模块。"><a href="#编写Hook模块。" class="headerlink" title="编写Hook模块。"></a>编写Hook模块。</h4><blockquote>
+<p>两种方法。<br>1,把请求重定向自己的页面，返回1<br>2,把请求的响应体强制改成1</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">findAndHookMethod(AbstractHttpClient, <span class="string">"execute"</span>, HttpUriRequest, <span class="keyword">new</span> XC_MethodHook() &#123;</div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">beforeHookedMethod</span><span class="params">(MethodHookParam param)</span> <span class="keyword">throws</span> URISyntaxException, UnknownHostException </span>&#123;</div><div class="line">		<span class="keyword">if</span> (HttpRequestBase.isInstance(param.args[<span class="number">0</span>])) &#123;</div><div class="line">			Object httpRequestBase = param.args[<span class="number">0</span>];</div><div class="line">			URI uri = (URI) callMethod(httpRequestBase, <span class="string">"getURI"</span>);</div><div class="line">			String host = uri.getHost();</div><div class="line">			<span class="keyword">if</span> (<span class="string">"****.**/vip/vip.php?imei="</span>.equals(host)) &#123;</div><div class="line">				String ip = <span class="string">"http:oi8g0l23v.bkt.clouddn.com/vip.txt"</span>;</div><div class="line">				URI newUrl = <span class="keyword">new</span> URI(uri.getScheme(), uri.getUserInfo(), ip, uri.getPort(), uri.getRawPath(), uri.getRawQuery(), uri.getRawFragment());</div><div class="line">				callMethod(httpRequestBase, <span class="string">"setURI"</span>, newUrl);</div><div class="line">				callMethod(httpRequestBase, <span class="string">"setHeader"</span>, <span class="string">"Host"</span>, host);</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p><br></p>
+<h4 id="app和模块下载地址"><a href="#app和模块下载地址" class="headerlink" title="app和模块下载地址"></a>app和模块下载地址</h4><blockquote>
+<ul>
+<li><a><a href="http://pan.baidu.com/s/1skFxIuL" target="_blank" rel="external">http://pan.baidu.com/s/1skFxIuL</a></a> 密码: 8zyj</li>
+</ul>
+</blockquote>
+
       
 
       
@@ -203,6 +251,21 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">xposed</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">破解</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -253,7 +316,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://y00z.github.io/tags/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://y00z.github.io/2017/03/28/开发xposed破解模块/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -265,6 +328,25 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2017/04/04/burp爆破http-Basic认证/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          burp爆破http Basic认证
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/03/25/xposed环境搭建/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">xposed环境搭建</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 
 
@@ -297,7 +379,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

