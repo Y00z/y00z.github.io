@@ -34,7 +34,7 @@
 <meta property="og:image" content="http://y00z.github.io/images/pasted-95.jpg">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-96.jpg">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-97.jpg">
-<meta property="og:updated_time" content="2017-04-22T17:09:57.004Z">
+<meta property="og:updated_time" content="2017-05-03T06:23:13.480Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="内网王者之arp攻击">
 <meta name="twitter:description" content="前言
@@ -86,8 +86,6 @@
 			<ul>
 			
 				<li><a href="/">主页</a></li>
-	        
-				<li><a href="/tags/随笔/">随笔</a></li>
 	        
 			</ul>
 		</nav>
@@ -141,8 +139,6 @@
 			
 				
 			
-				
-			
 			
 			
 			<nav class="header-nav">
@@ -163,9 +159,7 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
-		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 100%"><a href="/">主页</a></li>
 		        
 				</ul>
 			</nav>
@@ -257,7 +251,18 @@
 <blockquote>
 <p><img src="/images/pasted-97.jpg" alt=""></p>
 </blockquote>
-<p>攻击后受害者的所有流量都会经过攻击者，ettercap会自动抓取 TELNET、FTP、SSH、SMB、MySQL等等一些协议信息，同时也可以开wireshark来抓取更多的信息。</p>
+<p><br></p>
+<p>如果网站用了ssl加密呢，那么可以使用sslstrip来针对ssl的攻击。</p>
+<p>10000为sslstrip的监听端口</p>
+<ul>
+<li>iptables -t nat -A PREROUTING -p tcp –destination-port 80 -j REDIRECT –to-ports 10000</li>
+</ul>
+<p>开启sslstrip，并且监听；</p>
+<ul>
+<li>sslstrip -l 10000</li>
+</ul>
+<p>sslstrip会把https网址强制转换成http，然后再通过arp攻击来获取数据传输过程中的信息</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>攻击后受害者的所有流量都会经过攻击者，ettercap会自动抓取 TELNET、FTP、SSH、SMB、MySQL等等一些协议信息，同时也可以开wireshark来抓取更多的信息。</p>
 
       
 
