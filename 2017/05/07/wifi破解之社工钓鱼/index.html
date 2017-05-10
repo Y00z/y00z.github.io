@@ -12,7 +12,7 @@
 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！
 
 
-正文&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;wifi有很多种方法，上面说过抓握手包，这里说一下社工钓鱼来破解得到wifi密码。">
+正文&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;wifi有很多种方法，我在之前的文章中说过抓握手包破解，这里说一下社工钓鱼来破解得到wifi密码。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="wifi破解之社工钓鱼">
 <meta property="og:url" content="http://y00z.github.io/2017/05/07/wifi破解之社工钓鱼/index.html">
@@ -21,15 +21,37 @@
 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！
 
 
-正文&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;wifi有很多种方法，上面说过抓握手包，这里说一下社工钓鱼来破解得到wifi密码。">
-<meta property="og:updated_time" content="2017-05-07T14:54:48.027Z">
+正文&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;wifi有很多种方法，我在之前的文章中说过抓握手包破解，这里说一下社工钓鱼来破解得到wifi密码。">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-106.jpg">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-107.jpg">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-108.jpg">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-109.jpg">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-110.jpg">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-111.jpg">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-112.jpg">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-113.jpg">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-114.jpg">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-115.jpg">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-116.jpg">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-117.jpg">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-118.jpg">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-119.jpg">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-120.jpg">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-121.jpg">
+<meta property="og:image" content="http://y00z.github.io/images/Screenshot_2017-05-07-22-04-22.jpg">
+<meta property="og:image" content="http://y00z.github.io/images/Screenshot_2017-05-07-22-04-16.jpg">
+<meta property="og:image" content="http://y00z.github.io/images/Screenshot_2017-05-07-22-05-20.jpg">
+<meta property="og:image" content="http://y00z.github.io/images/Screenshot_2017-05-07-22-05-50.jpg">
+<meta property="og:image" content="http://y00z.github.io/images/pasted-122.jpg">
+<meta property="og:updated_time" content="2017-05-10T08:26:25.788Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="wifi破解之社工钓鱼">
 <meta name="twitter:description" content="前言
 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！
 
 
-正文&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;wifi有很多种方法，上面说过抓握手包，这里说一下社工钓鱼来破解得到wifi密码。">
+正文&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;wifi有很多种方法，我在之前的文章中说过抓握手包破解，这里说一下社工钓鱼来破解得到wifi密码。">
+<meta name="twitter:image" content="http://y00z.github.io/images/pasted-106.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Yooz的博客" type="application/atom+xml">
   
@@ -193,8 +215,65 @@ var _hmt = _hmt || [];
 <font color="#ff0000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！</strong></font>
 
 </blockquote>
-<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wifi有很多种方法，上面说过抓握手包，这里说一下社工钓鱼来破解得到wifi密码。<a id="more"></a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;原理就是创建一个和目标wifi同名的ap热点，然后再创建一个钓鱼的web页面，说路由器故障需要重启要求输入密码巴拉巴拉等，我们把用户输入的密码全部都保存在本地，并且把所有的域名解析到这个ip中。然后再ddos目标ap，使用户连不上路由器，这个时候用户连接不上wifi后就会连上我们的钓鱼wifi，连上后就所有请求页面都会转到我们的钓鱼页面。用户输入wifi密码后就会自动保存在本地。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这里我们使用Fluxion（当然也有相同的WiFiPhisher）来完成上诉的过程</p>
+<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wifi有很多种方法，我在之前的文章中说过抓握手包破解，这里说一下社工钓鱼来破解得到wifi密码。<a id="more"></a></p>
+<h4 id="攻击原理"><a href="#攻击原理" class="headerlink" title="攻击原理"></a>攻击原理</h4><ul>
+<li>抓取握手包</li>
+<li>创建一个和目标wifi同名的ap热点，</li>
+<li>开启一个web服务，创建一个钓鱼的web页面，要求用户输入wifi密码</li>
+<li>模拟dns服务，把所有的请求都解析到自己的ip中</li>
+<li>ddos目标ap，使用户连不上路由器</li>
+<li>用户连接不上wifi后就会自动连上我们的钓鱼wifi</li>
+<li>连上后就所有请求页面都会转到我们的钓鱼页面。</li>
+<li>用户输入wifi密码后通过抓取的握手包来匹配正确密码。</li>
+</ul>
+<p><strong>这里我们使用Fluxion（当然也有相同的WiFiPhisher）来完成上述的过程</strong></p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>首先把程序下载到本地</p>
+<pre><code>git clone https://github.com/FluxionNetwork/fluxion.git
+</code></pre><p>首先进入install目录中运行install，会自动把依赖的软件包自动安装好。  <strong>↓</strong></p>
+<p> <img src="/images/pasted-106.jpg" alt=""></p>
+<p>安装完毕之后就可以直接开启fluxion了。  <strong>↓</strong></p>
+<p> <img src="/images/pasted-107.jpg" alt=""></p>
+<p>一开始选择语言，其中有中文，但是我还是建议使用英文的。</p>
+<p>选择语言后来扫描指定ap的信道。 <strong>↓</strong></p>
+<p> <img src="/images/pasted-108.jpg" alt=""></p>
+<p>第一个是扫描全部信道，第二个是扫描指定信道，我们选择扫描全部信道。</p>
+<p>选择之后会自动开启一个小窗口来扫描ap，如果扫描到了我们要的ap就ctrl+c强制停止掉。   <strong>↓</strong></p>
+<p> <img src="/images/pasted-109.jpg" alt=""></p>
+<p>停止扫描后会把刚刚我们扫描到的ap都显示出来，选择我们需要攻击的ap。    <strong>↓</strong></p>
+<p> <img src="/images/pasted-110.jpg" alt=""></p>
+<p>然后选择攻击方式。   <strong>↓</strong></p>
+<p><img src="/images/pasted-111.jpg" alt=""></p>
+<p>第一个就是我上面说的伪装ap攻击。我们选第一个。</p>
+<p>选择后我们需要设置保存握手包保存路径。  <strong>↓</strong></p>
+<p><img src="/images/pasted-112.jpg" alt=""></p>
+<p>我们可以选择默认路径，直接回车。</p>
+<p>然后选择抓取握手包的方式。 <strong>↓</strong></p>
+<p><img src="/images/pasted-113.jpg" alt=""></p>
+<p>选择我们攻击ap的方式，第一个是使用默认aireplay来攻所有的客户端，第二个则是使用mdk3来攻击所有的客户端。</p>
+<p><img src="/images/pasted-114.jpg" alt=""></p>
+<p>选择之后会同时开启2个小窗口，一个来ddos攻击ap，第二个来抓取握手包。  <strong>↓</strong></p>
+<p><img src="/images/pasted-115.jpg" alt=""></p>
+<p>如果抓取到握手包了右上角会有显示。 <strong>↓</strong></p>
+<p><img src="/images/pasted-116.jpg" alt=""></p>
+<p>这个时候可以直接关掉小窗口了，然后查看握手包。    <strong>↓</strong></p>
+<p><img src="/images/pasted-117.jpg" alt=""></p>
+<p>来创建一个ssl证书。<strong>↓</strong></p>
+<p><img src="/images/pasted-118.jpg" alt=""></p>
+<p>开启web服务。<strong>↓</strong></p>
+<p><img src="/images/pasted-119.jpg" alt=""></p>
+<p>选择路由器的登录界面，在我们国内使用的tp-link比较多，我们可以选择tp-link。 <strong>↓</strong></p>
+<p><img src="/images/pasted-120.jpg" alt=""></p>
+<p>完毕之后会同时开启4个窗口，一个dhcp来分配ip，一个用来监听连接进钓鱼ap的客户端，一个来把所有请求解析到本地，最后一个来ddos目标的wifi。 <strong>↓</strong></p>
+<p><img src="/images/pasted-121.jpg" alt=""></p>
+<p>这个时候的客户端呢，用户会连接不上原wifi，而会自动连上我们的钓鱼wifi，而且一连上wifi就会自动打开网页，进入我们的钓鱼页面。 <strong>↓</strong></p>
+<p><img src="/images/Screenshot_2017-05-07-22-04-22.jpg" alt=""></p>
+<p>同时浏览器也会提示用户登录wifi。  <strong>↓</strong></p>
+<p><img src="/images/Screenshot_2017-05-07-22-04-16.jpg" alt=""></p>
+<p>用户输入密码后，会根据抓到的握手包来匹配正确密码。 <strong>↓</strong></p>
+<p><img src="/images/Screenshot_2017-05-07-22-05-20.jpg" alt=""></p>
+<p>直到用户输入正确密码后，程序停止。</p>
+<p><img src="/images/Screenshot_2017-05-07-22-05-50.jpg" alt=""></p>
+<p><img src="/images/pasted-122.jpg" alt=""></p>
 
       
 
@@ -430,10 +509,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">开源</a>
               </li>
              
@@ -443,6 +518,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">安卓</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -462,11 +541,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">破解</a>
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
+                <a href="javascript:void(0)" class="js-tag color3">破解</a>
               </li>
              
               <li class="article-tag-list-item">
