@@ -6,43 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://y00z.github.io">
-  <title>制作BadUSB | Yooz的博客</title>
+  <title>防范ONION勒索病毒 | Yooz的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！
-
-
-
-正文&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;BadUSB早在2014年底的PacSec会议上便已经提出，这是USB协议中的一个漏洞————USB设备可以伪装成为其他任何设备，例如输">
+  <meta name="description" content="前言&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;话说周末真的是搞大新闻时间，今早一醒就又被一个勒索病毒给刷了屏，稍微看了一下感觉没啥，就是一个勒索软件利用之前NSA曝光的漏洞来传播，github有很多开源的勒索软件，我之前也发过NSA曝光的漏洞相关文章，如果有设备中招了，病毒就会利用该设备来扫描内网中其他开445的设备并且攻击，很多学校机房和公用电脑都是年久">
 <meta property="og:type" content="article">
-<meta property="og:title" content="制作BadUSB">
-<meta property="og:url" content="http://y00z.github.io/2017/05/12/制作BadUSB/index.html">
+<meta property="og:title" content="防范ONION勒索病毒">
+<meta property="og:url" content="http://y00z.github.io/2017/05/13/如何防范ONION勒索病毒/index.html">
 <meta property="og:site_name" content="Yooz的博客">
-<meta property="og:description" content="前言
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！
-
-
-
-正文&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;BadUSB早在2014年底的PacSec会议上便已经提出，这是USB协议中的一个漏洞————USB设备可以伪装成为其他任何设备，例如输">
-<meta property="og:image" content="http://y00z.github.io/images/pasted-123.jpg">
-<meta property="og:image" content="http://y00z.github.io/images/pasted-124.jpg">
-<meta property="og:image" content="http://y00z.github.io/images/pasted-125.jpg">
-<meta property="og:image" content="http://y00z.github.io/images/pasted-126.jpg">
-<meta property="og:image" content="http://y00z.github.io/images/pasted-127.jpg">
-<meta property="og:image" content="http://y00z.github.io/images/pasted-128.jpg">
-<meta property="og:image" content="http://y00z.github.io/images/pasted-129.jpg">
-<meta property="og:image" content="http://y00z.github.io/images/pasted-130.jpg">
-<meta property="og:image" content="http://y00z.github.io/images/pasted-131.jpg">
-<meta property="og:updated_time" content="2017-05-13T08:42:23.367Z">
+<meta property="og:description" content="前言&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;话说周末真的是搞大新闻时间，今早一醒就又被一个勒索病毒给刷了屏，稍微看了一下感觉没啥，就是一个勒索软件利用之前NSA曝光的漏洞来传播，github有很多开源的勒索软件，我之前也发过NSA曝光的漏洞相关文章，如果有设备中招了，病毒就会利用该设备来扫描内网中其他开445的设备并且攻击，很多学校机房和公用电脑都是年久">
+<meta property="og:updated_time" content="2017-05-13T09:14:25.731Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="制作BadUSB">
-<meta name="twitter:description" content="前言
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！
-
-
-
-正文&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;BadUSB早在2014年底的PacSec会议上便已经提出，这是USB协议中的一个漏洞————USB设备可以伪装成为其他任何设备，例如输">
-<meta name="twitter:image" content="http://y00z.github.io/images/pasted-123.jpg">
+<meta name="twitter:title" content="防范ONION勒索病毒">
+<meta name="twitter:description" content="前言&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;话说周末真的是搞大新闻时间，今早一醒就又被一个勒索病毒给刷了屏，稍微看了一下感觉没啥，就是一个勒索软件利用之前NSA曝光的漏洞来传播，github有很多开源的勒索软件，我之前也发过NSA曝光的漏洞相关文章，如果有设备中招了，病毒就会利用该设备来扫描内网中其他开445的设备并且攻击，很多学校机房和公用电脑都是年久">
   
     <link rel="alternative" href="/atom.xml" title="Yooz的博客" type="application/atom+xml">
   
@@ -182,63 +157,30 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-制作BadUSB" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-如何防范ONION勒索病毒" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      制作BadUSB
+      防范ONION勒索病毒
     </h1>
   
 
         
-        <a href="/2017/05/12/制作BadUSB/" class="archive-article-date">
-  	<time datetime="2017-05-12T07:14:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-12</time>
+        <a href="/2017/05/13/如何防范ONION勒索病毒/" class="archive-article-date">
+  	<time datetime="2017-05-13T07:03:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-13</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
-<font color="#ff0000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！</strong></font>
-
-
-</blockquote>
-<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BadUSB早在2014年底的PacSec会议上便已经提出，这是USB协议中的一个漏洞————USB设备可以伪装成为其他任何设备，例如输入设备、网卡等等。这个漏洞目前还没有得到修复，几乎可以说在有合适的脚本的情况下，只要能够插进去，没有什么是黑不掉的！<a id="more"></a></p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;差不多的原理就是伪装成HID设备如键盘或者鼠标，然后模拟键盘按键来打开cmd执行powershell指令对电脑进行攻击，而且这种攻击是无法拦截的。</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;制作BadUsb有两个方法，一种是Arduino开发板，另一种PS2251-03的微处理器的U盘，可以在这里看U盘的<a href="https://github.com/brandonlw/Psychson/wiki/Known-Supported-Devices" target="_blank" rel="external">列表型号</a> ，这里我使用的第一种制作方法。<br>(ps：我本来用的是第二种方法，买了指定型号的u盘，买回来后发现微处理器并不是PS2251-03微处理器，然后才换了第一种方法)</p>
-<h4 id="材料"><a href="#材料" class="headerlink" title="材料"></a>材料</h4><pre><code>* Arduino Leonardo
-* Arduino IDE 
-* micro usb数据线
-</code></pre><p>Arduino Leonardo 可以去水深宝搜。</p>
-<p><a href="https://www.arduino.cc/en/Main/Software" target="_blank" rel="external">Arduino IDE 下载</a></p>
-<p>Arduino Leonardo <strong>↓</strong></p>
-<p> <img src="/images/pasted-123.jpg" alt=""></p>
-<p>拆开看看 <strong>↓</strong></p>
-<p><img src="/images/pasted-124.jpg" alt=""></p>
-<p>使用micro usb 安卓数据线就可以和电脑连接了  <strong>↓</strong></p>
-<p><img src="/images/pasted-125.jpg" alt=""></p>
-<h5 id="Arduino-IDE"><a href="#Arduino-IDE" class="headerlink" title="Arduino IDE"></a>Arduino IDE</h5><p>打开后默认是这样的  <strong>↓</strong></p>
-<p><img src="/images/pasted-126.jpg" alt=""></p>
-<p>同时需要把IDE菜单=&gt;工具的两个选项选一下。 <strong>↓</strong></p>
-<p><img src="/images/pasted-127.jpg" alt=""></p>
-<p>这个选项需要电脑连接开发板后才有  <strong>↓</strong></p>
-<p><img src="/images/pasted-128.jpg" alt=""></p>
-<p>然后可以来编写代码了。<br>我们可以先来写一个hello world  <strong>↓</strong></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;Keyboard.h&gt;</span> <span class="comment">//包含键盘模块头文件</span></span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">setup</span><span class="params">()</span> </span>&#123;</div><div class="line">  <span class="comment">// put your setup code here, to run once:</span></div><div class="line">  Keyboard.begin();<span class="comment">//开始键盘通信</span></div><div class="line">  delay(<span class="number">1000</span>);<span class="comment">//延时1000毫秒，不要太短，因为每天电脑的运行速度都不一样</span></div><div class="line">  Keyboard.press(KEY_CAPS_LOCK); <span class="comment">//按下大写键 这里我们最好这样写 不然大多数电脑在中文输入的情况下就会出现问题</span></div><div class="line">  Keyboard.release(KEY_CAPS_LOCK); <span class="comment">//释放大写键</span></div><div class="line">  delay(<span class="number">500</span>);</div><div class="line">  Keyboard.press(KEY_LEFT_GUI);<span class="comment">//按下徽标键 也就是win键</span></div><div class="line">  delay(<span class="number">500</span>);</div><div class="line">  Keyboard.press(<span class="string">'r'</span>);<span class="comment">//按下r键</span></div><div class="line">  delay(<span class="number">500</span>);</div><div class="line">  Keyboard.release(KEY_LEFT_GUI);<span class="comment">//松掉win键</span></div><div class="line">  Keyboard.release(<span class="string">'r'</span>);<span class="comment">//松掉r键</span></div><div class="line">  delay(<span class="number">500</span>);</div><div class="line">  Keyboard.println(<span class="string">"cmd"</span>);<span class="comment">//输入cmd进入DOS</span></div><div class="line">  delay(<span class="number">500</span>);</div><div class="line">  Keyboard.press(KEY_RETURN);  <span class="comment">//按下回车键</span></div><div class="line">  Keyboard.release(KEY_RETURN); <span class="comment">//释放回车键</span></div><div class="line">  delay(<span class="number">500</span>);</div><div class="line">  Keyboard.println(<span class="string">"echo hello world"</span>);</div><div class="line">  Keyboard.press(KEY_RETURN);  <span class="comment">//按下回车键</span></div><div class="line">  Keyboard.release(KEY_RETURN); <span class="comment">//释放回车键</span></div><div class="line">  delay(<span class="number">500</span>);</div><div class="line">  Keyboard.press(KEY_CAPS_LOCK); <span class="comment">//按下大写键</span></div><div class="line">  Keyboard.release(KEY_CAPS_LOCK); <span class="comment">//释放大写键 我们再次关闭开启的大写键</span></div><div class="line">  delay(<span class="number">500</span>);</div><div class="line">  Keyboard.end();<span class="comment">//结束键盘通讯</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">loop</span><span class="params">()</span> </span>&#123;</div><div class="line">  <span class="comment">// put your main code here, to run repeatedly:</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>然后编译验证  <strong>↓</strong></p>
-<p><img src="/images/pasted-129.jpg" alt=""></p>
-<p>如果提示这个就说明编译验证成功了  <strong>↓</strong></p>
-<p><img src="/images/pasted-130.jpg" alt=""></p>
-<p>接下来就可以把代码上传到Arduino Leonardo，来完成BadUSB制作的最后一步。  <strong>↓</strong></p>
-<p><img src="/images/pasted-131.jpg" alt=""></p>
-<p>上传成功后会自动断开USB然后再次连接并且执行代码。</p>
-<p>会根据代码来依次执行，先按出win+r键，然后按出cmd 回车，最后输入echo hello world。</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>当然我们可以执行powershell指令来下载自己的payload然后执行，或者其他一些代码。</p>
-<p>我这里放几个<a href="https://github.com/Y00z/BadUSB" target="_blank" rel="external">例子</a>。</p>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话说周末真的是搞大新闻时间，今早一醒就又被一个勒索病毒给刷了屏，稍微看了一下感觉没啥，就是一个勒索软件利用之前NSA曝光的漏洞来传播，github有很多开源的勒索软件，我之前也发过NSA曝光的漏洞<a href="https://y00z.github.io/2017/04/15/%E5%BE%AE%E8%BD%AF%E6%9C%AB%E6%97%A5-%E9%BB%91%E6%8E%89%E5%85%A8%E7%90%8370-%E7%94%B5%E8%84%91%E7%9A%840day/">相关文章</a>，如果有设备中招了，病毒就会利用该设备来扫描内网中其他开445的设备并且攻击，很多学校机房和公用电脑都是年久失修的，而且学校都是一个大内网，所以学校是重灾区。</p>
+<h3 id="修复"><a href="#修复" class="headerlink" title="修复"></a>修复</h3><p>①控制面板→windows防火墙→高级设置→入站规则→新建规则→端口→tcp→下面输入“135,445”→阻止连接→再新建一次规则里面选udp</p>
+<p>②打上最新官方<a href="https://technet.microsoft.com/zh-cn/library/security/MS17-010" target="_blank" rel="external">补丁</a></p>
+<p>③XP和win2003微软已经停止维护的可以使用 <a href="https://dl.360safe.com/nsa/nsatool.exe" target="_blank" rel="external">360的检测与修复工具</a></p>
 
       
 
@@ -339,7 +281,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://y00z.github.io/2017/05/12/制作BadUSB/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://y00z.github.io/2017/05/13/如何防范ONION勒索病毒/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -353,18 +295,9 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
-    <a href="/2017/05/13/如何防范ONION勒索病毒/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          防范ONION勒索病毒
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/05/07/wifi破解之社工钓鱼/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">wifi破解之社工钓鱼</div>
+    <a href="/2017/05/12/制作BadUSB/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">制作BadUSB</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -380,8 +313,8 @@ var _hmt = _hmt || [];
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "http://y00z.github.io/2017/05/12/制作BadUSB/", 
-    sourceId: "制作BadUSB",
+    url: "http://y00z.github.io/2017/05/13/如何防范ONION勒索病毒/", 
+    sourceId: "如何防范ONION勒索病毒",
     productKey: "ea5706922a114a4aa564f227af0bc075",
     target: "cloud-tie-wrapper"
   };
