@@ -177,7 +177,8 @@ var _hmt = _hmt || [];
       
         <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话说周末真的是搞大新闻时间，今早一醒就又被一个勒索病毒给刷了屏，稍微看了一下感觉没啥，就是一个勒索软件利用之前NSA曝光的smb漏洞来传播，github有很多开源的勒索软件，我之前也发过NSA曝光的漏洞相关文章<a href="https://y00z.github.io/2017/04/15/%E5%BE%AE%E8%BD%AF%E6%9C%AB%E6%97%A5-%E9%BB%91%E6%8E%89%E5%85%A8%E7%90%8370-%E7%94%B5%E8%84%91%E7%9A%840day/">(点我)</a>，如果有设备中招了，病毒就会利用该设备来扫描内网中其他开445的设备并且攻击，很多学校机房和公用电脑都是年久失修的，而且学校都是一个大内网，所以学校是重灾区。</p>
 <p><img src="http://image.3001.net/images/20170513/14946406784342.png" alt=""></p>
-<h3 id="漏洞防御"><a href="#漏洞防御" class="headerlink" title="漏洞防御"></a>漏洞防御</h3><p>防范这个病毒其实就是只要防范之前NSA爆出的smb漏洞就可以了。</p>
+<h3 id="漏洞防御"><a href="#漏洞防御" class="headerlink" title="漏洞防御"></a>漏洞防御</h3><p>这个病毒就是利用之前NSA爆出的smb漏洞来传播的，所有防范这个病毒其实就是只要防范之前NSA爆出的smb漏洞就可以了。</p>
+<p>3个办法</p>
 <p>①控制面板→windows防火墙→高级设置→入站规则→新建规则→端口→tcp→下面输入“135,445”→阻止连接→再新建一次规则里面选udp</p>
 <p>②打上最新官方补丁下载地址：<a href="https://technet.microsoft.com/zh-cn/library/security/MS17-010" target="_blank" rel="external">https://technet.microsoft.com/zh-cn/library/security/MS17-010</a></p>
 <p>③XP和win2003微软已经停止维护的可以使用 360的检测与修复工具 ：<a href="https://dl.360safe.com/nsa/nsatool.exe" target="_blank" rel="external">https://dl.360safe.com/nsa/nsatool.exe</a></p>
@@ -412,11 +413,11 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">安卓</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">安全攻防</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">安全攻防</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">安卓</a>
         		</li>
       		
 		</ul>
@@ -811,11 +812,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">React-Native</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">开源</a>
+                <a href="javascript:void(0)" class="js-tag color5">安全攻防</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -823,7 +820,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">安全攻防</a>
+                <a href="javascript:void(0)" class="js-tag color3">React-Native</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">开源</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -843,15 +844,15 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">破解</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">反编译</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
