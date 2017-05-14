@@ -23,7 +23,7 @@
 <meta property="og:image" content="http://y00z.github.io/images/pasted-54.jpg">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-55.jpg">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-56.jpg">
-<meta property="og:updated_time" content="2017-04-05T01:48:33.819Z">
+<meta property="og:updated_time" content="2017-05-14T08:07:03.558Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="开发xposed破解模块">
 <meta name="twitter:description" content="前言
@@ -217,11 +217,9 @@ var _hmt = _hmt || [];
 </blockquote>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">findAndHookMethod(AbstractHttpClient, <span class="string">"execute"</span>, HttpUriRequest, <span class="keyword">new</span> XC_MethodHook() &#123;</div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">beforeHookedMethod</span><span class="params">(MethodHookParam param)</span> <span class="keyword">throws</span> URISyntaxException, UnknownHostException </span>&#123;</div><div class="line">		<span class="keyword">if</span> (HttpRequestBase.isInstance(param.args[<span class="number">0</span>])) &#123;</div><div class="line">			Object httpRequestBase = param.args[<span class="number">0</span>];</div><div class="line">			URI uri = (URI) callMethod(httpRequestBase, <span class="string">"getURI"</span>);</div><div class="line">			String host = uri.getHost();</div><div class="line">			<span class="keyword">if</span> (<span class="string">"****.**/vip/vip.php?imei="</span>.equals(host)) &#123;</div><div class="line">				String ip = <span class="string">"http:oi8g0l23v.bkt.clouddn.com/vip.txt"</span>;</div><div class="line">				URI newUrl = <span class="keyword">new</span> URI(uri.getScheme(), uri.getUserInfo(), ip, uri.getPort(), uri.getRawPath(), uri.getRawQuery(), uri.getRawFragment());</div><div class="line">				callMethod(httpRequestBase, <span class="string">"setURI"</span>, newUrl);</div><div class="line">				callMethod(httpRequestBase, <span class="string">"setHeader"</span>, <span class="string">"Host"</span>, host);</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <p><br></p>
-<h4 id="app和模块下载地址"><a href="#app和模块下载地址" class="headerlink" title="app和模块下载地址"></a>app和模块下载地址</h4><blockquote>
-<ul>
-<li><a><a href="http://pan.baidu.com/s/1skFxIuL" target="_blank" rel="external">http://pan.baidu.com/s/1skFxIuL</a></a> 密码: 8zyj</li>
+<h4 id="app和模块下载地址"><a href="#app和模块下载地址" class="headerlink" title="app和模块下载地址"></a>app和模块下载地址</h4><ul>
+<li><a href="http://pan.baidu.com/s/1skFxIuL" target="_blank" rel="external">http://pan.baidu.com/s/1skFxIuL</a> 密码: 8zyj</li>
 </ul>
-</blockquote>
 
       
 
@@ -474,11 +472,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">开源</a>
+                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
+                <a href="javascript:void(0)" class="js-tag color3">开源</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -498,11 +496,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">反编译</a>
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
+                <a href="javascript:void(0)" class="js-tag color4">反编译</a>
               </li>
              
               <li class="article-tag-list-item">
