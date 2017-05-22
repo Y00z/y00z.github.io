@@ -23,7 +23,7 @@
 <meta property="og:image" content="http://y00z.github.io/images/pasted-54.jpg">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-55.jpg">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-56.jpg">
-<meta property="og:updated_time" content="2017-05-14T08:07:03.558Z">
+<meta property="og:updated_time" content="2017-05-19T15:31:35.130Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="开发xposed破解模块">
 <meta name="twitter:description" content="前言
@@ -213,9 +213,12 @@ var _hmt = _hmt || [];
 <p>这个app原理其实很简单，利用了qq的校验不严的漏洞。在录语音的时候会在本地生成已一个语音文件，然后发送给好友就是把这个语音文件发送了出去。然而发送的时候这个语音文件和录语音时生成的语音文件并没有做校验，导致了可以任意发送语音文件。</p>
 </blockquote>
 <h4 id="编写Hook模块。"><a href="#编写Hook模块。" class="headerlink" title="编写Hook模块。"></a>编写Hook模块。</h4><blockquote>
-<p>两种方法。<br>1,把请求重定向自己的页面，返回1<br>2,把请求的响应体强制改成1</p>
+<p>结论，当访问指定地址的时候如果返回1就是会员。<br>两种方法。<br>1,把请求重定向自己的页面，返回1<br>2,把请求的响应体强制改成1</p>
 </blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">findAndHookMethod(AbstractHttpClient, <span class="string">"execute"</span>, HttpUriRequest, <span class="keyword">new</span> XC_MethodHook() &#123;</div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">beforeHookedMethod</span><span class="params">(MethodHookParam param)</span> <span class="keyword">throws</span> URISyntaxException, UnknownHostException </span>&#123;</div><div class="line">		<span class="keyword">if</span> (HttpRequestBase.isInstance(param.args[<span class="number">0</span>])) &#123;</div><div class="line">			Object httpRequestBase = param.args[<span class="number">0</span>];</div><div class="line">			URI uri = (URI) callMethod(httpRequestBase, <span class="string">"getURI"</span>);</div><div class="line">			String host = uri.getHost();</div><div class="line">			<span class="keyword">if</span> (<span class="string">"****.**/vip/vip.php?imei="</span>.equals(host)) &#123;</div><div class="line">				String ip = <span class="string">"http:oi8g0l23v.bkt.clouddn.com/vip.txt"</span>;</div><div class="line">				URI newUrl = <span class="keyword">new</span> URI(uri.getScheme(), uri.getUserInfo(), ip, uri.getPort(), uri.getRawPath(), uri.getRawQuery(), uri.getRawFragment());</div><div class="line">				callMethod(httpRequestBase, <span class="string">"setURI"</span>, newUrl);</div><div class="line">				callMethod(httpRequestBase, <span class="string">"setHeader"</span>, <span class="string">"Host"</span>, host);</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>我们直接来hook网络请求模块，<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">findAndHookMethod(<span class="string">"org.apache.http.impl.client.AbstractHttpClient"</span>, lpparam.classLoader, <span class="string">"execute"</span>, HttpHost.class, HttpRequest.class, HttpContext.class, <span class="keyword">new</span> XC_MethodHook() &#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">afterHookedMethod</span><span class="params">(MethodHookParam param)</span> <span class="keyword">throws</span> Throwable </span>&#123;</div><div class="line">        HttpRequest request = (HttpRequest) param.args[<span class="number">1</span>];</div><div class="line">        <span class="keyword">if</span> (request <span class="keyword">instanceof</span> org.apache.http.client.methods.HttpGet) &#123;</div><div class="line">            org.apache.http.client.methods.HttpGet httpGet = (org.apache.http.client.methods.HttpGet) request;</div><div class="line">            <span class="keyword">if</span> (httpGet.getURI().toString().contains(<span class="string">"dess.ml/vip/vip.php?imei="</span>)) &#123;</div><div class="line">                BasicHttpResponse basicHttpResponse = (BasicHttpResponse) param.getResult();</div><div class="line">                basicHttpResponse.setEntity(<span class="keyword">new</span> StringEntity(<span class="string">"1"</span>, <span class="string">"utf-8"</span>));</div><div class="line">                toast(<span class="string">"-----破解成功-----"</span>);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>这个是apache的网络包，还有一个java的网络包</p>
+</blockquote>
 <p><br></p>
 <h4 id="app和模块下载地址"><a href="#app和模块下载地址" class="headerlink" title="app和模块下载地址"></a>app和模块下载地址</h4><ul>
 <li><a href="http://pan.baidu.com/s/1skFxIuL" target="_blank" rel="external">http://pan.baidu.com/s/1skFxIuL</a> 密码: 8zyj</li>
@@ -464,11 +467,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
+                <a href="javascript:void(0)" class="js-tag color3">开源</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">开源</a>
+                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -496,11 +499,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">破解</a>
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
+                <a href="javascript:void(0)" class="js-tag color3">破解</a>
               </li>
              
               <li class="article-tag-list-item">
