@@ -34,7 +34,7 @@
 <meta property="og:image" content="http://y00z.github.io/images/pasted-87.jpg">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-82.jpg">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-81.jpg">
-<meta property="og:updated_time" content="2017-04-16T10:09:03.940Z">
+<meta property="og:updated_time" content="2017-06-09T17:11:27.085Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="内网王者之会话劫持">
 <meta name="twitter:description" content="前言
@@ -242,7 +242,8 @@ var _hmt = _hmt || [];
 </ul>
 <p><img src="/images/pasted-84.jpg" alt=""></p>
 <p><strong>这个时候受害者登录微博。</strong></p>
-<p>接下来使用ferret来处理数据包。</p>
+<p>这个时候数据包中的数据都是受害者的网络请求数据，其中包含着cookies.</p>
+<p>然后使用ferret来处理数据包。</p>
 <ul>
 <li>ferret -r data.cap</li>
 </ul>
@@ -252,7 +253,7 @@ var _hmt = _hmt || [];
 <p><img src="/images/pasted-86.jpg" alt=""></p>
 <p>我们需要打开设置代理。</p>
 <p><img src="/images/pasted-80.jpg" alt=""></p>
-<p>设置完成后，打开浏进入127.0.0.1:1234，找关键信息。</p>
+<p>设置完成后，打开浏进入127.0.0.1:1234，这时候里面的数据都是受害者的所有网络请求数据，包含着登录信息。找到登录后的信息。</p>
 <p><img src="/images/pasted-87.jpg" alt=""></p>
 <p>劫持成功。</p>
 <p><img src="/images/pasted-82.jpg" alt=""></p>
@@ -506,10 +507,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">安全攻防</a>
               </li>
              
@@ -518,11 +515,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">wifi破解</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -530,7 +527,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">反编译</a>
+                <a href="javascript:void(0)" class="js-tag color2">wifi破解</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -543,6 +540,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">路由器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">反编译</a>
               </li>
             
             <div class="clearfix"></div>

@@ -23,7 +23,7 @@
 <meta property="og:image" content="http://y00z.github.io/images/pasted-54.jpg">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-55.jpg">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-56.jpg">
-<meta property="og:updated_time" content="2017-05-19T15:31:35.130Z">
+<meta property="og:updated_time" content="2017-06-18T08:06:14.199Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="开发xposed破解模块">
 <meta name="twitter:description" content="前言
@@ -217,7 +217,7 @@ var _hmt = _hmt || [];
 </blockquote>
 <p>我们直接来hook网络请求模块，<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">findAndHookMethod(<span class="string">"org.apache.http.impl.client.AbstractHttpClient"</span>, lpparam.classLoader, <span class="string">"execute"</span>, HttpHost.class, HttpRequest.class, HttpContext.class, <span class="keyword">new</span> XC_MethodHook() &#123;</div><div class="line">    <span class="meta">@Override</span></div><div class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">afterHookedMethod</span><span class="params">(MethodHookParam param)</span> <span class="keyword">throws</span> Throwable </span>&#123;</div><div class="line">        HttpRequest request = (HttpRequest) param.args[<span class="number">1</span>];</div><div class="line">        <span class="keyword">if</span> (request <span class="keyword">instanceof</span> org.apache.http.client.methods.HttpGet) &#123;</div><div class="line">            org.apache.http.client.methods.HttpGet httpGet = (org.apache.http.client.methods.HttpGet) request;</div><div class="line">            <span class="keyword">if</span> (httpGet.getURI().toString().contains(<span class="string">"dess.ml/vip/vip.php?imei="</span>)) &#123;</div><div class="line">                BasicHttpResponse basicHttpResponse = (BasicHttpResponse) param.getResult();</div><div class="line">                basicHttpResponse.setEntity(<span class="keyword">new</span> StringEntity(<span class="string">"1"</span>, <span class="string">"utf-8"</span>));</div><div class="line">                toast(<span class="string">"-----破解成功-----"</span>);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
 <blockquote>
-<p>这个是apache的网络包，还有一个java的网络包</p>
+<p>app用的是apache的网络包，当然还有一个java的网络包</p>
 </blockquote>
 <p><br></p>
 <h4 id="app和模块下载地址"><a href="#app和模块下载地址" class="headerlink" title="app和模块下载地址"></a>app和模块下载地址</h4><ul>
@@ -475,10 +475,6 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">安全攻防</a>
               </li>
              
@@ -487,11 +483,11 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">wifi破解</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -499,7 +495,7 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">反编译</a>
+                <a href="javascript:void(0)" class="js-tag color2">wifi破解</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -512,6 +508,10 @@ return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){v
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">路由器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">反编译</a>
               </li>
             
             <div class="clearfix"></div>
