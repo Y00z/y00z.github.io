@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://y00z.github.io">
   <title>防范ONION勒索病毒 | Yooz的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="前言&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;话说周末真的是搞大新闻时间，今早一醒就又被一个勒索病毒给刷了屏，稍微看了一下感觉没啥，就是一个古老的勒索软件利用了一个月前NSA美国安全局内部曝光的smb漏洞来传播，可怕的是这个NSA的这个漏洞非常厉害，所以传播的很快，我之前也发过NSA曝光的漏洞相关报道(点我)，如果有设备中招了，病毒就会利用该设备来扫描内网">
+<meta name="keywords" content="安全攻防">
 <meta property="og:type" content="article">
 <meta property="og:title" content="防范ONION勒索病毒">
 <meta property="og:url" content="http://y00z.github.io/2017/05/13/diary-2017-0513-01/index.html">
 <meta property="og:site_name" content="Yooz的博客">
 <meta property="og:description" content="前言&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;话说周末真的是搞大新闻时间，今早一醒就又被一个勒索病毒给刷了屏，稍微看了一下感觉没啥，就是一个古老的勒索软件利用了一个月前NSA美国安全局内部曝光的smb漏洞来传播，可怕的是这个NSA的这个漏洞非常厉害，所以传播的很快，我之前也发过NSA曝光的漏洞相关报道(点我)，如果有设备中招了，病毒就会利用该设备来扫描内网">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://image.3001.net/images/20170513/14946406784342.png">
-<meta property="og:updated_time" content="2017-07-13T11:03:13.663Z">
+<meta property="og:updated_time" content="2017-07-13T11:03:13.664Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="防范ONION勒索病毒">
 <meta name="twitter:description" content="前言&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;话说周末真的是搞大新闻时间，今早一醒就又被一个勒索病毒给刷了屏，稍微看了一下感觉没啥，就是一个古老的勒索软件利用了一个月前NSA美国安全局内部曝光的smb漏洞来传播，可怕的是这个NSA的这个漏洞非常厉害，所以传播的很快，我之前也发过NSA曝光的漏洞相关报道(点我)，如果有设备中招了，病毒就会利用该设备来扫描内网">
@@ -24,7 +26,7 @@
     <link rel="alternative" href="/atom.xml" title="Yooz的博客" type="application/atom+xml">
   
   
-    <link rel="icon" href="http://oi6ni1o6u.bkt.clouddn.com/tx.png">
+    <link rel="icon" href="https://raw.githubusercontent.com/Y00z/Test/master/tx.jpg">
   
   <link rel="stylesheet" type="text/css" href="/./main.266c1c.css">
   <style type="text/css">
@@ -48,7 +50,7 @@ var _hmt = _hmt || [];
 
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -58,7 +60,7 @@ var _hmt = _hmt || [];
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="http://oi6ni1o6u.bkt.clouddn.com/tx.png" class="js-avatar">
+			<img src="https://raw.githubusercontent.com/Y00z/Test/master/tx.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">悠哉&#39;</a></h1>
@@ -112,7 +114,7 @@ var _hmt = _hmt || [];
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="http://oi6ni1o6u.bkt.clouddn.com/tx.png" class="js-avatar">
+				<img src="https://raw.githubusercontent.com/Y00z/Test/master/tx.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">悠哉&#39;</h1>
@@ -180,22 +182,22 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话说周末真的是搞大新闻时间，今早一醒就又被一个勒索病毒给刷了屏，稍微看了一下感觉没啥，就是一个古老的勒索软件利用了一个月前NSA美国安全局内部曝光的smb漏洞来传播，可怕的是这个NSA的这个漏洞非常厉害，所以传播的很快，我之前也发过NSA曝光的漏洞相关报道<a href="https://y00z.github.io/2017/04/15/diary-2017-0415-03/">(点我)</a>，如果有设备中招了，病毒就会利用该设备来扫描内网中其他开445的设备并且攻击，很多学校机房和公用电脑都是年久失修的，而且学校都是一个大内网，所以学校是重灾区。<a id="more"></a></p>
-<p><img src="http://image.3001.net/images/20170513/14946406784342.png" alt=""></p>
+<p><img src="http://image.3001.net/images/20170513/14946406784342.png" alt></p>
 <h3 id="漏洞防御"><a href="#漏洞防御" class="headerlink" title="漏洞防御"></a>漏洞防御</h3><p>这个病毒就是利用之前NSA爆出的smb漏洞来传播的，所有防范这个病毒其实就是只要防范之前NSA爆出的smb漏洞就可以了。</p>
 <p>3个办法</p>
 <p>①控制面板→windows防火墙→高级设置→入站规则→新建规则→端口→tcp→下面输入“135,445”→阻止连接→再新建一次规则里面选udp</p>
-<p>②打上最新官方补丁下载地址：<a href="https://technet.microsoft.com/zh-cn/library/security/MS17-010" target="_blank" rel="external">https://technet.microsoft.com/zh-cn/library/security/MS17-010</a></p>
-<p>③XP和win2003微软已经停止维护的可以使用 360的检测与修复工具 ：<a href="https://dl.360safe.com/nsa/nsatool.exe" target="_blank" rel="external">https://dl.360safe.com/nsa/nsatool.exe</a></p>
+<p>②打上最新官方补丁下载地址：<a href="https://technet.microsoft.com/zh-cn/library/security/MS17-010" target="_blank" rel="noopener">https://technet.microsoft.com/zh-cn/library/security/MS17-010</a></p>
+<p>③XP和win2003微软已经停止维护的可以使用 360的检测与修复工具 ：<a href="https://dl.360safe.com/nsa/nsatool.exe" target="_blank" rel="noopener">https://dl.360safe.com/nsa/nsatool.exe</a></p>
 <h3 id="文件修复"><a href="#文件修复" class="headerlink" title="文件修复"></a>文件修复</h3><font color="#ff0000">最新消息</font>
 
 <p>出了两个文件恢复工具，并不是解密工具，只能恢复一部分文件<br>第一个是360出的恢复工具。</p>
-<p><a href="http://weibo.com/ttarticle/p/show?id=2309404107129664487886" target="_blank" rel="external">http://weibo.com/ttarticle/p/show?id=2309404107129664487886</a></p>
+<p><a href="http://weibo.com/ttarticle/p/show?id=2309404107129664487886" target="_blank" rel="noopener">http://weibo.com/ttarticle/p/show?id=2309404107129664487886</a></p>
 <p>第二个是不知名公司出的恢复工具</p>
-<p><a href="http://www.youxia.org/29083.html" target="_blank" rel="external">http://www.youxia.org/29083.html</a></p>
+<p><a href="http://www.youxia.org/29083.html" target="_blank" rel="noopener">http://www.youxia.org/29083.html</a></p>
 <font color="#ff0000">最新消息,可恢复全部数据</font>
 
 <p>阿里出了解密工具，可以完全恢复所有数据，前提是计算机没有关机过，原理就是加密后，key会存在内存中，可以在内存中找到key，和神器mimikatz原理差不多一样。</p>
-<p><a href="https://yq.aliyun.com/articles/86599?utm_content=m_21495" target="_blank" rel="external">https://yq.aliyun.com/articles/86599?utm_content=m_21495</a></p>
+<p><a href="https://yq.aliyun.com/articles/86599?utm_content=m_21495" target="_blank" rel="noopener">https://yq.aliyun.com/articles/86599?utm_content=m_21495</a></p>
 
       
 
@@ -213,13 +215,13 @@ var _hmt = _hmt || [];
                   <div class="reward-box">
                     
                     <div class="reward-box-item">
-                      <img class="reward-img" src="http://oi6ni1o6u.bkt.clouddn.com/zhifubao1.jpg">
+                      <img class="reward-img" src="https://raw.githubusercontent.com/Y00z/Test/master/zhifubao.jpg">
                       <span class="reward-type">支付宝</span>
                     </div>
                     
                     
                     <div class="reward-box-item">
-                      <img class="reward-img" src="http://oi6ni1o6u.bkt.clouddn.com/weixin1.jpg">
+                      <img class="reward-img" src="https://raw.githubusercontent.com/Y00z/Test/master/wenxin.jpg">
                       <span class="reward-type">微信</span>
                     </div>
                     
@@ -351,7 +353,7 @@ var _hmt = _hmt || [];
   
 
   
-  <div id="SOHUCS" sid="diary-2017-0513-01" ></div> 
+  <div id="SOHUCS" sid="diary-2017-0513-01"></div> 
 <script type="text/javascript"> 
 (function(){ 
 var appid = "cysYxW0PK"; 
@@ -371,7 +373,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 悠哉&#39;
+    		&copy; 2019 悠哉&#39;
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -446,6 +448,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">安卓</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">安全攻防</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
@@ -454,27 +464,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">安卓</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">安全攻防</a>
+                <a href="javascript:void(0)" class="js-tag color3">React-Native</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">反编译</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">React-Native</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -500,13 +498,17 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">wifi</a>
               </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">反编译</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:

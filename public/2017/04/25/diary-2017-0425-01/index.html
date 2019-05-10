@@ -1,52 +1,36 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://y00z.github.io">
   <title>向安卓app中注入payload后门 | Yooz的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！
-
-
-
-
-正文在前面的文章中我有说到过如何向android植入后门app，我们用的方法是使用msf生成一个payload，需要用户单独安装后才行。(点我)">
+  <meta name="description" content="前言 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！   正文在前面的文章中我有说到过如何向android植入后门app，我们用的方法是使用msf生成一个payload，需要用户单独安装后才行。(点我)">
+<meta name="keywords" content="安卓,安全攻防">
 <meta property="og:type" content="article">
 <meta property="og:title" content="向安卓app中注入payload后门">
 <meta property="og:url" content="http://y00z.github.io/2017/04/25/diary-2017-0425-01/index.html">
 <meta property="og:site_name" content="Yooz的博客">
-<meta property="og:description" content="前言
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！
-
-
-
-
-正文在前面的文章中我有说到过如何向android植入后门app，我们用的方法是使用msf生成一个payload，需要用户单独安装后才行。(点我)">
+<meta property="og:description" content="前言 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！   正文在前面的文章中我有说到过如何向android植入后门app，我们用的方法是使用msf生成一个payload，需要用户单独安装后才行。(点我)">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-98.jpg">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-99.jpg">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-101.jpg">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-102.jpg">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-103.jpg">
-<meta property="og:updated_time" content="2017-07-13T11:02:27.406Z">
+<meta property="og:updated_time" content="2017-07-13T11:02:27.407Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="向安卓app中注入payload后门">
-<meta name="twitter:description" content="前言
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！
-
-
-
-
-正文在前面的文章中我有说到过如何向android植入后门app，我们用的方法是使用msf生成一个payload，需要用户单独安装后才行。(点我)">
+<meta name="twitter:description" content="前言 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！   正文在前面的文章中我有说到过如何向android植入后门app，我们用的方法是使用msf生成一个payload，需要用户单独安装后才行。(点我)">
 <meta name="twitter:image" content="http://y00z.github.io/images/pasted-98.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Yooz的博客" type="application/atom+xml">
   
   
-    <link rel="icon" href="http://oi6ni1o6u.bkt.clouddn.com/tx.png">
+    <link rel="icon" href="https://raw.githubusercontent.com/Y00z/Test/master/tx.jpg">
   
   <link rel="stylesheet" type="text/css" href="/./main.266c1c.css">
   <style type="text/css">
@@ -70,7 +54,7 @@ var _hmt = _hmt || [];
 
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -80,7 +64,7 @@ var _hmt = _hmt || [];
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="http://oi6ni1o6u.bkt.clouddn.com/tx.png" class="js-avatar">
+			<img src="https://raw.githubusercontent.com/Y00z/Test/master/tx.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">悠哉&#39;</a></h1>
@@ -134,7 +118,7 @@ var _hmt = _hmt || [];
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="http://oi6ni1o6u.bkt.clouddn.com/tx.png" class="js-avatar">
+				<img src="https://raw.githubusercontent.com/Y00z/Test/master/tx.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">悠哉&#39;</h1>
@@ -204,16 +188,14 @@ var _hmt = _hmt || [];
         <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
 <font color="#ff0000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！</strong></font>
 
-
-
 </blockquote>
 <h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><p>在前面的文章中我有说到过如何向android植入后门app，我们用的方法是使用msf生成一个payload，需要用户单独安装后才行。<a href="https://y00z.github.io/2016/12/19/diary-2016-1219-01/">(点我)</a><a id="more"></a><br>那么可不可以向一个正常的app注入payload呢，当然是可以的。原理就是反编译app,然后在app中注入payload代码，然后再重新编译打包。前提是app没有做过一些加固等操作.</p>
 <p>在msf中就提供了这样注入方式。</p>
-<p><img src="/images/pasted-98.jpg" alt=""></p>
+<p><img src="/images/pasted-98.jpg" alt></p>
 <p>会对该app进行反编译，然后会找到可以注入载荷的钩子点。进一步，它会利用可用于后渗透活动的附加权限使该app的Android清单文件染毒。</p>
-<p><img src="/images/pasted-99.jpg" alt=""></p>
-<p>这里呢，我使用<a href="https://github.com/dana-at-cp/backdoor-apk" target="_blank" rel="external">backdoor-apk</a>来向app注入payload</p>
-<p><img src="/images/pasted-101.jpg" alt=""></p>
+<p><img src="/images/pasted-99.jpg" alt></p>
+<p>这里呢，我使用<a href="https://github.com/dana-at-cp/backdoor-apk" target="_blank" rel="noopener">backdoor-apk</a>来向app注入payload</p>
+<p><img src="/images/pasted-101.jpg" alt></p>
 <p>其中有3个选项，</p>
 <ul>
 <li>选择反弹的payload</li>
@@ -222,9 +204,9 @@ var _hmt = _hmt || [];
 </ul>
 <p>完毕之后染毒的apk在original/dist目录中，并且会在本地生成一个backdoor-apk.rc文件。</p>
 <p>backdoor-apk.rc里面包含着msf的所有配置，所以我们可以直接启动msf并且指定backdoor-apk.rc文件即可。会自动帮我们把msf配置好</p>
-<p><img src="/images/pasted-102.jpg" alt=""></p>
+<p><img src="/images/pasted-102.jpg" alt></p>
 <p>手机安装上染毒的apk，msf成功收到反弹到一个会话</p>
-<p><img src="/images/pasted-103.jpg" alt=""></p>
+<p><img src="/images/pasted-103.jpg" alt></p>
 
       
 
@@ -242,13 +224,13 @@ var _hmt = _hmt || [];
                   <div class="reward-box">
                     
                     <div class="reward-box-item">
-                      <img class="reward-img" src="http://oi6ni1o6u.bkt.clouddn.com/zhifubao1.jpg">
+                      <img class="reward-img" src="https://raw.githubusercontent.com/Y00z/Test/master/zhifubao.jpg">
                       <span class="reward-type">支付宝</span>
                     </div>
                     
                     
                     <div class="reward-box-item">
-                      <img class="reward-img" src="http://oi6ni1o6u.bkt.clouddn.com/weixin1.jpg">
+                      <img class="reward-img" src="https://raw.githubusercontent.com/Y00z/Test/master/wenxin.jpg">
                       <span class="reward-type">微信</span>
                     </div>
                     
@@ -384,7 +366,7 @@ var _hmt = _hmt || [];
   
 
   
-  <div id="SOHUCS" sid="diary-2017-0425-01" ></div> 
+  <div id="SOHUCS" sid="diary-2017-0425-01"></div> 
 <script type="text/javascript"> 
 (function(){ 
 var appid = "cysYxW0PK"; 
@@ -404,7 +386,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 悠哉&#39;
+    		&copy; 2019 悠哉&#39;
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -479,6 +461,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">安卓</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">安全攻防</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
@@ -487,27 +477,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">安卓</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">安全攻防</a>
+                <a href="javascript:void(0)" class="js-tag color3">React-Native</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">反编译</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">React-Native</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -533,13 +511,17 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">wifi</a>
               </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">反编译</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:

@@ -1,31 +1,21 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://y00z.github.io">
   <title>内网王者之dns劫持 | Yooz的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！
-
-
-
-正文
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;同样不做多介绍，我们来使用ettercap这个老牌利器来完成这次实验。">
+  <meta name="description" content="前言 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！  正文 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;同样不做多介绍，我们来使用ettercap这个老牌利器来完成这次实验。">
+<meta name="keywords" content="安全攻防">
 <meta property="og:type" content="article">
 <meta property="og:title" content="内网王者之dns劫持">
 <meta property="og:url" content="http://y00z.github.io/2017/04/15/diary-2017-0415-01/index.html">
 <meta property="og:site_name" content="Yooz的博客">
-<meta property="og:description" content="前言
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！
-
-
-
-正文
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;同样不做多介绍，我们来使用ettercap这个老牌利器来完成这次实验。">
+<meta property="og:description" content="前言 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！  正文 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;同样不做多介绍，我们来使用ettercap这个老牌利器来完成这次实验。">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-63.PNG">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-64.PNG">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-65.PNG">
@@ -34,22 +24,16 @@
 <meta property="og:image" content="http://y00z.github.io/images/pasted-67.PNG">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-68.PNG">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-69.PNG">
-<meta property="og:updated_time" content="2017-04-22T17:09:01.679Z">
+<meta property="og:updated_time" content="2017-04-22T17:09:01.680Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="内网王者之dns劫持">
-<meta name="twitter:description" content="前言
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！
-
-
-
-正文
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;同样不做多介绍，我们来使用ettercap这个老牌利器来完成这次实验。">
+<meta name="twitter:description" content="前言 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！  正文 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;同样不做多介绍，我们来使用ettercap这个老牌利器来完成这次实验。">
 <meta name="twitter:image" content="http://y00z.github.io/images/pasted-63.PNG">
   
     <link rel="alternative" href="/atom.xml" title="Yooz的博客" type="application/atom+xml">
   
   
-    <link rel="icon" href="http://oi6ni1o6u.bkt.clouddn.com/tx.png">
+    <link rel="icon" href="https://raw.githubusercontent.com/Y00z/Test/master/tx.jpg">
   
   <link rel="stylesheet" type="text/css" href="/./main.266c1c.css">
   <style type="text/css">
@@ -73,7 +57,7 @@ var _hmt = _hmt || [];
 
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -83,7 +67,7 @@ var _hmt = _hmt || [];
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="http://oi6ni1o6u.bkt.clouddn.com/tx.png" class="js-avatar">
+			<img src="https://raw.githubusercontent.com/Y00z/Test/master/tx.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">悠哉&#39;</a></h1>
@@ -137,7 +121,7 @@ var _hmt = _hmt || [];
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="http://oi6ni1o6u.bkt.clouddn.com/tx.png" class="js-avatar">
+				<img src="https://raw.githubusercontent.com/Y00z/Test/master/tx.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">悠哉&#39;</h1>
@@ -206,49 +190,69 @@ var _hmt = _hmt || [];
       
         <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
 <font color="#ff0000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！</strong></font>
-
-
 </blockquote>
 <h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><blockquote>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;同样不做多介绍，我们来使用ettercap这个老牌利器来完成这次实验。<a id="more"></a></p>
 </blockquote>
-<p>受害者<br> <img src="/images/pasted-63.PNG" alt=""></p>
-<p>攻击者<br> <img src="/images/pasted-64.PNG" alt=""></p>
+<p>受害者<br> <img src="/images/pasted-63.PNG" alt></p>
+<p>攻击者<br> <img src="/images/pasted-64.PNG" alt></p>
 <h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><blockquote>
 <p>首先我们需要更改ettercap的dns配置文件，位置在于/etc/ettercap/etter.dns, 我们直接shift+g来到配置文件的最后，配置劫持的域名，和域名所解析的ip，可用*通配符</p>
 </blockquote>
-<p> <img src="/images/pasted-65.PNG" alt=""></p>
+<p> <img src="/images/pasted-65.PNG" alt></p>
 <blockquote>
 <p>我把所有.com和.cn的域名全部解析到了本地，也就是说访问.com和.cn的域名，会自动解析我的ip地址。</p>
 <p>然后我们开启web服务器并且来到/var/www/html/路径，这里是默认weib服务器的网站目录，我们新建index.html内容随意。</p>
 </blockquote>
-<p><img src="/images/pasted-70.PNG" alt=""></p>
+<p><img src="/images/pasted-70.PNG" alt></p>
 <h3 id="攻击"><a href="#攻击" class="headerlink" title="攻击"></a>攻击</h3><blockquote>
 <p>配置完成之后我们就可以开始攻击了</p>
 <ul>
-<li><p>ettercap -i eth0 -Tq -P dns_spoof /ip// /网关//</p>
-</li>
-<li><p>-i 选择网卡</p>
-</li>
-<li><p>-T 文本模式</p>
-</li>
-<li><p>-P 选择模块</p>
-</li>
+<li>ettercap -i eth0 -Tq -P dns_spoof /ip// /网关//</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>-i 选择网卡</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>-T 文本模式</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li>-P 选择模块</li>
 </ul>
 </blockquote>
 <ul>
 <li>后面的两组/，如果我选择内网里所有目标，可以不填ip，</li>
 </ul>
 <blockquote>
-<p><img src="/images/pasted-66.PNG" alt=""></p>
+<p><img src="/images/pasted-66.PNG" alt></p>
+</blockquote>
+<blockquote>
 <p>可以看到检测到了3个目标，</p>
+</blockquote>
+<blockquote>
 <p>我们来ping一下百度</p>
-<p><img src="/images/pasted-67.PNG" alt=""></p>
+</blockquote>
+<blockquote>
+<p><img src="/images/pasted-67.PNG" alt></p>
+</blockquote>
+<blockquote>
 <p>可以看到百度的解析ip变成了我们的ip，说明我们已经劫持成功了，我们来访问一下百度</p>
-<p><img src="/images/pasted-68.PNG" alt=""></p>
+</blockquote>
+<blockquote>
+<p><img src="/images/pasted-68.PNG" alt></p>
 <p>劫持成功，网页显示的是我们刚刚搭建web服务器中的内容，同时还会检测到访问的所有请求，全部都劫持解析到我们的ip中来。</p>
+</blockquote>
+<blockquote>
 <p>也就是我们在配置文件上写的.com和.cn的域名全部会解析到我们的ip中来。</p>
-<p><img src="/images/pasted-69.PNG" alt=""></p>
+</blockquote>
+<blockquote>
+<p><img src="/images/pasted-69.PNG" alt></p>
 </blockquote>
 
       
@@ -267,13 +271,13 @@ var _hmt = _hmt || [];
                   <div class="reward-box">
                     
                     <div class="reward-box-item">
-                      <img class="reward-img" src="http://oi6ni1o6u.bkt.clouddn.com/zhifubao1.jpg">
+                      <img class="reward-img" src="https://raw.githubusercontent.com/Y00z/Test/master/zhifubao.jpg">
                       <span class="reward-type">支付宝</span>
                     </div>
                     
                     
                     <div class="reward-box-item">
-                      <img class="reward-img" src="http://oi6ni1o6u.bkt.clouddn.com/weixin1.jpg">
+                      <img class="reward-img" src="https://raw.githubusercontent.com/Y00z/Test/master/wenxin.jpg">
                       <span class="reward-type">微信</span>
                     </div>
                     
@@ -405,7 +409,7 @@ var _hmt = _hmt || [];
   
 
   
-  <div id="SOHUCS" sid="diary-2017-0415-01" ></div> 
+  <div id="SOHUCS" sid="diary-2017-0415-01"></div> 
 <script type="text/javascript"> 
 (function(){ 
 var appid = "cysYxW0PK"; 
@@ -425,7 +429,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 悠哉&#39;
+    		&copy; 2019 悠哉&#39;
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -500,6 +504,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">安卓</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">安全攻防</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
@@ -508,27 +520,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">安卓</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">安全攻防</a>
+                <a href="javascript:void(0)" class="js-tag color3">React-Native</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">反编译</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">React-Native</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -554,13 +554,17 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">wifi</a>
               </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">反编译</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:

