@@ -1,31 +1,21 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://y00z.github.io">
   <title>wifi破解之WPA/WPA2抓包跑包 | Yooz的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！
-
-
-
-正文
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;wifi有很多种方法，这里就说一下Aircrack-ng套件，Aircrack-ng就不多介绍了，一个非常经典的破解套件,也有很多其他">
+  <meta name="description" content="前言 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！    正文 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;wifi有很多种方法，这里就说一下Aircrack-ng套件，Aircrack-ng就不多介绍了，一个非常经典的破解套件,也有很多其他">
+<meta name="keywords" content="安全攻防,wifi破解">
 <meta property="og:type" content="article">
-<meta property="og:title" content="wifi破解之WPA/WPA2抓包跑包">
+<meta property="og:title" content="wifi破解之WPA&#x2F;WPA2抓包跑包">
 <meta property="og:url" content="http://y00z.github.io/2017/04/12/diary-2017-0412-01/index.html">
 <meta property="og:site_name" content="Yooz的博客">
-<meta property="og:description" content="前言
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！
-
-
-
-正文
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;wifi有很多种方法，这里就说一下Aircrack-ng套件，Aircrack-ng就不多介绍了，一个非常经典的破解套件,也有很多其他">
+<meta property="og:description" content="前言 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！    正文 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;wifi有很多种方法，这里就说一下Aircrack-ng套件，Aircrack-ng就不多介绍了，一个非常经典的破解套件,也有很多其他">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-64.jpg">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-65.jpg">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-68.jpg">
@@ -33,20 +23,14 @@
 <meta property="og:image" content="http://y00z.github.io/images/pasted-67.jpg">
 <meta property="og:updated_time" content="2017-06-08T03:08:35.324Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="wifi破解之WPA/WPA2抓包跑包">
-<meta name="twitter:description" content="前言
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！
-
-
-
-正文
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;wifi有很多种方法，这里就说一下Aircrack-ng套件，Aircrack-ng就不多介绍了，一个非常经典的破解套件,也有很多其他">
+<meta name="twitter:title" content="wifi破解之WPA&#x2F;WPA2抓包跑包">
+<meta name="twitter:description" content="前言 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！    正文 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;wifi有很多种方法，这里就说一下Aircrack-ng套件，Aircrack-ng就不多介绍了，一个非常经典的破解套件,也有很多其他">
 <meta name="twitter:image" content="http://y00z.github.io/images/pasted-64.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Yooz的博客" type="application/atom+xml">
   
   
-    <link rel="icon" href="http://oi6ni1o6u.bkt.clouddn.com/tx.png">
+    <link rel="icon" href="https://raw.githubusercontent.com/Y00z/Test/master/tx.jpg">
   
   <link rel="stylesheet" type="text/css" href="/./main.266c1c.css">
   <style type="text/css">
@@ -70,7 +54,7 @@ var _hmt = _hmt || [];
 
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -80,7 +64,7 @@ var _hmt = _hmt || [];
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="http://oi6ni1o6u.bkt.clouddn.com/tx.png" class="js-avatar">
+			<img src="https://raw.githubusercontent.com/Y00z/Test/master/tx.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">悠哉&#39;</a></h1>
@@ -134,7 +118,7 @@ var _hmt = _hmt || [];
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="http://oi6ni1o6u.bkt.clouddn.com/tx.png" class="js-avatar">
+				<img src="https://raw.githubusercontent.com/Y00z/Test/master/tx.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">悠哉&#39;</h1>
@@ -211,12 +195,12 @@ var _hmt = _hmt || [];
 </blockquote>
 <h5 id="扫描ap"><a href="#扫描ap" class="headerlink" title="扫描ap"></a>扫描ap</h5><blockquote>
 <p>准备一个无限网卡，然后ifconfig可以看到网卡信息,如果看不到是因为无线网卡没启用就ifconfig -a查看全部无线网卡，可以ifconfig wlan0 up来启用。</p>
-<p><img src="/images/pasted-64.jpg" alt=""></p>
+<p><img src="/images/pasted-64.jpg" alt></p>
 <p>然后扫描一下附近的ap。</p>
 <ul>
 <li>airodump-ng wlan0<br>wlan0是ifconfig的网卡名称，<br>注意：<br>我用的是kali2.0，其他版本的可能需要airmon-ng start wlan0把网卡置于监听模式</li>
 </ul>
-<p><img src="/images/pasted-65.jpg" alt=""></p>
+<p><img src="/images/pasted-65.jpg" alt></p>
 <p>下面的STATION为连接AP的客户端，看BSSID来区分客户端属于哪个AP的<br>注意：<br>抓包必须要有客户端连接才可以抓包。</p>
 </blockquote>
 <h5 id="抓握手包"><a href="#抓握手包" class="headerlink" title="抓握手包"></a>抓握手包</h5><blockquote>
@@ -225,15 +209,15 @@ var _hmt = _hmt || [];
 <li>airodump-ng –bssid EC:88:8F:8A:9C:A0 -w mywifi -c 6 wlan0<br>-bssid 要抓的ap的mac<br>-w 保存的包名<br>-c 信道(就是扫描中的CH)<br>注意：<br>抓包中需要攻击ap，让客户端断线，客户端重新连接ap后才可以抓到包。<br>可以用aireplay-ng组件来攻击ap</li>
 <li>aireplay-ng -0 0 -a EC:88:8F:8A:9C:A0 wlan0<br>-0 冲突攻击模式<br>-a ap的mac</li>
 </ul>
-<p><img src="/images/pasted-68.jpg" alt=""></p>
+<p><img src="/images/pasted-68.jpg" alt></p>
 <p>抓到握手包后右上角会显示抓到包的客户端mac</p>
-<p><img src="/images/pasted-66.jpg" alt=""></p>
+<p><img src="/images/pasted-66.jpg" alt></p>
 </blockquote>
 <h5 id="跑包"><a href="#跑包" class="headerlink" title="跑包"></a>跑包</h5><ul>
 <li>aircrack-ng -w [字典] [抓到的cap包]</li>
 </ul>
 <blockquote>
-<p><img src="/images/pasted-67.jpg" alt=""></p>
+<p><img src="/images/pasted-67.jpg" alt></p>
 </blockquote>
 
       
@@ -252,13 +236,13 @@ var _hmt = _hmt || [];
                   <div class="reward-box">
                     
                     <div class="reward-box-item">
-                      <img class="reward-img" src="http://oi6ni1o6u.bkt.clouddn.com/zhifubao1.jpg">
+                      <img class="reward-img" src="https://raw.githubusercontent.com/Y00z/Test/master/zhifubao.jpg">
                       <span class="reward-type">支付宝</span>
                     </div>
                     
                     
                     <div class="reward-box-item">
-                      <img class="reward-img" src="http://oi6ni1o6u.bkt.clouddn.com/weixin1.jpg">
+                      <img class="reward-img" src="https://raw.githubusercontent.com/Y00z/Test/master/wenxin.jpg">
                       <span class="reward-type">微信</span>
                     </div>
                     
@@ -414,7 +398,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 悠哉&#39;
+    		&copy; 2019 悠哉&#39;
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -489,15 +473,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">开源</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">安卓</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -505,19 +481,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">安卓</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">安全攻防</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">反编译</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">React-Native</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -533,15 +513,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">路由器</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">路由器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">wifi</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">nas</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">反编译</a>
               </li>
             
             <div class="clearfix"></div>

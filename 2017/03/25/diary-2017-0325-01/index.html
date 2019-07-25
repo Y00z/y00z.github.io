@@ -1,34 +1,33 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://y00z.github.io">
   <title>xposed环境搭建 | Yooz的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Xposed是GitHUB上rovo89大神设计开发的一个针对Android平台的动态劫持项目，通过替换/system/bin/app_process程序控制zygote进程，使得app_process在启动过程中会加载XposedBridge.jar这个jar包，从而完成对Zygote进程及其创建的Dalv">
+  <meta name="description" content="前言 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Xposed是GitHUB上rovo89大神设计开发的一个针对Android平台的动态劫持项目，通过替换/system/bin/app_process程序控制zygote进程，使得app_process在启动过程中会加载XposedBridge.jar这个jar包，从而完成对Zygote进程及其创建的Dalv">
+<meta name="keywords" content="xposed">
 <meta property="og:type" content="article">
 <meta property="og:title" content="xposed环境搭建">
 <meta property="og:url" content="http://y00z.github.io/2017/03/25/diary-2017-0325-01/index.html">
 <meta property="og:site_name" content="Yooz的博客">
-<meta property="og:description" content="前言
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Xposed是GitHUB上rovo89大神设计开发的一个针对Android平台的动态劫持项目，通过替换/system/bin/app_process程序控制zygote进程，使得app_process在启动过程中会加载XposedBridge.jar这个jar包，从而完成对Zygote进程及其创建的Dalv">
+<meta property="og:description" content="前言 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Xposed是GitHUB上rovo89大神设计开发的一个针对Android平台的动态劫持项目，通过替换/system/bin/app_process程序控制zygote进程，使得app_process在启动过程中会加载XposedBridge.jar这个jar包，从而完成对Zygote进程及其创建的Dalv">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-48.jpg">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-49.jpg">
 <meta property="og:updated_time" content="2017-03-28T14:09:06.266Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="xposed环境搭建">
-<meta name="twitter:description" content="前言
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Xposed是GitHUB上rovo89大神设计开发的一个针对Android平台的动态劫持项目，通过替换/system/bin/app_process程序控制zygote进程，使得app_process在启动过程中会加载XposedBridge.jar这个jar包，从而完成对Zygote进程及其创建的Dalv">
+<meta name="twitter:description" content="前言 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;Xposed是GitHUB上rovo89大神设计开发的一个针对Android平台的动态劫持项目，通过替换/system/bin/app_process程序控制zygote进程，使得app_process在启动过程中会加载XposedBridge.jar这个jar包，从而完成对Zygote进程及其创建的Dalv">
 <meta name="twitter:image" content="http://y00z.github.io/images/pasted-48.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Yooz的博客" type="application/atom+xml">
   
   
-    <link rel="icon" href="http://oi6ni1o6u.bkt.clouddn.com/tx.png">
+    <link rel="icon" href="https://raw.githubusercontent.com/Y00z/Test/master/tx.jpg">
   
   <link rel="stylesheet" type="text/css" href="/./main.266c1c.css">
   <style type="text/css">
@@ -52,7 +51,7 @@ var _hmt = _hmt || [];
 
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -62,7 +61,7 @@ var _hmt = _hmt || [];
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="http://oi6ni1o6u.bkt.clouddn.com/tx.png" class="js-avatar">
+			<img src="https://raw.githubusercontent.com/Y00z/Test/master/tx.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">悠哉&#39;</a></h1>
@@ -116,7 +115,7 @@ var _hmt = _hmt || [];
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="http://oi6ni1o6u.bkt.clouddn.com/tx.png" class="js-avatar">
+				<img src="https://raw.githubusercontent.com/Y00z/Test/master/tx.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">悠哉&#39;</h1>
@@ -189,20 +188,20 @@ var _hmt = _hmt || [];
 <h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文<a id="more"></a></h3><blockquote>
 <p>安卓环境就不多说了。</p>
 <h5 id="1-创建一个安卓工程项目"><a href="#1-创建一个安卓工程项目" class="headerlink" title="1 创建一个安卓工程项目"></a>1 创建一个安卓工程项目</h5><p>初识状态</p>
-<p><img src="/images/pasted-48.jpg" alt=""></p>
+<p><img src="/images/pasted-48.jpg" alt></p>
 <h5 id="2-导入xposed的jar包"><a href="#2-导入xposed的jar包" class="headerlink" title="2 导入xposed的jar包"></a>2 导入xposed的jar包</h5><p>下载地址：</p>
 <ul>
-<li><a href="https://bintray.com/rovo89/de.robv.android.xposed/api" target="_blank" rel="external">https://bintray.com/rovo89/de.robv.android.xposed/api</a><br>下载里面的<code>api-82-sources.jar</code>和<code>api-82.jar</code><br>导入到项目的lib目录下</li>
+<li><a href="https://bintray.com/rovo89/de.robv.android.xposed/api" target="_blank" rel="noopener">https://bintray.com/rovo89/de.robv.android.xposed/api</a><br>下载里面的<code>api-82-sources.jar</code>和<code>api-82.jar</code><br>导入到项目的lib目录下</li>
 </ul>
 <h5 id="3-修改AndroidManifest-xml"><a href="#3-修改AndroidManifest-xml" class="headerlink" title="3 修改AndroidManifest.xml"></a>3 修改AndroidManifest.xml</h5><p>在application节点中加入代码</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta-data</span></span></div><div class="line">     <span class="attr">android:name</span>=<span class="string">"xposedmodule"</span></div><div class="line">     <span class="attr">android:value</span>=<span class="string">"true"</span> /&gt;</div><div class="line"> <span class="tag">&lt;<span class="name">meta-data</span></span></div><div class="line">     <span class="attr">android:name</span>=<span class="string">"xposeddescription"</span></div><div class="line">     <span class="attr">android:value</span>=<span class="string">"Hook log test"</span> /&gt;</div><div class="line"> <span class="tag">&lt;<span class="name">meta-data</span></span></div><div class="line">     <span class="attr">android:name</span>=<span class="string">"xposedminversion"</span></div><div class="line">     <span class="attr">android:value</span>=<span class="string">"53"</span> /&gt;</div></pre></td></tr></table></figure>
-<h5 id="4-修改build-gradle"><a href="#4-修改build-gradle" class="headerlink" title="4 修改build.gradle"></a>4 修改build.gradle</h5><p><code>provided</code> 方式导入jar包<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">dependencies</span> &#123;</div><div class="line">    <span class="keyword">compile</span> <span class="string">'com.android.support:appcompat-v7:25.2.0'</span></div><div class="line">    testCompile <span class="string">'junit:junit:4.12'</span></div><div class="line">    provided <span class="string">'de.robv.android.xposed:api:82'</span></div><div class="line">    provided <span class="string">'de.robv.android.xposed:api:82:sources'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta-data</span></span></span><br><span class="line"><span class="tag">     <span class="attr">android:name</span>=<span class="string">"xposedmodule"</span></span></span><br><span class="line"><span class="tag">     <span class="attr">android:value</span>=<span class="string">"true"</span> /&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">meta-data</span></span></span><br><span class="line"><span class="tag">     <span class="attr">android:name</span>=<span class="string">"xposeddescription"</span></span></span><br><span class="line"><span class="tag">     <span class="attr">android:value</span>=<span class="string">"Hook log test"</span> /&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">meta-data</span></span></span><br><span class="line"><span class="tag">     <span class="attr">android:name</span>=<span class="string">"xposedminversion"</span></span></span><br><span class="line"><span class="tag">     <span class="attr">android:value</span>=<span class="string">"53"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<h5 id="4-修改build-gradle"><a href="#4-修改build-gradle" class="headerlink" title="4 修改build.gradle"></a>4 修改build.gradle</h5><p><code>provided</code> 方式导入jar包<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">dependencies</span> &#123;</span><br><span class="line">    <span class="keyword">compile</span> <span class="string">'com.android.support:appcompat-v7:25.2.0'</span></span><br><span class="line">    testCompile <span class="string">'junit:junit:4.12'</span></span><br><span class="line">    provided <span class="string">'de.robv.android.xposed:api:82'</span></span><br><span class="line">    provided <span class="string">'de.robv.android.xposed:api:82:sources'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><font color="#ff0000" fontsize="28sp">注意,注意,注意,注意,注意,注意</font><br>这里默认有个 <code>compile fileTree(dir: &#39;libs&#39;, include: [&#39;*.jar&#39;])</code>  一定要删掉。</p>
 <h5 id="5-创建一个类"><a href="#5-创建一个类" class="headerlink" title="5 创建一个类"></a>5 创建一个类</h5><p>创建一个<code>Tutorial</code>类，继承<code>IXposedHookLoadPackage</code></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Tutorial</span> <span class="keyword">implements</span> <span class="title">IXposedHookLoadPackage</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handleLoadPackage</span><span class="params">(<span class="keyword">final</span> LoadPackageParam lpparam)</span> <span class="keyword">throws</span> Throwable </span>&#123;</div><div class="line">        XposedBridge.log(<span class="string">"正在加载中....."</span> + lpparam.packageName);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Tutorial</span> <span class="keyword">implements</span> <span class="title">IXposedHookLoadPackage</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">handleLoadPackage</span><span class="params">(<span class="keyword">final</span> LoadPackageParam lpparam)</span> <span class="keyword">throws</span> Throwable </span>&#123;</span><br><span class="line">        XposedBridge.log(<span class="string">"正在加载中....."</span> + lpparam.packageName);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h5 id="6-创建入口文件。"><a href="#6-创建入口文件。" class="headerlink" title="6 创建入口文件。"></a>6 创建入口文件。</h5><p>创建一个<code>assets</code>文件，并且在里面创建一个<code>xposed_init</code>文件。<br><code>xposed_init</code>里面内容为<code>Tutorial</code>的完全路径<br><code>hk.myapplication03.Tutorial</code>  //完整类名:包名+类名</p>
 <p>Ok，全部已经搭建好了，来运行一下，需要进到框架中激活并且重启才能生效。<br>查看一下log日志。</p>
-<p><img src="/images/pasted-49.jpg" alt=""></p>
+<p><img src="/images/pasted-49.jpg" alt></p>
 <p>OK了， 环境搭建完成并且成功的实现了一个简单的HOOK</p>
 </blockquote>
 
@@ -222,13 +221,13 @@ var _hmt = _hmt || [];
                   <div class="reward-box">
                     
                     <div class="reward-box-item">
-                      <img class="reward-img" src="http://oi6ni1o6u.bkt.clouddn.com/zhifubao1.jpg">
+                      <img class="reward-img" src="https://raw.githubusercontent.com/Y00z/Test/master/zhifubao.jpg">
                       <span class="reward-type">支付宝</span>
                     </div>
                     
                     
                     <div class="reward-box-item">
-                      <img class="reward-img" src="http://oi6ni1o6u.bkt.clouddn.com/weixin1.jpg">
+                      <img class="reward-img" src="https://raw.githubusercontent.com/Y00z/Test/master/wenxin.jpg">
                       <span class="reward-type">微信</span>
                     </div>
                     
@@ -380,7 +379,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 悠哉&#39;
+    		&copy; 2019 悠哉&#39;
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -455,15 +454,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">开源</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">安卓</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -471,19 +462,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">安卓</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">安全攻防</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">反编译</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">React-Native</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -499,15 +494,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">路由器</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">路由器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">wifi</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">nas</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">反编译</a>
               </li>
             
             <div class="clearfix"></div>

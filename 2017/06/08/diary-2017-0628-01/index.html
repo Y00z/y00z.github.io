@@ -1,27 +1,21 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://y00z.github.io">
   <title>wifi干扰 | Yooz的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！
-
-
-正文&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;很早之前就在网上看到过一个固件，烧录在开发板中，然后可以用来攻击wifi和干扰wifi，其实原理很简单，干扰可以使用mkd3来完成，攻击可">
+  <meta name="description" content="前言 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！   正文&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;很早之前就在网上看到过一个固件，烧录在开发板中，然后可以用来攻击wifi和干扰wifi，其实原理很简单，干扰可以使用mkd3来完成，攻击可">
+<meta name="keywords" content="安全攻防">
 <meta property="og:type" content="article">
 <meta property="og:title" content="wifi干扰">
 <meta property="og:url" content="http://y00z.github.io/2017/06/08/diary-2017-0628-01/index.html">
 <meta property="og:site_name" content="Yooz的博客">
-<meta property="og:description" content="前言
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！
-
-
-正文&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;很早之前就在网上看到过一个固件，烧录在开发板中，然后可以用来攻击wifi和干扰wifi，其实原理很简单，干扰可以使用mkd3来完成，攻击可">
+<meta property="og:description" content="前言 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！   正文&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;很早之前就在网上看到过一个固件，烧录在开发板中，然后可以用来攻击wifi和干扰wifi，其实原理很简单，干扰可以使用mkd3来完成，攻击可">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-132.jpg">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-133.jpg">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-134.jpg">
@@ -30,17 +24,13 @@
 <meta property="og:updated_time" content="2017-07-19T02:48:31.111Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="wifi干扰">
-<meta name="twitter:description" content="前言
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！
-
-
-正文&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;很早之前就在网上看到过一个固件，烧录在开发板中，然后可以用来攻击wifi和干扰wifi，其实原理很简单，干扰可以使用mkd3来完成，攻击可">
+<meta name="twitter:description" content="前言 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！   正文&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;很早之前就在网上看到过一个固件，烧录在开发板中，然后可以用来攻击wifi和干扰wifi，其实原理很简单，干扰可以使用mkd3来完成，攻击可">
 <meta name="twitter:image" content="http://y00z.github.io/images/pasted-132.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Yooz的博客" type="application/atom+xml">
   
   
-    <link rel="icon" href="http://oi6ni1o6u.bkt.clouddn.com/tx.png">
+    <link rel="icon" href="https://raw.githubusercontent.com/Y00z/Test/master/tx.jpg">
   
   <link rel="stylesheet" type="text/css" href="/./main.266c1c.css">
   <style type="text/css">
@@ -64,7 +54,7 @@ var _hmt = _hmt || [];
 
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -74,7 +64,7 @@ var _hmt = _hmt || [];
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="http://oi6ni1o6u.bkt.clouddn.com/tx.png" class="js-avatar">
+			<img src="https://raw.githubusercontent.com/Y00z/Test/master/tx.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">悠哉&#39;</a></h1>
@@ -128,7 +118,7 @@ var _hmt = _hmt || [];
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="http://oi6ni1o6u.bkt.clouddn.com/tx.png" class="js-avatar">
+				<img src="https://raw.githubusercontent.com/Y00z/Test/master/tx.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">悠哉&#39;</h1>
@@ -201,30 +191,30 @@ var _hmt = _hmt || [];
 </blockquote>
 <h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;很早之前就在网上看到过一个固件，烧录在开发板中，然后可以用来攻击wifi和干扰wifi，其实原理很简单，干扰可以使用mkd3来完成，攻击可以使用aircrack-ng套件来完成，早在之前我就发过使用aircrack-ng攻击的相关文章<a href="https://y00z.github.io/2017/04/12/diary-2017-0412-01/">(点我)</a>，只是这个固件把这两个结合在了一起，喜欢折腾硬件的朋友可以去试一试。</p>
 <a id="more"></a>
-<p>固件地址<br><a href="https://github.com/spacehuhn/esp8266_deauther" target="_blank" rel="external">https://github.com/spacehuhn/esp8266_deauther</a></p>
+<p>固件地址<br><a href="https://github.com/spacehuhn/esp8266_deauther" target="_blank" rel="noopener">https://github.com/spacehuhn/esp8266_deauther</a></p>
 <h3 id="干扰"><a href="#干扰" class="headerlink" title="干扰"></a>干扰</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;很早之前就知道了wifi干扰，就是创建数十个杂乱的wifi来干扰正常的信号接收，前几天突然看到有人用wifi来表白，真是脑洞大开。然后我测试了一下也可以使用mdk3的wifi干扰来实现。</p>
 <p>我们使用的是mdk3中的b模块(b-Beacon Flood Mode)</p>
 <pre><code>mdk3 wlan0 b -g -c 11
 </code></pre><ul>
 <li>-c 信道</li>
 <li><p>-g 54Mbit模式            <strong>↓</strong></p>
-<p><img src="/images/pasted-132.jpg" alt=""></p>
+<p><img src="/images/pasted-132.jpg" alt></p>
 </li>
 </ul>
 <p>这种是创建数十个杂乱wifi信号来干扰。 <strong>↓</strong></p>
-<p> <img src="/images/pasted-133.jpg" alt=""></p>
+<p> <img src="/images/pasted-133.jpg" alt></p>
 <p>下面我们可以来创建自定义wifi。</p>
 <p>首先把wifi名一行一个的保存在文本中。 <strong>↓</strong></p>
-<p> <img src="/images/pasted-134.jpg" alt=""></p>
+<p> <img src="/images/pasted-134.jpg" alt></p>
 <p>我们先创建4个，当然也可以更多。</p>
 <pre><code>mdk3 wlan0 b -g -c 11 -f /root/ap.txt
 </code></pre><ul>
 <li><p>-f 自定义wifi名        <strong>↓</strong></p>
-<p><img src="/images/pasted-136.jpg" alt=""></p>
+<p><img src="/images/pasted-136.jpg" alt></p>
 </li>
 </ul>
 <p>然后会创建出以我们保存在文本中的名字的wifi名。<strong>↓</strong></p>
-<p> <img src="/images/pasted-135.jpg" alt=""></p>
+<p> <img src="/images/pasted-135.jpg" alt></p>
 <h3 id="题外"><a href="#题外" class="headerlink" title="题外"></a>题外</h3><p>下面再来说说攻击模块，我在前面说过攻击模块还是aircrack-ng套件比较好用<a href="https://y00z.github.io/2017/04/12/diary-2017-0412-01/">(点我)</a></p>
 <h4 id="洪水攻击"><a href="#洪水攻击" class="headerlink" title="洪水攻击"></a>洪水攻击</h4><p>mdk3下有两个攻击方式其中一个就是洪水攻击，d模块(De-authentication Flood Attack)</p>
 <pre><code>mdk3 wlan0 d -c 11
@@ -258,13 +248,13 @@ var _hmt = _hmt || [];
                   <div class="reward-box">
                     
                     <div class="reward-box-item">
-                      <img class="reward-img" src="http://oi6ni1o6u.bkt.clouddn.com/zhifubao1.jpg">
+                      <img class="reward-img" src="https://raw.githubusercontent.com/Y00z/Test/master/zhifubao.jpg">
                       <span class="reward-type">支付宝</span>
                     </div>
                     
                     
                     <div class="reward-box-item">
-                      <img class="reward-img" src="http://oi6ni1o6u.bkt.clouddn.com/weixin1.jpg">
+                      <img class="reward-img" src="https://raw.githubusercontent.com/Y00z/Test/master/wenxin.jpg">
                       <span class="reward-type">微信</span>
                     </div>
                     
@@ -416,7 +406,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 悠哉&#39;
+    		&copy; 2019 悠哉&#39;
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -491,15 +481,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">开源</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">安卓</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -507,19 +489,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">安卓</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">安全攻防</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">反编译</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">React-Native</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -535,15 +521,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">路由器</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">路由器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">wifi</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">nas</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">反编译</a>
               </li>
             
             <div class="clearfix"></div>

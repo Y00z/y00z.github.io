@@ -1,47 +1,34 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
   <meta name="renderer" content="webkit">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://y00z.github.io">
   <title>adb指令渗透手机获取隐私信息 | Yooz的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前言
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！
-
-
-正文
-前天的315晚会上，其中有部分为“手机充电桩窃取使用者信息”，其实攻击的原理并不高端，无非就是执行了adb恶意指令。">
+  <meta name="description" content="前言 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！   正文 前天的315晚会上，其中有部分为“手机充电桩窃取使用者信息”，其实攻击的原理并不高端，无非就是执行了adb恶意指令。">
+<meta name="keywords" content="安卓,安全攻防">
 <meta property="og:type" content="article">
 <meta property="og:title" content="adb指令渗透手机获取隐私信息">
 <meta property="og:url" content="http://y00z.github.io/2017/03/17/diary-2017-0317-01/index.html">
 <meta property="og:site_name" content="Yooz的博客">
-<meta property="og:description" content="前言
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！
-
-
-正文
-前天的315晚会上，其中有部分为“手机充电桩窃取使用者信息”，其实攻击的原理并不高端，无非就是执行了adb恶意指令。">
+<meta property="og:description" content="前言 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！   正文 前天的315晚会上，其中有部分为“手机充电桩窃取使用者信息”，其实攻击的原理并不高端，无非就是执行了adb恶意指令。">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-45.jpg">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-46.jpg">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-47.jpg">
-<meta property="og:updated_time" content="2017-03-21T02:16:22.788Z">
+<meta property="og:updated_time" content="2017-03-21T02:16:22.789Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="adb指令渗透手机获取隐私信息">
-<meta name="twitter:description" content="前言
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！
-
-
-正文
-前天的315晚会上，其中有部分为“手机充电桩窃取使用者信息”，其实攻击的原理并不高端，无非就是执行了adb恶意指令。">
+<meta name="twitter:description" content="前言 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！   正文 前天的315晚会上，其中有部分为“手机充电桩窃取使用者信息”，其实攻击的原理并不高端，无非就是执行了adb恶意指令。">
 <meta name="twitter:image" content="http://y00z.github.io/images/pasted-45.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Yooz的博客" type="application/atom+xml">
   
   
-    <link rel="icon" href="http://oi6ni1o6u.bkt.clouddn.com/tx.png">
+    <link rel="icon" href="https://raw.githubusercontent.com/Y00z/Test/master/tx.jpg">
   
   <link rel="stylesheet" type="text/css" href="/./main.266c1c.css">
   <style type="text/css">
@@ -65,7 +52,7 @@ var _hmt = _hmt || [];
 
 
 </head>
-
+</html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -75,7 +62,7 @@ var _hmt = _hmt || [];
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="http://oi6ni1o6u.bkt.clouddn.com/tx.png" class="js-avatar">
+			<img src="https://raw.githubusercontent.com/Y00z/Test/master/tx.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">悠哉&#39;</a></h1>
@@ -129,7 +116,7 @@ var _hmt = _hmt || [];
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="http://oi6ni1o6u.bkt.clouddn.com/tx.png" class="js-avatar">
+				<img src="https://raw.githubusercontent.com/Y00z/Test/master/tx.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">悠哉&#39;</h1>
@@ -210,7 +197,7 @@ var _hmt = _hmt || [];
 <li>adb shell input keyevent 22<br>回车，就是按下发送键</li>
 <li>adb shell input keyevent 66  </li>
 </ul>
-<p><img src="/images/pasted-45.jpg" alt=""></p>
+<p><img src="/images/pasted-45.jpg" alt></p>
 </blockquote>
 <h4 id="监视受害者手机"><a href="#监视受害者手机" class="headerlink" title="监视受害者手机"></a>监视受害者手机</h4><blockquote>
 <p>对受害者手机屏幕录屏，然后从手机传输到电脑。<br></p>
@@ -219,7 +206,7 @@ var _hmt = _hmt || [];
 <li>adb pull /sdcard/test.mp4 d:\test.mp4<br>其中如果全分辨率录制的会视频会比较大，如果受害者手机是2k的，那么就更大了，所以建议设置一下分辨率。</li>
 <li>adb shell screenrecord –size 848x480 /sdcard/test.mp4</li>
 </ul>
-<p><img src="/images/pasted-46.jpg" alt=""></p>
+<p><img src="/images/pasted-46.jpg" alt></p>
 </blockquote>
 <h4 id="静默安装程序"><a href="#静默安装程序" class="headerlink" title="静默安装程序"></a>静默安装程序</h4><blockquote>
 <p>将恶意程序静默安装在受害者手机内。</p>
@@ -227,7 +214,7 @@ var _hmt = _hmt || [];
 <li>adb install d:/test.apk<br>打开启动程序</li>
 <li>adb shell am start -n hk.myapplication/hk.myapplication.MainActivity<br>hk.myapplication为包名，hk.myapplication.MainActivity为Activity的路径.</li>
 </ul>
-<p><img src="/images/pasted-47.jpg" alt=""></p>
+<p><img src="/images/pasted-47.jpg" alt></p>
 </blockquote>
 <h4 id="窃取通讯录短信等隐私。"><a href="#窃取通讯录短信等隐私。" class="headerlink" title="窃取通讯录短信等隐私。"></a>窃取通讯录短信等隐私。</h4><blockquote>
 <p>作为安卓开发者我们都知道手机的短信通讯录等都存在手机的数据库中。<br>我们把数据库拷贝到电脑就相当于获取到了受害者的通讯录短信。<br>通讯录和通话记录的数据库存放在<br><code>/data/data/com.android.providers.contacts/databases/contacts2.db</code><br>短信的数据库存放在<br><code>/data/data/com.android.providers.telephony/databases/mmssms.db</code><br>ps: 不知道是我手机原因还是什么原因，adb pull 不能直接拷贝到电脑，然后adb shell进入命令模式，先把数据库拷贝到sdcard中，然后再adb pull就成功拷贝了。<br>另外所有安卓手机中，我们手机拍摄的照片都会保存在<code>/sdcard/DCIM</code>这个文件夹中，我们adb pull这个文件夹，受害者在生活照所拍摄的照片和视频全部都可以获取到。</p>
@@ -257,13 +244,13 @@ var _hmt = _hmt || [];
                   <div class="reward-box">
                     
                     <div class="reward-box-item">
-                      <img class="reward-img" src="http://oi6ni1o6u.bkt.clouddn.com/zhifubao1.jpg">
+                      <img class="reward-img" src="https://raw.githubusercontent.com/Y00z/Test/master/zhifubao.jpg">
                       <span class="reward-type">支付宝</span>
                     </div>
                     
                     
                     <div class="reward-box-item">
-                      <img class="reward-img" src="http://oi6ni1o6u.bkt.clouddn.com/weixin1.jpg">
+                      <img class="reward-img" src="https://raw.githubusercontent.com/Y00z/Test/master/wenxin.jpg">
                       <span class="reward-type">微信</span>
                     </div>
                     
@@ -419,7 +406,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 悠哉&#39;
+    		&copy; 2019 悠哉&#39;
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -494,15 +481,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">开源</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">安卓</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -510,19 +489,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">安卓</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">安全攻防</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">反编译</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">React-Native</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -538,15 +521,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">路由器</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">路由器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">wifi</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">nas</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">反编译</a>
               </li>
             
             <div class="clearfix"></div>
