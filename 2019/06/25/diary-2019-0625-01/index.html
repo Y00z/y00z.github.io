@@ -9,7 +9,7 @@
   <title>蜗牛星际搭建pve+黑群晖nas+lede | Yooz的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="简介 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;又是时隔一年多没有写博客了，最近入手了一个新玩具，蜗牛星际，说是用来挖CAI虚拟货币的矿机，结果被跑路了，原价5，6千的主机现在统统只要2百块。&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;看到一些社区上很多人买来蜗牛星际做nas，看了多个帖子后自己也决定买一个来">
-<meta name="keywords" content="路由器,nas">
+<meta name="keywords" content="nas,路由器">
 <meta property="og:type" content="article">
 <meta property="og:title" content="蜗牛星际搭建pve+黑群晖nas+lede">
 <meta property="og:url" content="http://y00z.github.io/2019/06/25/diary-2019-0625-01/index.html">
@@ -19,7 +19,7 @@
 <meta property="og:image" content="http://y00z.github.io/images/pasted-151.png">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-149.png">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-150.png">
-<meta property="og:updated_time" content="2019-07-25T03:07:47.176Z">
+<meta property="og:updated_time" content="2019-08-26T07:33:48.358Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="蜗牛星际搭建pve+黑群晖nas+lede">
 <meta name="twitter:description" content="简介 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;又是时隔一年多没有写博客了，最近入手了一个新玩具，蜗牛星际，说是用来挖CAI虚拟货币的矿机，结果被跑路了，原价5，6千的主机现在统统只要2百块。&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;看到一些社区上很多人买来蜗牛星际做nas，看了多个帖子后自己也决定买一个来">
@@ -209,7 +209,10 @@ var _hmt = _hmt || [];
 <blockquote>
 <p>经过多次实测，蜗牛星际不适合用来搭建pve+黑裙+lede，性能极其有限，拷贝个文件会让黑裙内存直接飙满崩溃，导致黑裙文件损坏，然后只能重装黑裙。截稿这天我已经卸载了pve，直装黑裙。如果想玩lede软路由，可以买两台蜗牛星际，一台装群晖，一台装lede，或者动手能力强的同学想一台机器搞定，可以尝试把蜗牛星际里面的硬件更换性能更高的。<a href="https://post.smzdm.com/p/a9975kq0/" target="_blank" rel="noopener">参考</a></p>
 </blockquote>
-<p>直装黑裙的话就比较简单了，需要把synoboot.img引导镜像写进u盘，然后开机的时候选择u盘启动，然后跟上面一样开Synology Assistant搜索群晖安装。</p>
+<p>直装黑裙的话分两种</p>
+<p>第一种u盘引导安装，机器每次开机启动的时候，机器必须插上u盘引导启动。这种方法是u盘安装群晖的引导镜像，然后开机的时候安装，将群晖的安装镜像安装到硬盘中，这样就把群晖拆了两份，一个引导在u盘，一个群晖系统在硬盘，这种安装方式确定就是开机必须要u盘启动，好处就是稳定可使用官方镜像安装。</p>
+<p>第二种二合一安装，顾名思义就是把引导镜像和群晖系统合在了一起，开机时不需要u盘，可以直接硬盘引导启动，但是这种二合一的镜像一般都是由一些网络上的人员制作导出的，一个二合一镜像将近15g。这种安装方式好处就是不需要u盘，坏处就是不稳定，并且这种网络上的人制作出来的镜像就相当于当年xp的ghost镜像，不安全。</p>
+<p>这两种黑裙的直装方式就比较简单，第一种直接把引导镜像写入u盘，第二种需要进入pe，再把二合一镜像写入硬盘。</p>
 <p> 工具下载地址</p>
 <ul>
 <li><a href="https://pan.baidu.com/s/1twe237u5uHlkfKl4DWusIg" target="_blank" rel="noopener">https://pan.baidu.com/s/1twe237u5uHlkfKl4DWusIg</a>  提取码: ef8k</li>
@@ -258,11 +261,11 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">路由器</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">nas</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">nas</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">路由器</a>
         		</li>
       		
 		</ul>
@@ -459,6 +462,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">开源</a>
               </li>
              
@@ -475,15 +482,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">React-Native</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">小程序</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -503,15 +506,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">路由器</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">wifi</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">nas</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">路由器</a>
               </li>
              
               <li class="article-tag-list-item">
