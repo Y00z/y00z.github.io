@@ -6,12 +6,12 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://y00z.github.io">
-  <title>蜗牛星际搭建pve+黑群晖nas+lede | Yooz的博客</title>
+  <title>蜗牛星际搭建pve+黑群晖nas+软路由lede | Yooz的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="简介 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;又是时隔一年多没有写博客了，最近入手了一个新玩具，蜗牛星际，说是用来挖CAI虚拟货币的矿机，结果被跑路了，原价5，6千的主机现在统统只要2百块。&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;看到一些社区上很多人买来蜗牛星际做nas，看了多个帖子后自己也决定买一个来">
-<meta name="keywords" content="nas,路由器">
+<meta name="keywords" content="路由器,nas">
 <meta property="og:type" content="article">
-<meta property="og:title" content="蜗牛星际搭建pve+黑群晖nas+lede">
+<meta property="og:title" content="蜗牛星际搭建pve+黑群晖nas+软路由lede">
 <meta property="og:url" content="http://y00z.github.io/2019/06/25/diary-2019-0625-01/index.html">
 <meta property="og:site_name" content="Yooz的博客">
 <meta property="og:description" content="简介 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;又是时隔一年多没有写博客了，最近入手了一个新玩具，蜗牛星际，说是用来挖CAI虚拟货币的矿机，结果被跑路了，原价5，6千的主机现在统统只要2百块。&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;看到一些社区上很多人买来蜗牛星际做nas，看了多个帖子后自己也决定买一个来">
@@ -19,9 +19,9 @@
 <meta property="og:image" content="http://y00z.github.io/images/pasted-151.png">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-149.png">
 <meta property="og:image" content="http://y00z.github.io/images/pasted-150.png">
-<meta property="og:updated_time" content="2019-08-26T07:33:48.358Z">
+<meta property="og:updated_time" content="2019-10-09T11:20:55.628Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="蜗牛星际搭建pve+黑群晖nas+lede">
+<meta name="twitter:title" content="蜗牛星际搭建pve+黑群晖nas+软路由lede">
 <meta name="twitter:description" content="简介 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;又是时隔一年多没有写博客了，最近入手了一个新玩具，蜗牛星际，说是用来挖CAI虚拟货币的矿机，结果被跑路了，原价5，6千的主机现在统统只要2百块。&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;看到一些社区上很多人买来蜗牛星际做nas，看了多个帖子后自己也决定买一个来">
 <meta name="twitter:image" content="http://y00z.github.io/images/pasted-151.png">
   
@@ -85,6 +85,10 @@ var _hmt = _hmt || [];
     			
             
     			
+    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
+    			
+            
+    			
     			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
     			
             
@@ -102,6 +106,11 @@ var _hmt = _hmt || [];
 		        
 			</div>
 		</nav>
+		
+			<nav class="header-music" style="margin-top: 80px;position: fixed;left: 0px;">
+				<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=300 height=86 src="//music.163.com/outchain/player?type=2&id=694286&auto=1&height=66"></iframe>
+			</nav>
+		
 	</header>		
 </div>
 
@@ -170,7 +179,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      蜗牛星际搭建pve+黑群晖nas+lede
+      蜗牛星际搭建pve+黑群晖nas+软路由lede
     </h1>
   
 
@@ -192,15 +201,15 @@ var _hmt = _hmt || [];
 <blockquote>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我买的是B款四个盘位 破解千兆 双口的，可以用来做lede软路由+pve(经过实测，蜗牛星际性能有限，同时装这两个容易性能崩溃)</p>
 </blockquote>
-<h4 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h4><blockquote>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><blockquote>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们这次安装主要是在蜗牛星际中装一个pve虚拟机，然后在pve虚拟机再装lede以及群晖，当然也可以其他的linux，和vmware一样。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;pve和lede的安装可以参考这两篇博客，写的非常详细<a href="https://post.smzdm.com/p/ag89qdw6/" target="_blank" rel="noopener">(安装pve)</a> 、<a href="https://post.smzdm.com/p/adwl903x/" target="_blank" rel="noopener">(安装lede)</a>，</p>
 </blockquote>
-<h6 id="群晖安装"><a href="#群晖安装" class="headerlink" title="群晖安装"></a>群晖安装</h6><blockquote>
+<h3 id="群晖安装"><a href="#群晖安装" class="headerlink" title="群晖安装"></a>群晖安装</h3><blockquote>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果已经安装了pve，我们就可以直接来装群晖6.1.7了，</p>
 </blockquote>
 <p>先创建dsm虚拟机，<span style="color:#ff0000">硬盘选择sata类型</span>，网卡选择E1000，其他的全部默认，创建完毕后不要启动。</p>
 <p>ssh连接pve，把img2kvm和synoboot.img引导程序上传至pve，</p>
-<p>./img2kvm synoboot.img 101 vm-101-disk-1</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./img2kvm synoboot.img 101 vm-101-disk-1</span><br></pre></td></tr></table></figure>
 <p>这个101是虚拟机的编号，看编号来改这个命令。完成后pve面板下的dsm虚拟机会多出一个未使用的磁盘。</p>
 <p><img src="/images/pasted-149.png" alt></p>
 <p>这个磁盘就是我们的dsm的引导，我们双击这个磁盘，<span style="color:#ff0000">选择sata类型</span>，然后再把引导顺序改为我们刚刚新增的磁盘，之后就可以启动虚拟机了</p>
@@ -209,10 +218,10 @@ var _hmt = _hmt || [];
 <blockquote>
 <p>经过多次实测，蜗牛星际不适合用来搭建pve+黑裙+lede，性能极其有限，拷贝个文件会让黑裙内存直接飙满崩溃，导致黑裙文件损坏，然后只能重装黑裙。截稿这天我已经卸载了pve，直装黑裙。如果想玩lede软路由，可以买两台蜗牛星际，一台装群晖，一台装lede，或者动手能力强的同学想一台机器搞定，可以尝试把蜗牛星际里面的硬件更换性能更高的。<a href="https://post.smzdm.com/p/a9975kq0/" target="_blank" rel="noopener">参考</a></p>
 </blockquote>
-<p>直装黑裙的话分两种</p>
-<p>第一种u盘引导安装，机器每次开机启动的时候，机器必须插上u盘引导启动。这种方法是u盘安装群晖的引导镜像，然后开机的时候安装，将群晖的安装镜像安装到硬盘中，这样就把群晖拆了两份，一个引导在u盘，一个群晖系统在硬盘，这种安装方式确定就是开机必须要u盘启动，好处就是稳定可使用官方镜像安装。</p>
-<p>第二种二合一安装，顾名思义就是把引导镜像和群晖系统合在了一起，开机时不需要u盘，可以直接硬盘引导启动，但是这种二合一的镜像一般都是由一些网络上的人员制作导出的，一个二合一镜像将近15g。这种安装方式好处就是不需要u盘，坏处就是不稳定，并且这种网络上的人制作出来的镜像就相当于当年xp的ghost镜像，不安全。</p>
-<p>这两种黑裙的直装方式就比较简单，第一种直接把引导镜像写入u盘，第二种需要进入pe，再把二合一镜像写入硬盘。</p>
+<h3 id="群晖两种直装的方式"><a href="#群晖两种直装的方式" class="headerlink" title="群晖两种直装的方式"></a>群晖两种直装的方式</h3><p>直装黑裙的话分两种</p>
+<h4 id="u盘引导安装"><a href="#u盘引导安装" class="headerlink" title="u盘引导安装"></a>u盘引导安装</h4><p>第一种u盘引导安装(推荐)，机器每次开机启动的时候，机器必须插上u盘引导启动。这种方法是u盘安装群晖的引导镜像，然后开机的时候安装，将群晖的安装镜像安装到硬盘中，这样就把群晖拆了两份，一个引导在u盘，一个群晖系统在硬盘，这种安装方式确定就是开机必须要u盘启动，好处就是稳定可使用官方镜像安装。</p>
+<h4 id="二合一安装"><a href="#二合一安装" class="headerlink" title="二合一安装"></a>二合一安装</h4><p>第二种二合一安装，顾名思义就是把引导镜像和群晖系统合在了一起，开机时不需要u盘，可以直接硬盘引导启动，但是这种二合一的镜像一般都是由一些网络上的人员制作导出的，一个二合一镜像将近15g。这种安装方式好处就是不需要u盘，坏处就是不稳定，并且这种网络上的人制作出来的镜像就相当于当年xp的ghost镜像，不安全。</p>
+<p>这两种黑裙的直装方式比较简单就不详情描述了，第一种直接把引导镜像写入u盘，第二种需要进入pe，再把二合一镜像写入硬盘。</p>
 <p> 工具下载地址</p>
 <ul>
 <li><a href="https://pan.baidu.com/s/1twe237u5uHlkfKl4DWusIg" target="_blank" rel="noopener">https://pan.baidu.com/s/1twe237u5uHlkfKl4DWusIg</a>  提取码: ef8k</li>
@@ -261,11 +270,11 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">nas</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">路由器</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">路由器</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">nas</a>
         		</li>
       		
 		</ul>
@@ -335,6 +344,15 @@ var _hmt = _hmt || [];
   
 <nav id="article-nav">
   
+    <a href="/2019/09/11/diary-2019-0911-01/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          内网穿透
+        
+      </div>
+    </a>
+  
   
     <a href="/2018/06/09/diary-2018-0609-01/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">ESP8266攻击wifi</div>
@@ -387,7 +405,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 悠哉&#39;
+    		&copy; 2020 悠哉&#39;
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -396,6 +414,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
   </div>
 </footer>
     </div>
+    <script src="//cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
     <script>
 	var yiliaConfig = {
 		mathjax: false,
@@ -431,17 +450,25 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
       
     
+      
+      
+      
+    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
+      
+        
+      
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -466,19 +493,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">开源</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">安卓</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">安全攻防</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">开源</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -502,6 +529,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">路由器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
              
@@ -514,11 +545,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">路由器</a>
+                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">反编译</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">开发</a>
               </li>
             
             <div class="clearfix"></div>
@@ -564,6 +599,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     	</section>
     
 
+    
+    	<section class="tools-section tools-section-friends" q-show="friends">
+  		
+        <ul class="search-ul">
+          
+            <li class="search-li">
+              <a href="http://www.yuedun.wang/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>yuedun</a>
+            </li>
+          
+        </ul>
+  		
+    	</section>
     
 
     
@@ -642,6 +689,123 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     </div>
 
 </div>
+    
+<div id="he-plugin-simple"></div>
+<script>
+WIDGET = {
+  CONFIG: {
+    "modules": "01234",
+    "background": 1,
+    "tmpColor": "FFFFFF",
+    "tmpSize": 16,
+    "cityColor": "FFFFFF",
+    "citySize": 16,
+    "aqiSize": 16,
+    "weatherIconSize": 24,
+    "alertIconSize": 18,
+    "padding": "10px 10px 10px 10px",
+    "shadow": "1",
+    "language": "auto",
+    "borderRadius": 5,
+    "fixed": "true",
+    "vertical": "middle",
+    "horizontal": "right",
+    "right": 10,
+    "top": 10,
+    "key": "53f1d56652a24786b33a08cd33779adc"
+  }
+}
+</script>
+<script after async="true" src="https://widget.heweather.net/simple/static/js/he-simple-common.js?v=1.1"></script>
+
+    
+<link href="//cdn.bootcss.com/animate.css/3.7.2/animate.css" rel="stylesheet">
+<script>
+  if (yiliaConfig.isHome) {
+    var animatedArr = ["fadeInDown", "fadeInLeft", "fadeInRight", "fadeInUp", "rollIn", "jackInTheBox", "zoomIn", "rotateInDownLeft", "rotateInDownRight", "rotateInUpLeft", "rotateInUpRight", "lightSpeedIn", "flipInX", "flipInY", "bounceIn", "bounce"]
+    var animated_class = animatedArr[Math.floor(Math.random() * (animatedArr.length - 1 - 0 + 1)) + 0]
+    $("article").addClass("animated " + animated_class)
+  }
+</script>
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+<script src="https://cdn.jsdelivr.net/gh/Y00z/live2d-widget/autoload.js"></script>
+<script>
+  setTimeout(function(){
+    $('#waifu').css("z-index", "999")
+    // document.getElementById("waifu").style.left = "auto"
+    // document.getElementById("waifu").style.right = "20px"
+    var _drag = {};
+    _drag.top = 0; //拖动过的位置距离上边
+    _drag.left = 0; //拖动过的位置距离左边
+    _drag.maxLeft; //距离左边最大的距离
+    _drag.maxTop; //距离上边最大的距离
+    _drag.dragging = false; //是否拖动标志
+    //拖动函数
+    function bindDrag(el) {
+      var winWidth = $(window).width(),
+        winHeight = $(window).height(),
+        objWidth = $(el).outerWidth(),
+        objHeight = $(el).outerHeight();
+      _drag.maxLeft = winWidth - objWidth,
+        _drag.maxTop = winHeight - objHeight;
+      var els = el.style,
+        x = 0,
+        y = 0;
+      var objTop = $(el).offset().top,
+        objLeft = $(el).offset().left;
+      $(el).mousedown(function (e) {
+        _drag.dragging = true;
+        _drag.isDragged = true;
+        x = e.clientX - el.offsetLeft;
+        y = e.clientY - el.offsetTop;
+        el.setCapture && el.setCapture();
+        $(document).bind('mousemove', mouseMove).bind('mouseup', mouseUp);
+        return false;
+      });
+      function mouseMove(e) {
+        e = e || window.event;
+        if (_drag.dragging) {
+          _drag.top = e.clientY - y;
+          _drag.left = e.clientX - x;
+          _drag.top = _drag.top > _drag.maxTop ? _drag.maxTop : _drag.top;
+          _drag.left = _drag.left > _drag.maxLeft ? _drag.maxLeft : _drag.left;
+          _drag.top = _drag.top < 0 ? 0 : _drag.top;
+          _drag.left = _drag.left < 0 ? 0 : _drag.left;
+          els.top = _drag.top + 'px';
+          els.left = _drag.left + 'px';
+          return false;
+        }
+      }
+      function mouseUp(e) {
+        _drag.dragging = false;
+        el.releaseCapture && el.releaseCapture();
+        e.cancelBubble = true;
+        $(document).unbind('mousemove', mouseMove).unbind('mouseup', mouseUp);
+      }
+      $(window).resize(function () {
+        var winWidth = $(window).width(),
+          winHeight = $(window).height(),
+          el = $(el),
+          elWidth = el.outerWidth(),
+          elHeight = el.outerHeight(),
+          elLeft = parseFloat(el.css('left')),
+          elTop = parseFloat(el.css('top'));
+        _drag.maxLeft = winWidth - elWidth;
+        _drag.maxTop = winHeight - elHeight;
+        _drag.top = _drag.maxTop < elTop ? _drag.maxTop : elTop;
+        _drag.left = _drag.maxLeft < elLeft ? _drag.maxLeft : elLeft;
+        el.css({
+          top: _drag.top,
+          left: _drag.left
+        })
+      })
+    }
+    bindDrag(document.getElementById('waifu'));
+  },3000)
+</script>
+
   </div>
 </body>
 </html>

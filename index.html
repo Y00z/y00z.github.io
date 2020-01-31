@@ -76,6 +76,10 @@ var _hmt = _hmt || [];
     			
             
     			
+    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
+    			
+            
+    			
     			<a q-on="click: openSlider(e, 'aboutme')" href="javascript:void(0)">关于我</a>
     			
             
@@ -93,6 +97,11 @@ var _hmt = _hmt || [];
 		        
 			</div>
 		</nav>
+		
+			<nav class="header-music" style="margin-top: 80px;position: fixed;left: 0px;">
+				<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=300 height=86 src="//music.163.com/outchain/player?type=2&id=694286&auto=1&height=66"></iframe>
+			</nav>
+		
 	</header>		
 </div>
 
@@ -156,6 +165,393 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-diary-2020-0131-01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/31/diary-2020-0131-01/">hexo主题</a>
+    </h1>
+  
+
+        
+        <a href="/2020/01/31/diary-2020-0131-01/" class="archive-article-date">
+  	<time datetime="2020-01-31T12:45:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-31</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;由于yilia主题作者很久没有更新过了，所以这里我们对该主题做了一些改动和优化。</p>
+<h1 id="在原主题原基础上做了以下功能升级"><a href="#在原主题原基础上做了以下功能升级" class="headerlink" title="在原主题原基础上做了以下功能升级"></a>在原主题原基础上做了以下功能升级</h1><p>1，新增天气插件<br>2，新增首页文章标题动画<br>3，新增桌面小人看板娘并且拖动<br>4，新增网易云音乐插件<br>……待续<br>
+        
+          <a class="article-more-a" href="/2020/01/31/diary-2020-0131-01/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/01/31/diary-2020-0131-01/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-diary-2019-1107-01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/07/diary-2019-1107-01/">前端nginx配置+jenkins+github自动部署上线</a>
+    </h1>
+  
+
+        
+        <a href="/2019/11/07/diary-2019-1107-01/" class="archive-article-date">
+  	<time datetime="2019-11-07T07:53:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在我们前端开发中，大部分发布等都是由运维帮我们操作，对于项目的自动化部署发布上线等等，这些事作为开发我们也有必要了解，下面就用jenkins来完成项目的自动化构建部署上线流程。</p>
+<blockquote>
+<p>Jenkins是一个开源软件项目，是基于Java开发的一种持续集成工具，用于监控持续重复的工作，旨在提供一个开放易用的软件平台，使软件的持续集成变成可能。</p>
+</blockquote>
+<h3 id="jenkins构建部署大致分两种，"><a href="#jenkins构建部署大致分两种，" class="headerlink" title="jenkins构建部署大致分两种，"></a>jenkins构建部署大致分两种，</h3><p><strong>手动触发式构建</strong>：这种就是我们把代码push到git仓库后，需要登陆到jenkins后台，然后手动点击一键构建后才开始构建和部署到对应的服务器。<br><strong>自动触发式构建</strong>：这种是当我们push代码到指定的分支后，jenkins就会自动开始构建和部署。<br>
+        
+          <a class="article-more-a" href="/2019/11/07/diary-2019-1107-01/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">开发</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/11/07/diary-2019-1107-01/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-diary-2019-0920-01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/20/diary-2019-0920-01/">mac读写NTFS移动硬盘&amp;u盘</a>
+    </h1>
+  
+
+        
+        <a href="/2019/09/20/diary-2019-0920-01/" class="archive-article-date">
+  	<time datetime="2019-09-20T02:49:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;装了nas后，mac里有一些资源需要拷贝到nas上，但是mac通过wifi把资源上传到nas中速度不太理想，而且不稳定还经常卡住。所以我想着先把资源拷到移动硬盘中，再从移动硬盘拷贝到nas中，usb传输速度快而且稳定些，但是mac是只能读NTFS硬盘不能写，然后下面就介绍一个读写NTFS硬盘的方法</p>
+</blockquote>
+<p>先查看硬盘的uuid<br>
+        
+          <a class="article-more-a" href="/2019/09/20/diary-2019-0920-01/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MacOS</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/20/diary-2019-0920-01/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-diary-2019-0912-01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/12/diary-2019-0912-01/">打造家庭影院+tr离线下载</a>
+    </h1>
+  
+
+        
+        <a href="/2019/09/12/diary-2019-0912-01/" class="archive-article-date">
+  	<time datetime="2019-09-12T06:20:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们的群晖nas全部都搞好后就可以开始玩儿了，我是比较爱看电影的人，平时如果看到很喜欢的电影看完后就会下载下来放到移动硬盘里，一直到现在已经堆积了许多电影，现在我们有了nas可以搭建一个家庭影院，可以来用更高大上的方式来看电影。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;首先我们要装个家庭影院程序，这里我用的是emby，当然还有其他的plex以及jellyfin，jellyfin说是在emby收费后引起了一些核心开发人员的不满，然后在emby基础上单独开发了jellyfin，我在使用emby中暂时还没发现什么问题。</p>
+</blockquote>
+<h1 id="安装emby-家庭影院"><a href="#安装emby-家庭影院" class="headerlink" title="安装emby(家庭影院)"></a>安装emby(家庭影院)</h1><p>首先我们要在套件中心中设置运行安装第三方套件来源<br>
+        
+          <a class="article-more-a" href="/2019/09/12/diary-2019-0912-01/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">nas</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/12/diary-2019-0912-01/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-diary-2019-0911-01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/11/diary-2019-0911-01/">内网穿透</a>
+    </h1>
+  
+
+        
+        <a href="/2019/09/11/diary-2019-0911-01/" class="archive-article-date">
+  	<time datetime="2019-09-11T02:17:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><blockquote>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;有了nas后，就一直想要远程管理访问nas，用来远程下载等等，在贫穷的我没有服务器以及公网ip的情况下如何远程访问，之前一直用的是zerotier来组建的内网，但是不知道最近怎么回事，zerotier最近抽风了，组的内网一直显示不出连接地址。然后现在又找到了另外一个内网穿透的办法。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cpolar通过安全隧道将NAT和防火墙后面的本地服务器暴露给公网。</p>
+</blockquote>
+<h2 id="安装cpolar"><a href="#安装cpolar" class="headerlink" title="安装cpolar"></a>安装cpolar</h2><p>首先需要<a href="https://www.cpolar.com/download" target="_blank" rel="noopener">下载</a>cpolar，如果是群晖的话直接选择linux版本，同时需要在其<a href="https://www.cpolar.com" target="_blank" rel="noopener">官网</a>注册账号<br>
+        
+          <a class="article-more-a" href="/2019/09/11/diary-2019-0911-01/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">路由器</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">nas</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/11/diary-2019-0911-01/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-diary-2019-0625-01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -163,7 +559,7 @@ var _hmt = _hmt || [];
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/25/diary-2019-0625-01/">蜗牛星际搭建pve+黑群晖nas+lede</a>
+      <a class="article-title" href="/2019/06/25/diary-2019-0625-01/">蜗牛星际搭建pve+黑群晖nas+软路由lede</a>
     </h1>
   
 
@@ -194,11 +590,11 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">nas</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">路由器</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">路由器</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">nas</a>
         		</li>
       		
 		</ul>
@@ -422,412 +818,9 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-diary-2017-0719-01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/19/diary-2017-0719-01/">React-Native新颖的开发模式</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/19/diary-2017-0719-01/" class="archive-article-date">
-  	<time datetime="2017-07-19T07:07:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;最近发现了一个React-Native非常新颖的模式，类似于微信小程序，通过扫描二维码来打开app，避免了烦琐的安卓和ios打包环境。</p>
-<h4 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h4><p>需要两个工具</p>
-<ul>
-<li>create-react-native-app</li>
-<li>Expo</li>
-</ul>
-<p>第一个工具直接通过npm安装即可<br>    <code>npm install -g create-react-native-app</code><br>
-        
-          <a class="article-more-a" href="/2017/07/19/diary-2017-0719-01/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">React-Native</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/19/diary-2017-0719-01/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-diary-2017-0628-01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/06/08/diary-2017-0628-01/">wifi干扰</a>
-    </h1>
-  
-
-        
-        <a href="/2017/06/08/diary-2017-0628-01/" class="archive-article-date">
-  	<time datetime="2017-06-08T02:13:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
-<font color="#ff0000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！</strong></font>
-
-</blockquote>
-<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;很早之前就在网上看到过一个固件，烧录在开发板中，然后可以用来攻击wifi和干扰wifi，其实原理很简单，干扰可以使用mkd3来完成，攻击可以使用aircrack-ng套件来完成，早在之前我就发过使用aircrack-ng攻击的相关文章<a href="https://y00z.github.io/2017/04/12/diary-2017-0412-01/">(点我)</a>，只是这个固件把这两个结合在了一起，喜欢折腾硬件的朋友可以去试一试。</p>
-        
-          <a class="article-more-a" href="/2017/06/08/diary-2017-0628-01/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">安全攻防</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/06/08/diary-2017-0628-01/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-diary-2017-0530-01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/30/diary-2017-0530-01/">React开发新闻网适配pc端及移动端</a>
-    </h1>
-  
-
-        
-        <a href="/2017/05/30/diary-2017-0530-01/" class="archive-article-date">
-  	<time datetime="2017-05-30T11:07:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;React项目，我是先接触的React-Native，并且也开发过几个小项目。由于React-Native是由React衍生过来的，所以学习React起来也非常快，得心应手。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这个项目比较简单，代码简洁明了，封装性很强，比较适合初识react的同学了解和学习<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;支持用户注册,登录退出,新闻收藏，评论等。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;项目同时对pc端以及移动端做了相应的适配，项目用的es6</p>
-<h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><ul>
-<li>聚合新闻接口</li>
-<li>UI框架,antd</li>
-<li>路由react-router
-        
-          <a class="article-more-a" href="/2017/05/30/diary-2017-0530-01/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">开源</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">React</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/30/diary-2017-0530-01/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-diary-2017-0513-01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/13/diary-2017-0513-01/">防范ONION勒索病毒</a>
-    </h1>
-  
-
-        
-        <a href="/2017/05/13/diary-2017-0513-01/" class="archive-article-date">
-  	<time datetime="2017-05-13T05:03:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话说周末真的是搞大新闻时间，今早一醒就又被一个勒索病毒给刷了屏，稍微看了一下感觉没啥，就是一个古老的勒索软件利用了一个月前NSA美国安全局内部曝光的smb漏洞来传播，可怕的是这个NSA的这个漏洞非常厉害，所以传播的很快，我之前也发过NSA曝光的漏洞相关报道<a href="https://y00z.github.io/2017/04/15/diary-2017-0415-03/">(点我)</a>，如果有设备中招了，病毒就会利用该设备来扫描内网中其他开445的设备并且攻击，很多学校机房和公用电脑都是年久失修的，而且学校都是一个大内网，所以学校是重灾区。
-        
-          <a class="article-more-a" href="/2017/05/13/diary-2017-0513-01/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">安全攻防</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/13/diary-2017-0513-01/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-diary-2017-0512-01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/12/diary-2017-0512-01/">制作BadUSB</a>
-    </h1>
-  
-
-        
-        <a href="/2017/05/12/diary-2017-0512-01/" class="archive-article-date">
-  	<time datetime="2017-05-12T07:14:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
-<font color="#ff0000">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>文中提及的部分技术，可能带有一定攻击性，仅供安全学习和教学用途，禁止非法使用！</strong></font>
-
-
-</blockquote>
-<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BadUSB早在2014年底的PacSec会议上便已经提出，这是USB协议中的一个漏洞————USB设备可以伪装成为其他任何设备，例如输入设备、网卡等等。这个漏洞目前还没有得到修复，几乎可以说在有合适的脚本的情况下，只要能够插进去，没有什么是黑不掉的！
-        
-          <a class="article-more-a" href="/2017/05/12/diary-2017-0512-01/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">安全攻防</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/12/diary-2017-0512-01/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -839,7 +832,7 @@ var _hmt = _hmt || [];
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 悠哉&#39;
+    		&copy; 2020 悠哉&#39;
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -848,6 +841,7 @@ var _hmt = _hmt || [];
   </div>
 </footer>
     </div>
+    <script src="//cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
     <script>
 	var yiliaConfig = {
 		mathjax: false,
@@ -883,17 +877,25 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
       
     
+      
+      
+      
+    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
+      
+        
+      
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -918,19 +920,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">开源</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">安卓</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">安全攻防</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">开源</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -954,6 +956,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">路由器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
              
@@ -966,11 +972,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">路由器</a>
+                <a href="javascript:void(0)" class="js-tag color1">MacOS</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">反编译</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">开发</a>
               </li>
             
             <div class="clearfix"></div>
@@ -1016,6 +1026,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     	</section>
     
 
+    
+    	<section class="tools-section tools-section-friends" q-show="friends">
+  		
+        <ul class="search-ul">
+          
+            <li class="search-li">
+              <a href="http://www.yuedun.wang/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>yuedun</a>
+            </li>
+          
+        </ul>
+  		
+    	</section>
     
 
     
@@ -1094,6 +1116,123 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     </div>
 
 </div>
+    
+<div id="he-plugin-simple"></div>
+<script>
+WIDGET = {
+  CONFIG: {
+    "modules": "01234",
+    "background": 1,
+    "tmpColor": "FFFFFF",
+    "tmpSize": 16,
+    "cityColor": "FFFFFF",
+    "citySize": 16,
+    "aqiSize": 16,
+    "weatherIconSize": 24,
+    "alertIconSize": 18,
+    "padding": "10px 10px 10px 10px",
+    "shadow": "1",
+    "language": "auto",
+    "borderRadius": 5,
+    "fixed": "true",
+    "vertical": "middle",
+    "horizontal": "right",
+    "right": 10,
+    "top": 10,
+    "key": "53f1d56652a24786b33a08cd33779adc"
+  }
+}
+</script>
+<script after async="true" src="https://widget.heweather.net/simple/static/js/he-simple-common.js?v=1.1"></script>
+
+    
+<link href="//cdn.bootcss.com/animate.css/3.7.2/animate.css" rel="stylesheet">
+<script>
+  if (yiliaConfig.isHome) {
+    var animatedArr = ["fadeInDown", "fadeInLeft", "fadeInRight", "fadeInUp", "rollIn", "jackInTheBox", "zoomIn", "rotateInDownLeft", "rotateInDownRight", "rotateInUpLeft", "rotateInUpRight", "lightSpeedIn", "flipInX", "flipInY", "bounceIn", "bounce"]
+    var animated_class = animatedArr[Math.floor(Math.random() * (animatedArr.length - 1 - 0 + 1)) + 0]
+    $("article").addClass("animated " + animated_class)
+  }
+</script>
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css">
+<script src="https://cdn.jsdelivr.net/gh/Y00z/live2d-widget/autoload.js"></script>
+<script>
+  setTimeout(function(){
+    $('#waifu').css("z-index", "999")
+    // document.getElementById("waifu").style.left = "auto"
+    // document.getElementById("waifu").style.right = "20px"
+    var _drag = {};
+    _drag.top = 0; //拖动过的位置距离上边
+    _drag.left = 0; //拖动过的位置距离左边
+    _drag.maxLeft; //距离左边最大的距离
+    _drag.maxTop; //距离上边最大的距离
+    _drag.dragging = false; //是否拖动标志
+    //拖动函数
+    function bindDrag(el) {
+      var winWidth = $(window).width(),
+        winHeight = $(window).height(),
+        objWidth = $(el).outerWidth(),
+        objHeight = $(el).outerHeight();
+      _drag.maxLeft = winWidth - objWidth,
+        _drag.maxTop = winHeight - objHeight;
+      var els = el.style,
+        x = 0,
+        y = 0;
+      var objTop = $(el).offset().top,
+        objLeft = $(el).offset().left;
+      $(el).mousedown(function (e) {
+        _drag.dragging = true;
+        _drag.isDragged = true;
+        x = e.clientX - el.offsetLeft;
+        y = e.clientY - el.offsetTop;
+        el.setCapture && el.setCapture();
+        $(document).bind('mousemove', mouseMove).bind('mouseup', mouseUp);
+        return false;
+      });
+      function mouseMove(e) {
+        e = e || window.event;
+        if (_drag.dragging) {
+          _drag.top = e.clientY - y;
+          _drag.left = e.clientX - x;
+          _drag.top = _drag.top > _drag.maxTop ? _drag.maxTop : _drag.top;
+          _drag.left = _drag.left > _drag.maxLeft ? _drag.maxLeft : _drag.left;
+          _drag.top = _drag.top < 0 ? 0 : _drag.top;
+          _drag.left = _drag.left < 0 ? 0 : _drag.left;
+          els.top = _drag.top + 'px';
+          els.left = _drag.left + 'px';
+          return false;
+        }
+      }
+      function mouseUp(e) {
+        _drag.dragging = false;
+        el.releaseCapture && el.releaseCapture();
+        e.cancelBubble = true;
+        $(document).unbind('mousemove', mouseMove).unbind('mouseup', mouseUp);
+      }
+      $(window).resize(function () {
+        var winWidth = $(window).width(),
+          winHeight = $(window).height(),
+          el = $(el),
+          elWidth = el.outerWidth(),
+          elHeight = el.outerHeight(),
+          elLeft = parseFloat(el.css('left')),
+          elTop = parseFloat(el.css('top'));
+        _drag.maxLeft = winWidth - elWidth;
+        _drag.maxTop = winHeight - elHeight;
+        _drag.top = _drag.maxTop < elTop ? _drag.maxTop : elTop;
+        _drag.left = _drag.maxLeft < elLeft ? _drag.maxLeft : elLeft;
+        el.css({
+          top: _drag.top,
+          left: _drag.left
+        })
+      })
+    }
+    bindDrag(document.getElementById('waifu'));
+  },3000)
+</script>
+
   </div>
 </body>
 </html>
