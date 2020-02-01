@@ -9,7 +9,7 @@
   <title>安卓源码三连发 | Yooz的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="前言 早在高三的时候,我就决定不再弄啥网络安全了,想从事开发的工作.当时正好移动设备特别火,所以决定入坑安卓开发了.当时给自己定下的目标是先学习java，javaweb，然后是android. 学习期间自己也试着开发了几个项目，这里开源出来和大家分享一下，希望能和大家共同学习.  手机安全卫士">
-<meta name="keywords" content="开源,安卓">
+<meta name="keywords" content="安卓,开源">
 <meta property="og:type" content="article">
 <meta property="og:title" content="安卓源码三连发">
 <meta property="og:url" content="http://y00z.github.io/2017/01/06/diary-2017-0106-01/index.html">
@@ -244,11 +244,11 @@ var _hmt = _hmt || [];
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">开源</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">安卓</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">安卓</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">开源</a>
         		</li>
       		
 		</ul>
@@ -361,22 +361,23 @@ var _hmt = _hmt || [];
   
 
   
-    <div id="gitmentContainer"></div>
-<!-- <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script> -->
-<link rel="stylesheet" href="//billts.site/extra_css/gitment.css">
-<script src="//billts.site/js/gitment.js"></script>
+
+  
+    <div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 <script>
-  var gitment = new Gitment({
-    id: '安卓源码三连发',
-    owner: 'y00z',
-    repo: 'y00z.github.io',
-    oauth: {
-      client_id: '79ec07d694cf178c2658',
-      client_secret: 'f589fb600a8534b87094e8723928de99686059be'
-    },
-  });
-  gitment.render('gitmentContainer')
+
+var gitalk = new Gitalk({
+  client_id: '79ec07d694cf178c2658',
+  client_secret: 'f589fb600a8534b87094e8723928de99686059be',
+  repo: 'y00z.github.io',
+  owner: 'y00z',
+  admin: ['y00z'],
+  id: '安卓源码三连发',      // Ensure uniqueness and length less than 50
+  distractionFreeMode: false  // Facebook-like distraction free mode
+})
+gitalk.render('gitalk-container')
 </script>
   
 
@@ -474,6 +475,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">安卓</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">安全攻防</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
@@ -483,14 +492,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">NodeJs</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">安卓</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">安全攻防</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -522,11 +523,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">wifi</a>
+                <a href="javascript:void(0)" class="js-tag color4">nas</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">nas</a>
+                <a href="javascript:void(0)" class="js-tag color5">wifi</a>
               </li>
              
               <li class="article-tag-list-item">
